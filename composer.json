@@ -12,7 +12,8 @@
         "laravel-frontend-presets/paper": "^1.0",
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "^3.2"
+        "laravel/ui": "^3.2",
+        "orangehill/iseed": "^3.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
