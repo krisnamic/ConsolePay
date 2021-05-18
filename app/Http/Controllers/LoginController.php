@@ -55,7 +55,7 @@ class LoginController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'email_verified_at' => now(),
-            'password' => Hash::make('secret'),
+            'password' => Hash::make($request->password),
             'noTelepon' => $request->noTelepon,
             'alamat' => $request->alamat,
             'role' => 'user',
