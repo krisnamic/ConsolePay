@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .bg-img {
     background-image: url('https://ak2.picdn.net/shutterstock/videos/9057502/thumb/12.jpg');
     background-position: center center;
@@ -5,4 +10,15 @@
     background-size: cover;
     height: 100%;
     width: 100%;
+}
+
+.home-logo {
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 2em;
+    max-width: 50%;
+}
+
+.home {
+    text-align: center;
 }

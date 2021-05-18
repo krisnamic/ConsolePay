@@ -4,7 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>ConsolePay</title>
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -22,10 +25,30 @@
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @include('Template/head')
-            @include('Template/navbar')
+        @include('Template/head')
+        @include('Template/navbar')
+        
+        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+            <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg text-center" style="padding-bottom: 3em;">
+                <object class="home-logo" data="img/consolepay/consolepay-logo.svg" width="720" type="image/svg+xml"></object>
+                <button type="button" class="btn btn-lg btn-outline-primary">Rent a Video Game Console!</button>
+            </div>
+        </div>
 
-            <object data="public/img/consolepay/consolepay-logo.svg" type="image/svg+xml"></object>
+        <br>
+
+        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+            <div class="flex mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
+                <div>
+                    <img src="img/gambar/psp.png" class="w-75" alt="">
+                </div>
+                <div>
+                    <p>test</p>
+                </div>
+            </div>
+        </div>
+
+        <br>
 
             <!-- @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
