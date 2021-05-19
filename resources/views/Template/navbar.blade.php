@@ -14,10 +14,14 @@
 
     <object data="img/consolepay/consolepay-horizontal.svg" width="240" type="image/svg+xml"></object>
 
+    <div class="ml-auto">
     @if (Route::has('login'))
             @auth
                 <li class="nav-item d-none d-sm-inline-block">
                   <a href="{{ url('/home') }}" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                  <a href="{{ route('logout')}}" class="nav-link">Logout</a>
                 </li>
             @else
                 <li class="nav-item d-none d-sm-inline-block">
@@ -30,6 +34,7 @@
                 @endif
             @endauth
     @endif
+    </div>
 
     <!-- SEARCH FORM 
     <form class="form-inline ml-3">
@@ -44,7 +49,7 @@
     </form>-->
 
     <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
+    <!-- <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a href="{{ route('logout')}}" class="nav-link">
             <i class="nav-icon fas fa-th"></i>
@@ -55,5 +60,5 @@
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i
             class="fas fa-th-large"></i></a>
       </li>
-    </ul>
+    </ul> -->
   </nav>

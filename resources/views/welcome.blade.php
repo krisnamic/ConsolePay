@@ -33,9 +33,9 @@
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg text-center" style="padding-bottom: 3em;">
                 <!-- ConsolePay Logo -->
-                <object class="home-logo" data="img/consolepay/consolepay-logo.svg" width="720" type="image/svg+xml" data-aos="zoom-in"></object>
+                <object class="home-logo" data="img/consolepay/consolepay-logo.svg" width="720" type="image/svg+xml" data-aos="fade-down" data-aos-duration="1000" data-aos-easing="ease-in-out"></object>
                 <!-- Rent Button -->
-                    <button type="button" onclick="location.href='{{ route('login') }}'" class="btn btn-large btn-outline-primary">Rent a Video Game Console!</button>
+                    <button type="button" onclick="location.href='{{ route('login') }}'" class="btn btn-large btn-outline-primary" data-aos="fade-down" data-aos-delay="500" data-aos-anchor-placement="top-bottom">Rent a Video Game Console!</button>
             </div>
         </div>
 
@@ -45,12 +45,12 @@
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8" style="margin: 2%;" >
             <div class="flex mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                 <div class="d-flex justify-content-center" style="margin: 0 25%;">
-                    <img src="img/gambar/3ds-xl.png" class="w-30" alt="" data-aos="zoom-in">
-                    <img src="img/gambar/xbox-one-s.png" class="w-30" alt="" data-aos="zoom-in">
-                    <img src="img/gambar/ps5.png" class="w-30" alt="" data-aos="zoom-in">
-                    <img src="img/gambar/switch.png" class="w-30" alt="" data-aos="zoom-in">
+                    <img src="img/gambar/psvita.png" class="w-30" alt="" data-aos="zoom-in" data-aos-delay="50">
+                    <img src="img/gambar/xbox-one-s.png" class="w-30" alt="" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="img/gambar/ps5.png" class="w-30" alt="" data-aos="zoom-in" data-aos-delay="150">
+                    <img src="img/gambar/switch.png" class="w-30" alt="" data-aos="zoom-in" data-aos-delay="200">
                 </div>
-                <div class="text-center" style="margin: 2% 0;">
+                <div class="text-center" style="margin: 2% 0;"  data-aos="zoom-in" data-aos-delay="200">
                     <h1>Choose from a wide collection of <strong>modern video game consoles!</strong></h1>
                 </div>
             </div>
