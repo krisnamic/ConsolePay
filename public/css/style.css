@@ -3,6 +3,13 @@
     padding: 0;
 }
 
+.navbar-fixed {
+    position: fixed;
+    z-index: 999;
+    opacity: 1;
+    width: 100%;
+}
+
 .bg-img {
     background-image: url('https://ak2.picdn.net/shutterstock/videos/9057502/thumb/12.jpg');
     background-position: center center;
@@ -19,6 +26,31 @@
     max-width: 50%;
 }
 
+.btn-large {
+    padding: 18px 28px;
+    font-size: 32px !important; //change this to your desired size
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
 .home {
     text-align: center;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.merek-home {
+    margin: 0 5% ;
+}
+
+.header {
+    margin: 0 25% !important;
+}
+
+.footer {
+    margin: 0 25% !important;
 }

@@ -1,4 +1,4 @@
-<nav class="main-header navbar navbar-expand navbar-white navbar-light text-center">
+<nav class="main-header header navbar sticky-top navbar-expand navbar-white navbar-light text-center">
     <!-- Left navbar links -->
     <!-- <ul class="navbar-nav">
       <li class="nav-item">

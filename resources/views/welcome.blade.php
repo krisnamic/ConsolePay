@@ -25,30 +25,58 @@
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+        
         @include('Template/head')
+
+        <!-- Navbar -->
         @include('Template/navbar')
         
+        <!-- Section 1 -->
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg text-center" style="padding-bottom: 3em;">
+                <!-- ConsolePay Logo -->
                 <object class="home-logo" data="img/consolepay/consolepay-logo.svg" width="720" type="image/svg+xml"></object>
-                <button type="button" class="btn btn-lg btn-outline-primary">Rent a Video Game Console!</button>
+                <!-- Rent Button -->
+                <button type="button" class="btn btn-large btn-outline-primary">Rent a Video Game Console!</button>
             </div>
         </div>
 
         <br>
 
-        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+        <!-- Section 2 -->
+        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8" style="margin: 2%;">
             <div class="flex mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                <div>
-                    <img src="img/gambar/psp.png" class="w-75" alt="">
+                <div class="d-flex justify-content-center" style="margin: 0 25%;">
+                    <img src="img/gambar/3ds-xl.png" class="w-30" alt="">
+                    <img src="img/gambar/xbox-one-s.png" class="w-30" alt="">
+                    <img src="img/gambar/ps5.png" class="w-30" alt="">
+                    <img src="img/gambar/switch.png" class="w-30" alt="">
                 </div>
-                <div>
-                    <p>test</p>
+                <div class="text-center" style="margin: 2% 0;">
+                    <h1>Choose from a wide collection of <strong>modern video game consoles!</strong></h1>
                 </div>
             </div>
         </div>
 
         <br>
+
+        <!-- Section 2 -->
+        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+            <div class="flex mt-8 bg-white dark:bg-gray-800 overflow-hidden sm:rounded-lg">
+                <div class="text-center">
+                    <p>Sponsored by :</p>
+                </div>
+                <div class="d-flex justify-content-center" style="margin: 0 25%;">
+                    <img src="img/merek/sony.svg" class="w-30 merek-home" alt="">
+                    <img src="img/merek/microsoft.svg" class="w-30 merek-home" alt="">
+                    <img src="img/merek/nintendo.svg" class="w-30 merek-home" alt="">
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        @include('Template/footer')
 
             <!-- @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
