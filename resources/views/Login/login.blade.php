@@ -24,6 +24,7 @@
   <!-- <link rel="stylesheet" href="../../css/captcha.css"> -->
   <!-- <script src="../../js/captcha.js"></script> -->
   <link href="https://fonts.googleapis.com/css?family=Kanit:300,300i,400,400i,600,600i,700,700i|Varela:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body class="hold-transition login-page bg-img">
@@ -57,18 +58,20 @@
               </div>
             </div>
           </div>
-          <p style="font-size:12px; color:red;">@error('password')
+          <p style="font-size:12px; color:red;">
+          @error('password')
             {{ $message }}
             @enderror
           </p>
           @if(Session::has('error'))
           <p class="font-size:12px; color:red;">{{ Session::get('error') }}</p>
           @endif
-          <div class="row">
-            <div class="col-8">
-              <div class="icheck-primary">
-              </div>
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <div class="g-recaptcha" data-sitekey="{{env('CAPTCHA_KEY')}}"></div>
             </div>
+          </div>
+
 
             <!-- captcha -->
             <!-- /.col -->
@@ -124,6 +127,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.3/venobox.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script> -->
+  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    async defer>
+</script>
+  <!-- <script type="text/javascript">
+  var onloadCallback = function() {
+    alert("grecaptcha is ready!");
+  };
+</script> -->
 </body>
 
 </html>
