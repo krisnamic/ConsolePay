@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Barang;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -12,6 +13,7 @@ class HomeController extends Controller
     }
     public function userHome()
     {
-        return view('user.userHome');
+        $barang = Barang::all(); //retrieving models
+        return view('user.userHome', ['barang' => $barang]);
     }
 }

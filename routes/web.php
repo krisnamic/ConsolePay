@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 use App\Http\Middleware\CheckRole;
 use PHPUnit\TextUI\XmlConfiguration\Group;
 
@@ -33,4 +34,5 @@ Route::group(['middleware' => ['auth', 'checkrole:admin']], function () {
 });
 Route::group(['middleware' => ['auth', 'checkrole:user']], function () {
     Route::get('/userHome', [HomeController::class, 'userHome'])->name('userHome');
+    Route::get('/userHome/{ID_Barang}', [UserController::class, 'detailBarang'])->name('detailBarang');
 });
