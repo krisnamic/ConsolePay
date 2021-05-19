@@ -76,7 +76,7 @@
 
             $('body').on('click', '.delete', function () {
                 if (confirm("Delete Record?") == true) {
-                    var id = $(this).data('ID_Barang');
+                    var id = $(this).data('id');
                     // ajax
                     $.ajax({
                         type:"POST",

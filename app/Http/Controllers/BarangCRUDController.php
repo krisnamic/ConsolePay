@@ -125,7 +125,7 @@ class BarangCRUDController extends Controller
     */
     public function destroy(Request $request)
     {
-        $com = Barang::where('ID_Barang',$request->id)->delete();
+        $com = Barang::where('id',$request->id)->delete();
         return Response()->json($com);
     }
 }
