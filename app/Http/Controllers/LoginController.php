@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use App\Rules\Captcha;
 // use Hash;
 use Illuminate\Support\Facades\Session;
 
@@ -23,7 +24,8 @@ class LoginController extends Controller
     {
         $rules = [
             'email' => 'required|email',
-            'password' => 'required'
+            'password' => 'required',
+            'g-recaptcha-response' => new Captcha(),
         ];
         $messages = [
             'email.required'        => 'Email wajib diisi',
