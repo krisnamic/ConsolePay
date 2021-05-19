@@ -41,22 +41,22 @@ class BarangCRUDController extends Controller
     */
     public function store(Request $request)
     {
-        // $request->validate([
-        // 'name' => 'required',
-        // 'company' => 'required',
-        // 'type' => 'required',
-        // 'description' => 'required',
-        // 'price' => 'required',
-        // 'stock' => 'required'
-        // ]);
-        // dd($request);
+        $request->validate([
+            'name' => 'required',
+            'company' => 'required',
+            'type' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'stock' => 'required'
+        ]);
+        
         $barang = new Barang;
-        $barang->namaBarang = $request->nama;
-        $barang->merekBarang = $request->merek;
-        $barang->kategoriBarang = $request->kategori;
-        $barang->deskripsiBarang = $request->deskripsi;
-        $barang->hargaBarang = $request->harga;
-        $barang->stokBarang = $request->stok;
+        $barang->namaBarang = $request->name;
+        $barang->merekBarang = $request->company;
+        $barang->kategoriBarang = $request->type;
+        $barang->deskripsiBarang = $request->description;
+        $barang->hargaBarang = $request->price;
+        $barang->stokBarang = $request->stock;
         $barang->gambarBarang = 'test';
         $barang->logoBarang = 'test';
         $barang->created_at = now();

@@ -30,7 +30,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Name:</strong>
-                        <input type="text" name="nama" class="form-control" placeholder="Name">
+                        <input type="text" name="name" class="form-control" placeholder="Name">
                         @error('name')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
@@ -39,7 +39,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Company:</strong>
-                        <input type="text" name="merek" class="form-control" placeholder="Company">
+                        <input type="text" name="company" class="form-control" placeholder="Company">
                         @error('company')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
@@ -48,7 +48,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Type</strong>
-                        <input type="text" name="kategori" class="form-control" placeholder="Type">
+                        <input type="text" name="type" class="form-control" placeholder="Type">
                         @error('type')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
@@ -57,7 +57,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Description</strong>
-                        <input type="text" name="deskripsi" class="form-control" placeholder="Description">
+                        <input type="text" name="description" class="form-control" placeholder="Description">
                         @error('description')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
@@ -66,7 +66,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Price</strong>
-                        <input type="text" name="harga" class="form-control" placeholder="Price">
+                        <input type="text" name="price" class="form-control" placeholder="Price">
                         @error('price')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
@@ -75,7 +75,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Stock</strong>
-                        <input type="text" name="stok" class="form-control" placeholder="Stock">
+                        <input type="text" name="stock" class="form-control" placeholder="Stock">
                         @error('stock')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
