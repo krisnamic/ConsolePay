@@ -95,14 +95,24 @@ class BarangCRUDController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-        'name' => 'required',
-        'email' => 'required',
-        'address' => 'required'
+            'name' => 'required',
+            'company' => 'required',
+            'type' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'stock' => 'required'
         ]);
+
         $barang = Barang::find($id);
-        $barang->name = $request->name;
-        $barang->email = $request->email;
-        $barang->address = $request->address;
+        $barang->namaBarang = $request->name;
+        $barang->merekBarang = $request->company;
+        $barang->kategoriBarang = $request->type;
+        $barang->deskripsiBarang = $request->description;
+        $barang->hargaBarang = $request->price;
+        $barang->stokBarang = $request->stock;
+        $barang->gambarBarang = 'test';
+        $barang->logoBarang = 'test';
+        $barang->updated_at = now();
         $barang->save();
         return redirect()->route('barang.index')
         ->with('success','Barang Has Been updated successfully');

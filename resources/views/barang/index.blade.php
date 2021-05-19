@@ -71,7 +71,7 @@
                 { data: 'gambarBarang', name: 'gambarBarang' },
                 {data: 'action', orderable: false},
                 ],
-                order: [[0, 'asc']]
+                order: [[0, 'desc']]
             });
 
             $('body').on('click', '.delete', function () {
