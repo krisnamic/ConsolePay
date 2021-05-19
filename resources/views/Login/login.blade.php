@@ -8,9 +8,6 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="{{asset('css/style.css')}}">
-
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{asset('AdminLTE/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Ionicons -->
@@ -27,6 +24,10 @@
 </head>
 
 <body class="hold-transition login-page bg-img">
+
+  <!-- Head -->
+  @include('Template/head')
+
   <div class="login-box">
     <div class="login-logo">
       <a href="{{url('/')}}"><b>Console</b>Pay</a>
@@ -65,25 +66,27 @@
           <p class="font-size:12px; color:red;">{{ Session::get('error') }}</p>
           @endif
           <div class="row">
-            <div class="col-8">
+            <!-- <div class="col-8">
               <div class="icheck-primary">
               </div>
-            </div>
+            </div> -->
+
+            <p class="mb-0">
+          <a href="{{route('register')}}" class="text-center">I don't have an account</a>
+        </p>
 
             <!-- captcha -->
             <!-- /.col -->
-            <div class="col-4">
+            <div class="ml-auto">
               <button type="submit" id="login-btn" class="btn btn-primary btn-block">Sign In</button>
             </div>
             <!-- /.col -->
           </div>
         </form>
 
-        <p class="mb-1">
-        </p>
-        <p class="mb-0">
-          <a href="{{route('register')}}" class="text-center">I don't have an account</a>
-        </p>
+        <!-- <p class="mb-1">
+        </p> -->
+        
       </div>
       <!-- /.login-card-body -->
     </div>
