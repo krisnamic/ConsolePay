@@ -22,12 +22,15 @@ Route::get('/', function () {
 });
 
 
-Route::get('/login', [LoginController::class,'loginPage'])->name('login');
-Route::post('/postlogin', [LoginController::class,'postLogin'])->name('postlogin');
-Route::get('/logout', [LoginController::class,'logout'])->name('logout');
-Route::get('/register', [LoginController::class,'register'])->name('register');
-Route::post('/savedata', [LoginController::class,'saveData'])->name('savedata');
+Route::get('/login', [LoginController::class, 'loginPage'])->name('login');
+Route::post('/postlogin', [LoginController::class, 'postLogin'])->name('postlogin');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/register', [LoginController::class, 'register'])->name('register');
+Route::post('/savedata', [LoginController::class, 'saveData'])->name('savedata');
 
-Route::group(['middleware' => ['auth','checkrole:admin,user']], function(){
-Route::get('/home', [HomeController::class,'index'])->name('home');
+Route::group(['middleware' => ['auth', 'checkrole:admin']], function () {
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+});
+Route::group(['middleware' => ['auth', 'checkrole:user']], function () {
+    Route::get('/userHome', [HomeController::class, 'userHome'])->name('userHome');
 });
