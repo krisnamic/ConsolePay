@@ -17,8 +17,8 @@ class CreateDetailpesananTable extends Migration
             $table->id();
             $table->unsignedBigInteger('id_pesanan');
             $table->foreign('id_pesanan')->references('id')->on('pesanan');
-            $table->integer('id_barang');
-            $table->foreign('id_barang')->references('ID_Barang')->on('barang');
+            $table->unsignedBigInteger('id_barang');
+            $table->foreign('id_barang')->references('id')->on('barang');
             $table->integer('hargaBarang');
             $table->timestamps();
         });

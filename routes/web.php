@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Middleware\CheckRole;
 use PHPUnit\TextUI\XmlConfiguration\Group;
-use App\Http\Controllers\ConsoleController;
+use App\Http\Controllers\BarangCRUDController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +32,7 @@ Route::post('/savedata', [LoginController::class,'saveData'])->name('savedata');
 Route::group(['middleware' => ['auth','checkrole:admin,user']], function(){
 Route::get('/home', [HomeController::class,'index'])->name('home');
 });
+
+//datatables
+Route::resource('barang', BarangCRUDController::class);
+Route::post('delete-barang', [BarangCRUDController::class,'destroy']);
