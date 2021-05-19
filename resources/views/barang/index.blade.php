@@ -69,9 +69,8 @@
                 { data: 'hargaBarang', name: 'hargaBarang' },
                 { data: 'stokBarang', name: 'stokBarang' },
                 { data: 'gambarBarang', name: 'gambarBarang' },
-                {data: 'action', orderable: false},
-                ],
-                order: [[0, 'desc']]
+                { data: 'action', orderable: false, targets: 0 },
+                ]
             });
 
             $('body').on('click', '.delete', function () {
