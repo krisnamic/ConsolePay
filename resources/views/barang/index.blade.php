@@ -44,7 +44,7 @@
                 <div class="card-body">
                 <div>
                     <div class="d-flex flex-row-reverse" style="margin-right: 1.3em;">
-                        <a class="btn btn-primary" href="{{ route('barang.create') }}"><i class="fas fa-plus"></i> Add Console</a>
+                        <a class="btn btn-primary" href="{{ route('barang.create') }}"><i class="fas fa-plus"></i> <i class="fas fa-gamepad"></i> &nbsp;Add Console</a>
                     </div>
                        
                     
