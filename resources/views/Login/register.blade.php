@@ -21,11 +21,17 @@
 </head>
 
 <body class="hold-transition register-page">
+
+  <!-- Head -->
+  @include('Template/head')
+
   <div class="register-box">
-    <div class="register-logo">
-      <a href="{{url('/')}}"><b>Admin</b>LTE</a>
+    <!-- ConsolePay Logo -->
+    <div class="login-logo">
+      <object class="home-login" data="img/consolepay/consolepay-horizontal.svg" type="image/svg+xml"></object>
     </div>
 
+    <!-- Register Card -->
     <div class="card">
       <div class="card-body register-card-body">
         <p class="login-box-msg">Register a new membership</p>
@@ -97,21 +103,31 @@
             </p>
             <div class="input-group mb-3">
             </div>
-            <div class="row">
-              <div class="col-8">
+            <div class="row d-flex justify-content-between">
+              <!-- <div class="col-8">
                 <div class="icheck-primary">
                 </div>
+              </div> -->
+              <div class="d-flex align-items-center mb-0">
+                <a href="{{route('login')}}" class="text-center" style="vertical-align:middle;">I already have an account</a>
               </div>
+              
+              <!-- captcha -->
               <!-- /.col -->
-              <div class="col-4">
-                <button type="submit" class="btn btn-primary btn-block">Register</button>
+              <div class="ml-auto">
+                <button type="submit" id="login-btn" class="btn btn-primary btn-block">Register</button>
               </div>
+
+              <!-- /.col -->
+              <!-- <div class="col-4">
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+              </div> -->
               <!-- /.col -->
             </div>
         </form>
 
 
-        <a href="{{route('login')}}" class="text-center">I already have an account</a>
+        <!-- <a href="{{route('login')}}" class="text-center">I already have an account</a> -->
       </div>
       <!-- /.form-box -->
     </div><!-- /.card -->

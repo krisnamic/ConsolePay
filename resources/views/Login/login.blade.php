@@ -29,10 +29,11 @@
   @include('Template/head')
 
   <div class="login-box">
+    <!-- ConsolePay Logo -->
     <div class="login-logo">
-    <object class="home-logo" data="img/consolepay/consolepay-horizontal.svg" width="720" type="image/svg+xml"></object>
+      <object class="home-login" data="img/consolepay/consolepay-horizontal.svg" type="image/svg+xml"></object>
     </div>
-    <!-- /.login-logo -->
+    <!-- Login Card -->
     <div class="card">
       <div class="card-body login-card-body">
         <p class="login-box-msg">Sign in to start your session</p>
@@ -71,9 +72,10 @@
               </div>
             </div> -->
 
-            <p class="mb-0">
-          <a href="{{route('register')}}" class="text-center">I don't have an account</a>
-        </p>
+            <div class="d-flex align-items-center mb-0">
+                <a href="{{route('register')}}" class="text-center" style="vertical-align:middle;">I don't have an account</a>
+            </div>
+            
 
             <!-- captcha -->
             <!-- /.col -->

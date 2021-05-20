@@ -26,9 +26,9 @@ class LoginController extends Controller
             'password' => 'required'
         ];
         $messages = [
-            'email.required'        => 'Email wajib diisi',
-            'email.email'           => 'Email tidak valid',
-            'password.required'     => 'Password wajib diisi',
+            'email.required'        => 'Please enter your email.',
+            'email.email'           => 'Email is not valid.',
+            'password.required'     => 'Please enter your password.',
         ];
         $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
@@ -67,7 +67,7 @@ class LoginController extends Controller
             }
         } else {
             //Login Fail
-            Session::flash('error', 'Email atau password salah');
+            Session::flash('error', 'Email or password is incorrect.');
             return redirect()->route('login');
         }
 
@@ -104,13 +104,13 @@ class LoginController extends Controller
         ];
 
         $messages = [
-            'name.required'         => 'Nama Lengkap wajib diisi',
-            'email.required'        => 'Email wajib diisi',
-            'email.email'           => 'Email tidak valid',
-            'email.unique'          => 'Email sudah terdaftar',
-            'password.required'     => 'Password wajib diisi',
-            'alamat'                => 'Alamat wajib diisi',
-            'noTelepon'             => 'Nomor telepon wajib diisi',
+            'name.required'         => 'Please enter your full name.',
+            'email.required'        => 'Please enter your email.',
+            'email.email'           => 'Email is not valid.',
+            'email.unique'          => 'Email has already been registered.',
+            'password.required'     => 'Please enter your password.',
+            'alamat'                => 'Please enter your address.',
+            'noTelepon'             => 'Please enter your phone number.',
         ];
         $validator = Validator::make($request->all(), $rules, $messages);
 
@@ -143,10 +143,10 @@ class LoginController extends Controller
         $simpan = $user->save();
 
         if ($simpan) {
-            Session::flash('success', 'Register berhasil! Silahkan login untuk mengakses data');
+            Session::flash('success', 'Register successful! You may login to access your data.');
             return redirect()->route('login');
         } else {
-            Session::flash('errors', 'Register gagal! Silahkan ulangi beberapa saat lagi');
+            Session::flash('errors', 'Register failed! Please try again.');
             return redirect()->route('register');
         }
 

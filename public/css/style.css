@@ -56,7 +56,28 @@
 /* Login + Register */
 /********************/
 
-.login-logo {
-    display: block;
-    max-width: 200%;
+.bg-img {
+    background-color: white;
+    background-image: url('https://i.pinimg.com/originals/49/f0/9a/49f09ae57885ce862c1d813305ca4398.jpg') center center cover no-repeat fixed;;
 }
+
+.home-login {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+/*.bg-img {
+    background-image: url('https://wallpapercave.com/wp/wp3601617.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color:#464646;
+  }
+
+  @media only screen and (max-width: 767px) {
+    body {
+      background-image: url(images/background-photo-mobile-devices.jpg);
+    }
+      }*/
