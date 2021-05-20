@@ -53,6 +53,7 @@ class LoginController extends Controller
         // }
         // dump($request->all());
         $role = DB::table('users')->where('email', $request->email)->value('role');
+        $user_id = DB::table('users')->where('email', $request->email)->value('id');
         // dd($role);
         // if(Auth::attempt($request->only('email','password'))){
         //     return redirect('/home');
@@ -63,9 +64,11 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             if ($role == 'admin') {
+
                 return redirect()->intended('home');
             } else {
-                return redirect()->intended('userHome');
+                Session::put('user_id', $user_id);
+                return redirect()->intended('/');
             }
         } else {
             //Login Fail
@@ -81,7 +84,7 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-
+        Session::flush();
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();

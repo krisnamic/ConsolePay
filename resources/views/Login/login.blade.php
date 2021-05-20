@@ -59,7 +59,7 @@
             </div>
           </div>
           <p style="font-size:12px; color:red;">
-          @error('password')
+            @error('password')
             {{ $message }}
             @enderror
           </p>
@@ -73,23 +73,23 @@
           </div>
 
 
-            <!-- captcha -->
-            <!-- /.col -->
-            <div class="col-4">
-              <button type="submit" id="login-btn" class="btn btn-primary btn-block">Sign In</button>
-            </div>
-            <!-- /.col -->
+          <!-- captcha -->
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="submit" id="login-btn" class="btn btn-primary btn-block">Sign In</button>
           </div>
-        </form>
-
-        <p class="mb-1">
-        </p>
-        <p class="mb-0">
-          <a href="{{route('register')}}" class="text-center">I don't have an account</a>
-        </p>
+          <!-- /.col -->
       </div>
-      <!-- /.login-card-body -->
+      </form>
+
+      <p class="mb-1">
+      </p>
+      <p class="mb-0">
+        <a href="{{route('register')}}" class="text-center">I don't have an account</a>
+      </p>
     </div>
+    <!-- /.login-card-body -->
+  </div>
   </div>
   <!-- /.login-box -->
 
@@ -127,9 +127,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.3/venobox.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script> -->
-  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-    async defer>
-</script>
+  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
+  </script>
   <!-- <script type="text/javascript">
   var onloadCallback = function() {
     alert("grecaptcha is ready!");
