@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Middleware\CheckRole;
@@ -30,7 +29,7 @@ Route::get('/register', [LoginController::class,'register'])->name('register');
 Route::post('/savedata', [LoginController::class,'saveData'])->name('savedata');
 
 Route::group(['middleware' => ['auth','checkrole:admin,user']], function(){
-Route::get('/home', [HomeController::class,'index'])->name('home');
+Route::get('/barang', [BarangCRUDController::class,'index'])->name('barang');
 });
 
 //datatables
