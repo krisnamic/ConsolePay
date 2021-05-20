@@ -3,12 +3,29 @@
     padding: 0;
 }
 
+/*******************/
+/* Header + Footer */
+/*******************/
+
+.header {
+    margin: 0 25% !important;
+    padding: 1% 0 !important;
+}
+
+.footer {
+    margin: 0 25% !important;
+}
+
 .navbar-fixed {
     position: fixed;
     z-index: 999;
     opacity: 1;
     width: 100%;
 }
+
+/*********/
+/* Home */
+/********/
 
 .home-logo {
     display: block;
@@ -35,11 +52,11 @@
     margin: 0 5% ;
 }
 
-.header {
-    margin: 0 25% !important;
-    padding: 1% 0 !important;
-}
+/********************/
+/* Login + Register */
+/********************/
 
-.footer {
-    margin: 0 25% !important;
+.login-logo {
+    display: block;
+    max-width: 200%;
 }

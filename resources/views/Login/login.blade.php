@@ -30,7 +30,7 @@
 
   <div class="login-box">
     <div class="login-logo">
-      <a href="{{url('/')}}"><b>Console</b>Pay</a>
+    <object class="home-logo" data="img/consolepay/consolepay-horizontal.svg" width="720" type="image/svg+xml"></object>
     </div>
     <!-- /.login-logo -->
     <div class="card">
