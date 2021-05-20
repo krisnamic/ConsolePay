@@ -67,7 +67,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Price</strong>
-                        <input type="text" name="price" value="{{ $barang->hargaBarang }}" class="form-control" placeholder="Price">
+                        <input type="number" name="price" value="{{ $barang->hargaBarang }}" class="form-control" placeholder="Price">
                         @error('price')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
@@ -76,10 +76,34 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Stock</strong>
-                        <input type="text" name="stock" value="{{ $barang->stokBarang }}" class="form-control" placeholder="Stock">
+                        <input type="number" name="stock" value="{{ $barang->stokBarang }}" class="form-control" placeholder="Stock">
                         @error('stock')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>Photo</strong>
+                        <input type="file" name="photo" class="form-control" accept="image/*">
+                        
+                        @error('photo')
+                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                        @enderror
+
+                        <!-- <input type="text" name="photo_lama" value="{{ $barang->gambarBarang }}" hidden> -->
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>Logo</strong>
+                        <input type="file" name="logo" class="form-control" accept="image/*">
+                        
+                        @error('logo')
+                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                        @enderror
+
+                        <!-- <input type="text" name="logo_lama" value="{{ $barang->logoBarang }}" hidden> -->
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary ml-3">Submit</button>

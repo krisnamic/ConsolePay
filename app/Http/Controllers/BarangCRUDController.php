@@ -47,9 +47,11 @@ class BarangCRUDController extends Controller
             'type' => 'required',
             'description' => 'required',
             'price' => 'required',
-            'stock' => 'required'
+            'stock' => 'required',
+            'photo' => 'required',
+            'logo' => 'required'
         ]);
-        
+
         $barang = new Barang;
         $barang->namaBarang = $request->name;
         $barang->merekBarang = $request->company;
@@ -57,8 +59,8 @@ class BarangCRUDController extends Controller
         $barang->deskripsiBarang = $request->description;
         $barang->hargaBarang = $request->price;
         $barang->stokBarang = $request->stock;
-        $barang->gambarBarang = 'test';
-        $barang->logoBarang = 'test';
+        $barang->gambarBarang = $request->photo->getClientOriginalName();
+        $barang->logoBarang = $request->logo->getClientOriginalName();
         $barang->created_at = now();
         $barang->updated_at = now();
         $barang->save();
@@ -102,7 +104,7 @@ class BarangCRUDController extends Controller
             'price' => 'required',
             'stock' => 'required'
         ]);
-
+        // dd($request);
         $barang = Barang::find($id);
         $barang->namaBarang = $request->name;
         $barang->merekBarang = $request->company;
@@ -110,8 +112,19 @@ class BarangCRUDController extends Controller
         $barang->deskripsiBarang = $request->description;
         $barang->hargaBarang = $request->price;
         $barang->stokBarang = $request->stock;
-        $barang->gambarBarang = 'test';
-        $barang->logoBarang = 'test';
+
+        if($request->photo == null) {
+            $barang->gambarBarang = $barang->gambarBarang;
+        } else {
+            $barang->gambarBarang = $request->photo->getClientOriginalName();
+        }
+        
+        if($request->logo == null) {
+            $barang->logoBarang = $barang->logoBarang;
+        } else {
+            $barang->logoBarang = $request->logo->getClientOriginalName();
+        }
+
         $barang->updated_at = now();
         $barang->save();
         return redirect()->route('barang.index')

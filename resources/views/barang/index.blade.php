@@ -40,6 +40,7 @@
                             <th>Price/Day</th>
                             <th>Stock</th>
                             <th>Photo</th>
+                            <th>Logo</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -61,16 +62,17 @@
                 serverSide: true,
                 ajax: "{{ url('barang') }}",
                 columns: [
-                { data: 'id', name: 'id' },
-                { data: 'namaBarang', name: 'namaBarang' },
-                { data: 'merekBarang', name: 'merekBarang' },
-                { data: 'kategoriBarang', name: 'kategoriBarang' },
-                { data: 'deskripsiBarang', name: 'deskripsiBarang' },
-                { data: 'hargaBarang', name: 'hargaBarang' },
-                { data: 'stokBarang', name: 'stokBarang' },
-                { data: 'gambarBarang', name: 'gambarBarang' },
-                { data: 'action', orderable: false, targets: 0 },
-                ]
+                    { data: 'id', name: 'id' },
+                    { data: 'namaBarang', name: 'namaBarang' },
+                    { data: 'merekBarang', name: 'merekBarang' },
+                    { data: 'kategoriBarang', name: 'kategoriBarang' },
+                    { data: 'deskripsiBarang', name: 'deskripsiBarang' },
+                    { data: 'hargaBarang', name: 'hargaBarang' },
+                    { data: 'stokBarang', name: 'stokBarang' },
+                    { data: 'gambarBarang', name: 'gambarBarang' },
+                    { data: 'logoBarang', name: 'logoBarang' },
+                    { data: 'action', orderable: false, targets: 0 }
+                ], order: [[0, 'desc']]
             });
 
             $('body').on('click', '.delete', function () {

@@ -66,7 +66,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Price</strong>
-                        <input type="text" name="price" class="form-control" placeholder="Price">
+                        <input type="number" name="price" class="form-control" placeholder="Price">
                         @error('price')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
@@ -75,8 +75,26 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Stock</strong>
-                        <input type="text" name="stock" class="form-control" placeholder="Stock">
+                        <input type="number" name="stock" class="form-control" placeholder="Stock">
                         @error('stock')
+                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>Photo</strong>
+                        <input type="file" name="photo" class="form-control" accept="image/*">
+                        @error('photo')
+                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>Logo</strong>
+                        <input type="file" name="logo" class="form-control" accept="image/*">
+                        @error('logo')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
                     </div>
