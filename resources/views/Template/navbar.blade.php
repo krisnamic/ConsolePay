@@ -1,4 +1,4 @@
-<nav class="main-header header navbar sticky-top navbar-expand navbar-white navbar-light text-center">
+<nav class="main-header header sticky-top navbar-expand navbar-white navbar-light text-center">
     <!-- Left navbar links -->
     <!-- <ul class="navbar-nav">
       <li class="nav-item">
@@ -12,29 +12,32 @@
       </li>
     </ul> -->
 
-    <object data="img/consolepay/consolepay-horizontal.svg" width="240" type="image/svg+xml"></object>
-
-    <div class="ml-auto">
-    @if (Route::has('login'))
-            @auth
-                <li class="nav-item d-none d-sm-inline-block">
-                  <a href="{{ url('/home') }}" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                  <a href="{{ route('logout')}}" class="nav-link">Logout</a>
-                </li>
-            @else
-                <li class="nav-item d-none d-sm-inline-block">
-                  <a href="{{ route('login') }}" class="nav-link">Login</a>
-                </li>
-                @if (Route::has('register'))
-                    <li class="nav-item d-none d-sm-inline-block">
-                      <a href="{{ route('register') }}" class="nav-link">Register</a>
-                    </li>
-                @endif
-            @endauth
-    @endif
+    <div class="d-flex header-child bg-white navbar">
+      <object data="img/consolepay/consolepay-horizontal.svg" width="240" type="image/svg+xml"></object>
+      <div class="ml-auto">
+      @if (Route::has('login'))
+              @auth
+                  <li class="nav-item d-none d-sm-inline-block">
+                    <a href="{{ url('/home') }}" class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item d-none d-sm-inline-block">
+                    <a href="{{ route('logout')}}" class="nav-link">Logout</a>
+                  </li>
+              @else
+                  <li class="nav-item d-none d-sm-inline-block">
+                    <a href="{{ route('login') }}" class="nav-link">Login</a>
+                  </li>
+                  @if (Route::has('register'))
+                      <li class="nav-item d-none d-sm-inline-block">
+                        <a href="{{ route('register') }}" class="nav-link">Register</a>
+                      </li>
+                  @endif
+              @endauth
+      @endif
+      </div>
     </div>
+
+    
 
     <!-- SEARCH FORM 
     <form class="form-inline ml-3">

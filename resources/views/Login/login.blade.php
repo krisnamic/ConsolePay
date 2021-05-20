@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Log in</title>
+  <title>ConsolePay | Login</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -36,7 +36,7 @@
     <!-- Login Card -->
     <div class="card">
       <div class="card-body login-card-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <h5>Sign in to start your session</h5>
         <form action="{{ route('postlogin') }}" method="post">
           {{csrf_field()}}
           <div class="input-group mb-3">
@@ -83,8 +83,16 @@
               <button type="submit" id="login-btn" class="btn btn-primary btn-block">Sign In</button>
             </div>
             <!-- /.col -->
+
+            <br>
+
+            
           </div>
         </form>
+
+        <div class="mb-0">
+          <a href="/" class="text-center" style="vertical-align:middle;">Back to main page</a>
+        </div>
 
         <!-- <p class="mb-1">
         </p> -->

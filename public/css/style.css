@@ -3,11 +3,30 @@
     padding: 0;
 }
 
+@font-face {
+    font-family: 'c&c';
+    src: url('../font/C&C Red Alert [INET].ttf');
+  }
+
+body {
+    font-family: 'c&c', '04b03', 'Nunito', sans-serif;
+}
+
 /*******************/
 /* Header + Footer */
 /*******************/
 
+
+.header-main {}
+
 .header {
+    /*margin: 0 25% !important;
+    padding: 1% 0 !important;*/
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.header-child {
     margin: 0 25% !important;
     padding: 1% 0 !important;
 }
@@ -22,6 +41,8 @@
     opacity: 1;
     width: 100%;
 }
+
+
 
 /*********/
 /* Home */
@@ -52,14 +73,43 @@
     margin: 0 5% ;
 }
 
+.main-section {
+}
+
+.second-section {
+}
+
+.bg-section-1 {
+    background-image: url('../img/consolepay/bg-home-blue.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color:white;
+}
+
+.bg-section-2 {
+    background-image: url('../img/consolepay/bg-home-red.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color:white;
+}
+
+@media only screen and (max-width: 767px) {
+    .bg-section-1 {
+        background-image: url('../img/consolepay/bg-home-blue.svg');
+    }
+
+    .bg-section-2 {
+        background-image: url('../img/consolepay/bg-home-red.svg');
+    }
+}
+
 /********************/
 /* Login + Register */
 /********************/
-
-.bg-img {
-    background-color: white;
-    background-image: url('https://i.pinimg.com/originals/49/f0/9a/49f09ae57885ce862c1d813305ca4398.jpg') center center cover no-repeat fixed;;
-}
 
 .home-login {
     display: block;
@@ -67,17 +117,6 @@
     max-width: 100%;
 }
 
-/*.bg-img {
-    background-image: url('https://wallpapercave.com/wp/wp3601617.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color:#464646;
-  }
-
-  @media only screen and (max-width: 767px) {
-    body {
-      background-image: url(images/background-photo-mobile-devices.jpg);
-    }
-      }*/
+h5 {
+    text-align: center;
+}
