@@ -8,10 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Validator;
-use App\Rules\Captcha;
+use Validator;
 // use Hash;
-use Illuminate\Support\Facades\Session;
+use Session;
 
 class LoginController extends Controller
 {
@@ -24,8 +23,7 @@ class LoginController extends Controller
     {
         $rules = [
             'email' => 'required|email',
-            'password' => 'required',
-            'g-recaptcha-response' => new Captcha(),
+            'password' => 'required'
         ];
         $messages = [
             'email.required'        => 'Email wajib diisi',

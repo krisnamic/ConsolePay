@@ -8,9 +8,6 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="{{asset('css/style.css')}}">
-
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{asset('AdminLTE/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Ionicons -->
@@ -24,10 +21,13 @@
   <!-- <link rel="stylesheet" href="../../css/captcha.css"> -->
   <!-- <script src="../../js/captcha.js"></script> -->
   <link href="https://fonts.googleapis.com/css?family=Kanit:300,300i,400,400i,600,600i,700,700i|Varela:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body class="hold-transition login-page bg-img">
+
+  <!-- Head -->
+  @include('Template/head')
+
   <div class="login-box">
     <div class="login-logo">
       <a href="{{url('/')}}"><b>Console</b>Pay</a>
@@ -58,27 +58,35 @@
               </div>
             </div>
           </div>
-          <p style="font-size:12px; color:red;">
-            @error('password')
+          <p style="font-size:12px; color:red;">@error('password')
             {{ $message }}
             @enderror
           </p>
           @if(Session::has('error'))
           <p class="font-size:12px; color:red;">{{ Session::get('error') }}</p>
           @endif
-          <div class="input-group mb-3">
-            <div class="input-group-append">
-              <div class="g-recaptcha" data-sitekey="{{env('CAPTCHA_KEY')}}"></div>
+          <div class="row">
+            <!-- <div class="col-8">
+              <div class="icheck-primary">
+              </div>
+            </div> -->
+
+            <p class="mb-0">
+              <a href="{{route('register')}}" class="text-center">I don't have an account</a>
+            </p>
+
+            <!-- captcha -->
+            <!-- /.col -->
+            <div class="ml-auto">
+              <button type="submit" id="login-btn" class="btn btn-primary btn-block">Sign In</button>
             </div>
+            <!-- /.col -->
           </div>
+        </form>
 
+        <!-- <p class="mb-1">
+        </p> -->
 
-          <!-- captcha -->
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" id="login-btn" class="btn btn-primary btn-block">Sign In</button>
-          </div>
-          <!-- /.col -->
       </div>
       </form>
 
