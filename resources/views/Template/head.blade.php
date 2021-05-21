@@ -3,8 +3,8 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/fontawesome-free/cs s/all.min.css') }}">
-
+  <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/fontawesome-free/css/all.min.css') }}">
+  
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('AdminLTE/dist/css/adminlte.min.css') }}">
 

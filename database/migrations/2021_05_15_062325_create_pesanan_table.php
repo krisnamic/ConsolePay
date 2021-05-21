@@ -20,7 +20,7 @@ class CreatePesananTable extends Migration
             $table->date('tanggalPemesanan');
             $table->integer('jumlahHari');
             $table->integer('hargaTotal');
-            $table->integer('statusPemesanan');
+            $table->string('statusPemesanan');
             $table->timestamps();
         });
     }

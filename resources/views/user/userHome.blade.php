@@ -11,7 +11,27 @@
 <body>
     @include('Template/navbar')
     <h1>Tes User</h1>
+    <div class="container">
+        <div class="row row-cols-3">
+            @foreach($barang as $b)
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <a href="/userHome/{{$b->id}}" style="color:black">
+                        <img src="{{asset('img/gambar/'.$b->gambarBarang)}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3 class="card-title">{{$b->namaBarang}}</h3>
+                            <p class="card-text">Rp{{$b->hargaBarang}}</p>
+                            <p class="card-text">Available : {{$b->stokBarang}}</p>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </a>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
     @include('Template/script')
+
 </body>
 
 </html>

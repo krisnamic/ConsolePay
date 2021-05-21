@@ -1,5 +1,4 @@
 <?php
-
 namespace Database\Seeders;
 
 use Illuminate\Support\Facades\DB;
@@ -8,21 +7,21 @@ use Illuminate\Support\Facades\Hash;
 
 class BarangTableSeeder extends Seeder
 {
+
     /**
-     * Run the database seeds.
+     * Auto generated seed file
      *
      * @return void
      */
     public function run()
     {
-        DB::table('barang')->delete();
+        
 
-        DB::table('barang')->insert(array(
-            0 =>
-            array(
-                'ID_Barang' => 1,
-                'ID_Kategori' => 1,
-                'ID_Merek' => 1,
+        DB::table('barang')->delete();
+        
+        DB::table('barang')->insert(array (
+            0 => 
+            array (
                 'kategoriBarang' => 'Handheld Console',
                 'merekBarang' => 'Sony',
                 'namaBarang' => 'PlayStation Portable (PSP)',
@@ -31,12 +30,11 @@ class BarangTableSeeder extends Seeder
                 'stokBarang' => 12,
                 'gambarBarang' => 'psp.png',
                 'logoBarang' => 'logo-psp.svg',
+                'created_at' => now(),
+                'updated_at' => now()
             ),
-            1 =>
-            array(
-                'ID_Barang' => 2,
-                'ID_Kategori' => 1,
-                'ID_Merek' => 1,
+            1 => 
+            array (
                 'kategoriBarang' => 'Handheld Console',
                 'merekBarang' => 'Sony',
                 'namaBarang' => 'PlayStation Vita (PS Vita)',
@@ -45,12 +43,11 @@ class BarangTableSeeder extends Seeder
                 'stokBarang' => 10,
                 'gambarBarang' => 'psvita.png',
                 'logoBarang' => 'logo-psvita.svg',
+                'created_at' => now(),
+                'updated_at' => now()
             ),
-            2 =>
-            array(
-                'ID_Barang' => 3,
-                'ID_Kategori' => 2,
-                'ID_Merek' => 1,
+            2 => 
+            array (
                 'kategoriBarang' => 'Home Console',
                 'merekBarang' => 'Sony',
                 'namaBarang' => 'PlayStation 3',
@@ -59,12 +56,11 @@ class BarangTableSeeder extends Seeder
                 'stokBarang' => 6,
                 'gambarBarang' => 'ps3.png',
                 'logoBarang' => 'logo-ps3.svg',
+                'created_at' => now(),
+                'updated_at' => now()
             ),
-            3 =>
-            array(
-                'ID_Barang' => 4,
-                'ID_Kategori' => 2,
-                'ID_Merek' => 1,
+            3 => 
+            array (
                 'kategoriBarang' => 'Home Console',
                 'merekBarang' => 'Sony',
                 'namaBarang' => 'PlayStation 4',
@@ -73,12 +69,11 @@ class BarangTableSeeder extends Seeder
                 'stokBarang' => 6,
                 'gambarBarang' => 'ps4.png',
                 'logoBarang' => 'logo-ps4.svg',
+                'created_at' => now(),
+                'updated_at' => now()
             ),
-            4 =>
-            array(
-                'ID_Barang' => 5,
-                'ID_Kategori' => 2,
-                'ID_Merek' => 1,
+            4 => 
+            array (
                 'kategoriBarang' => 'Home Console',
                 'merekBarang' => 'Sony',
                 'namaBarang' => 'PlayStation 5',
@@ -87,12 +82,11 @@ class BarangTableSeeder extends Seeder
                 'stokBarang' => 4,
                 'gambarBarang' => 'ps5.png',
                 'logoBarang' => 'logo-ps5.svg',
+                'created_at' => now(),
+                'updated_at' => now()
             ),
-            5 =>
-            array(
-                'ID_Barang' => 6,
-                'ID_Kategori' => 1,
-                'ID_Merek' => 2,
+            5 => 
+            array (
                 'kategoriBarang' => 'Handheld Console',
                 'merekBarang' => 'Nintendo',
                 'namaBarang' => 'Nintendo DS',
@@ -101,12 +95,11 @@ class BarangTableSeeder extends Seeder
                 'stokBarang' => 20,
                 'gambarBarang' => 'ds.png',
                 'logoBarang' => 'logo-ds.svg',
+                'created_at' => now(),
+                'updated_at' => now()
             ),
-            6 =>
-            array(
-                'ID_Barang' => 7,
-                'ID_Kategori' => 1,
-                'ID_Merek' => 2,
+            6 => 
+            array (
                 'kategoriBarang' => 'Handheld Console',
                 'merekBarang' => 'Nintendo',
                 'namaBarang' => 'Nintendo 2DS',
@@ -115,12 +108,11 @@ class BarangTableSeeder extends Seeder
                 'stokBarang' => 16,
                 'gambarBarang' => '2ds.png',
                 'logoBarang' => 'logo-2ds.svg',
+                'created_at' => now(),
+                'updated_at' => now()
             ),
-            7 =>
-            array(
-                'ID_Barang' => 8,
-                'ID_Kategori' => 1,
-                'ID_Merek' => 2,
+            7 => 
+            array (
                 'kategoriBarang' => 'Handheld Console',
                 'merekBarang' => 'Nintendo',
                 'namaBarang' => 'Nintendo 3DS',
@@ -129,12 +121,11 @@ class BarangTableSeeder extends Seeder
                 'stokBarang' => 10,
                 'gambarBarang' => '3ds.png',
                 'logoBarang' => 'logo-3ds.svg',
+                'created_at' => now(),
+                'updated_at' => now()
             ),
-            8 =>
-            array(
-                'ID_Barang' => 9,
-                'ID_Kategori' => 1,
-                'ID_Merek' => 2,
+            8 => 
+            array (
                 'kategoriBarang' => 'Handheld Console',
                 'merekBarang' => 'Nintendo',
                 'namaBarang' => 'Nintendo 3DS XL',
@@ -143,12 +134,11 @@ class BarangTableSeeder extends Seeder
                 'stokBarang' => 8,
                 'gambarBarang' => '3ds-xl.png',
                 'logoBarang' => 'logo-3ds-xl.svg',
+                'created_at' => now(),
+                'updated_at' => now()
             ),
-            9 =>
-            array(
-                'ID_Barang' => 10,
-                'ID_Kategori' => 3,
-                'ID_Merek' => 2,
+            9 => 
+            array (
                 'kategoriBarang' => 'Hybrid Console',
                 'merekBarang' => 'Nintendo',
                 'namaBarang' => 'Nintendo Switch',
@@ -157,12 +147,11 @@ class BarangTableSeeder extends Seeder
                 'stokBarang' => 10,
                 'gambarBarang' => 'switch.png',
                 'logoBarang' => 'logo-switch.svg',
+                'created_at' => now(),
+                'updated_at' => now()
             ),
-            10 =>
-            array(
-                'ID_Barang' => 11,
-                'ID_Kategori' => 1,
-                'ID_Merek' => 2,
+            10 => 
+            array (
                 'kategoriBarang' => 'Handheld Console',
                 'merekBarang' => 'Nintendo',
                 'namaBarang' => 'Nintendo Switch Lite',
@@ -171,12 +160,11 @@ class BarangTableSeeder extends Seeder
                 'stokBarang' => 6,
                 'gambarBarang' => 'switch-lite.png',
                 'logoBarang' => 'logo-switch-lite.svg',
+                'created_at' => now(),
+                'updated_at' => now()
             ),
-            11 =>
-            array(
-                'ID_Barang' => 12,
-                'ID_Kategori' => 2,
-                'ID_Merek' => 3,
+            11 => 
+            array (
                 'kategoriBarang' => 'Home Console',
                 'merekBarang' => 'Microsoft',
                 'namaBarang' => 'Xbox 360',
@@ -185,12 +173,11 @@ class BarangTableSeeder extends Seeder
                 'stokBarang' => 6,
                 'gambarBarang' => 'xbox360.png',
                 'logoBarang' => 'logo-xbox360.svg',
+                'created_at' => now(),
+                'updated_at' => now()
             ),
-            12 =>
-            array(
-                'ID_Barang' => 13,
-                'ID_Kategori' => 2,
-                'ID_Merek' => 3,
+            12 => 
+            array (
                 'kategoriBarang' => 'Home Console',
                 'merekBarang' => 'Microsoft',
                 'namaBarang' => 'Xbox One',
@@ -199,12 +186,11 @@ class BarangTableSeeder extends Seeder
                 'stokBarang' => 6,
                 'gambarBarang' => 'xbox-one.png',
                 'logoBarang' => 'logo-xbox-one.png',
+                'created_at' => now(),
+                'updated_at' => now()
             ),
-            13 =>
-            array(
-                'ID_Barang' => 14,
-                'ID_Kategori' => 2,
-                'ID_Merek' => 3,
+            13 => 
+            array (
                 'kategoriBarang' => 'Home Console',
                 'merekBarang' => 'Microsoft',
                 'namaBarang' => 'Xbox One S',
@@ -213,12 +199,11 @@ class BarangTableSeeder extends Seeder
                 'stokBarang' => 3,
                 'gambarBarang' => 'xbox-one-s.png',
                 'logoBarang' => 'logo-xbox-one-s.svg',
+                'created_at' => now(),
+                'updated_at' => now()
             ),
-            14 =>
-            array(
-                'ID_Barang' => 15,
-                'ID_Kategori' => 2,
-                'ID_Merek' => 3,
+            14 => 
+            array (
                 'kategoriBarang' => 'Home Console',
                 'merekBarang' => 'Microsoft',
                 'namaBarang' => 'Xbox Series X',
@@ -227,7 +212,11 @@ class BarangTableSeeder extends Seeder
                 'stokBarang' => 4,
                 'gambarBarang' => 'xbox-series-x.png',
                 'logoBarang' => 'logo-xbox-series-x.svg',
+                'created_at' => now(),
+                'updated_at' => now()
             ),
         ));
+        
+        
     }
 }

@@ -21,6 +21,9 @@
   <!-- <link rel="stylesheet" href="../../css/captcha.css"> -->
   <!-- <script src="../../js/captcha.js"></script> -->
   <link href="https://fonts.googleapis.com/css?family=Kanit:300,300i,400,400i,600,600i,700,700i|Varela:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+
 </head>
 
 <body class="hold-transition login-page overflow-hidden">
@@ -69,6 +72,23 @@
             @if(Session::has('error'))
             <p class="font-size:12px; color:red;">{{ Session::get('error') }}</p>
             @endif
+                        <!-- captcha -->
+                        <div class="form-group mt-3 mb-3">
+                <div class="captcha">
+                    <span>{!! captcha_img() !!}</span>
+                    <button type="button" class="btn btn-danger" class="refresh-captcha" id="refresh-captcha">
+                        &#x21bb;
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-group mb-4">
+                <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
+            </div>
+            <p style="font-size:12px; color:red;">@error('captcha')
+              {{ $message }}
+              @enderror
+            </p>
             <div class="row">
               <!-- <div class="col-8">
                 <div class="icheck-primary">
@@ -80,17 +100,20 @@
                 <a href="/" class="text-left" style="vertical-align:middle;">> Back to main page</a>
               </div>
               
-
               <!-- captcha -->
               <!-- /.col -->
               <div class="ml-auto">
                 <button type="submit" id="login-btn" class="btn btn-primary btn-block">Sign In</button>
               </div>
               <!-- /.col -->
-
-              <br>
-
-              
+            
+            </p>
+            @if(Session::has('error'))
+            <p class="font-size:12px; color:red;">{{ Session::get('error') }}</p>
+            @endif
+            <!-- /.col -->
+            <div class="ml-auto">
+              <button type="submit" id="login-btn" class="btn btn-primary btn-block">Sign In</button>
             </div>
           </form>
 
@@ -108,6 +131,47 @@
     </div>
     <div class="sliding-background" style="position: relative !important; z-index: -1080;"></div>
   </div>
+
+  <!-- <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    // (function() {
+    //   'use strict';
+    //   window.addEventListener('load', function() {
+    //     document.getElementById("login-btn").disabled = true;
+    //     // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    //     var forms = document.getElementsByClassName('needs-validation');
+    //     // Loop over them and prevent submission
+    //     var validation = Array.prototype.filter.call(forms, function(form) {
+    //       form.addEventListener('submit', function(event) {
+    //         if (form.checkValidity() === false) {
+    //           event.preventDefault();
+    //           event.stopPropagation();
+    //         }
+    //         form.classList.add('was-validated');
+    //       }, false);
+    //     });
+    //   }, false);
+    // })();
+  </script> -->
+    <script type="text/javascript">
+      $('#refresh-captcha').click(function () {
+          $.ajax({
+              type: 'GET',
+              url: 'refresh-captcha',
+              success: function (data) {
+                  $(".captcha span").html(data.captcha);
+              }
+          });
+      });
+    </script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> -->
+  <!-- <script src="../../js/captcha.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.3/venobox.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script> -->
+
 
 </body>
 
