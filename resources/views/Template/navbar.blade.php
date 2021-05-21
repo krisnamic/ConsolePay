@@ -1,6 +1,6 @@
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
+<nav class="main-header header navbar sticky-top navbar-expand navbar-white navbar-light text-center">
+  <!-- Left navbar links -->
+  <!-- <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
@@ -10,9 +10,37 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
       </li>
-    </ul>
+    </ul> -->
 
-    <!-- SEARCH FORM -->
+  <object data="img/consolepay/consolepay-horizontal.svg" width="240" type="image/svg+xml"></object>
+
+  <div class="ml-auto">
+    @if (Route::has('login'))
+    @auth
+    <li class="nav-item d-none d-sm-inline-block">
+      <a href="{{ url('/home') }}" class="nav-link">Home</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+      <a href="{{ route('logout')}}" class="nav-link">Logout</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+      <!-- <a href="{{ route('logout')}}" class="nav-link">Logout</a> -->
+      <a href="{{route('viewShoppingCart')}}"><i class="fas fa-shopping-cart"></i></a>
+    </li>
+    @else
+    <li class="nav-item d-none d-sm-inline-block">
+      <a href="{{ route('login') }}" class="nav-link">Login</a>
+    </li>
+    @if (Route::has('register'))
+    <li class="nav-item d-none d-sm-inline-block">
+      <a href="{{ route('register') }}" class="nav-link">Register</a>
+    </li>
+    @endif
+    @endauth
+    @endif
+  </div>
+
+  <!-- SEARCH FORM 
     <form class="form-inline ml-3">
       <div class="input-group input-group-sm">
         <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
@@ -22,7 +50,7 @@
           </button>
         </div>
       </div>
-    </form>
+    </form>-->
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
