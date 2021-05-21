@@ -85,36 +85,29 @@
             <div class="form-group mb-4">
                 <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
             </div>
+
             <p style="font-size:12px; color:red;">@error('captcha')
               {{ $message }}
               @enderror
             </p>
-            <div class="row">
-              <!-- <div class="col-8">
-                <div class="icheck-primary">
-                </div>
-              </div> -->
 
-              <div class="d-flex flex-column justify-content-start align-items-left mb-0" style="">
-                <a href="{{route('register')}}" class="text-left" style="vertical-align:middle;">> I don't have an account</a>
-                <a href="/" class="text-left" style="vertical-align:middle;">> Back to main page</a>
-              </div>
-              
-              <!-- captcha -->
-              <!-- /.col -->
-              <div class="ml-auto">
-                <button type="submit" id="login-btn" class="btn btn-primary btn-block">Sign In</button>
-              </div>
-              <!-- /.col -->
-            
-            </p>
             @if(Session::has('error'))
             <p class="font-size:12px; color:red;">{{ Session::get('error') }}</p>
             @endif
-            <!-- /.col -->
-            <div class="ml-auto">
-              <button type="submit" id="login-btn" class="btn btn-primary btn-block">Sign In</button>
+
+            <div class="d-flex justify-content-between">
+
+              <div class="d-flex flex-column mb-0" style="">
+                <a href="{{route('register')}}" class="text-left" style="vertical-align:middle;">> I don't have an account</a>
+                <a href="/" class="text-left" style="vertical-align:middle;">> Back to main page</a>
+              </div>
+
+              <div class="ml-auto">
+                <button type="submit" id="login-btn" class="btn btn-primary btn-block">Sign In</button>
+              </div>
+            
             </div>
+            
           </form>
 
           <!-- <p class="mb-1">

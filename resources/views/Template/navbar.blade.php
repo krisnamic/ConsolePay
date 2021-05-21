@@ -23,6 +23,9 @@
                   <li class="nav-item d-none d-sm-inline-block">
                     <a href="{{ route('logout')}}" class="nav-link">Logout</a>
                   </li>
+                  <li class="nav-item d-none d-sm-inline-block">
+                    <a href="{{route('viewShoppingCart')}}"><i class="fas fa-shopping-cart"></i></a>
+                  </li>
               @else
                   <li class="nav-item d-none d-sm-inline-block">
                     <a href="{{ route('login') }}" class="nav-link">Login</a>
@@ -129,11 +132,6 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li> -->
-      <li class="nav-item">
-        <a href="{{ route('logout')}}" class="nav-link">
-          <!-- <i class="nav-icon fas fa-th"></i> -->
-          <p>Logout</p>
-        </a>
       <!-- </li>
       <li class="nav-item">
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i

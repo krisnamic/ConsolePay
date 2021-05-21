@@ -106,7 +106,7 @@
               </p>
               <div class="input-group mb-3">
               </div>
-              <div class="row d-flex justify-content-between">
+              <div class="d-flex justify-content-between">
                 <!-- <div class="col-8">
                   <div class="icheck-primary">
                   </div>
