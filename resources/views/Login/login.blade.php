@@ -21,6 +21,9 @@
   <!-- <link rel="stylesheet" href="../../css/captcha.css"> -->
   <!-- <script src="../../js/captcha.js"></script> -->
   <link href="https://fonts.googleapis.com/css?family=Kanit:300,300i,400,400i,600,600i,700,700i|Varela:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+
 </head>
 
 <body class="hold-transition login-page bg-img">
@@ -62,9 +65,7 @@
             {{ $message }}
             @enderror
           </p>
-          @if(Session::has('error'))
-          <p class="font-size:12px; color:red;">{{ Session::get('error') }}</p>
-          @endif
+
           <div class="row">
             <!-- <div class="col-8">
               <div class="icheck-primary">
@@ -76,6 +77,28 @@
             </p>
 
             <!-- captcha -->
+            <div class="form-group mt-3 mb-3">
+                <div class="captcha">
+                    <span>{!! captcha_img() !!}</span>
+                    <button type="button" class="btn btn-danger" class="refresh-captcha" id="refresh-captcha">
+                        &#x21bb;
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-group mb-4">
+                <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
+            </div>
+            <p style="font-size:12px; color:red;">@error('captcha')
+              {{ $message }}
+              @enderror
+            </p>
+            
+            
+            </p>
+            @if(Session::has('error'))
+            <p class="font-size:12px; color:red;">{{ Session::get('error') }}</p>
+            @endif
             <!-- /.col -->
             <div class="ml-auto">
               <button type="submit" id="login-btn" class="btn btn-primary btn-block">Sign In</button>
@@ -107,7 +130,7 @@
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
 
-  <script>
+  <!-- <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
     // (function() {
     //   'use strict';
@@ -127,7 +150,18 @@
     //     });
     //   }, false);
     // })();
-  </script>
+  </script> -->
+    <script type="text/javascript">
+      $('#refresh-captcha').click(function () {
+          $.ajax({
+              type: 'GET',
+              url: 'refresh-captcha',
+              success: function (data) {
+                  $(".captcha span").html(data.captcha);
+              }
+          });
+      });
+    </script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> -->
   <!-- <script src="../../js/captcha.js"></script> -->
@@ -135,13 +169,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.3/venobox.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script> -->
-  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
-  </script>
-  <!-- <script type="text/javascript">
-  var onloadCallback = function() {
-    alert("grecaptcha is ready!");
-  };
-</script> -->
+
+
 </body>
 
 </html>

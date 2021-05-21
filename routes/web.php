@@ -26,6 +26,7 @@ Route::get('/', [HomeController::class, 'userHome'])->name('userHome');
 Route::get('/login', [LoginController::class, 'loginPage'])->name('login');
 
 Route::post('/postlogin', [LoginController::class, 'postLogin'])->name('postlogin');
+Route::get('/refresh-captcha', [LoginController::class, 'refreshCaptcha'])->name('refreshcaptcha');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/register', [LoginController::class, 'register'])->name('register');
 
