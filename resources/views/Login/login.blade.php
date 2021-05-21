@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Log in</title>
+  <title>ConsolePay | Login</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -26,58 +26,54 @@
 
 </head>
 
-<body class="hold-transition login-page bg-img">
+<body class="hold-transition login-page overflow-hidden">
 
   <!-- Head -->
   @include('Template/head')
 
-  <div class="login-box">
-    <div class="login-logo">
-      <a href="{{url('/')}}"><b>Console</b>Pay</a>
-    </div>
-    <!-- /.login-logo -->
-    <div class="card">
-      <div class="card-body login-card-body">
-        <p class="login-box-msg">Sign in to start your session</p>
-        <form action="{{ route('postlogin') }}" method="post">
-          {{csrf_field()}}
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" name="email" placeholder="Email">
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-envelope"></span>
+  <div class="bg-container">
+
+    <div style="z-index: 1080;">
+      <div class="login-box">
+      <!-- ConsolePay Logo -->
+      <div class="login-logo">
+        <object class="home-login" data="img/consolepay/consolepay-horizontal.svg" type="image/svg+xml"></object>
+      </div>
+      <!-- Login Card -->
+      <div class="card shadow">
+        <div class="card-body login-card-body" style="border-radius: 50px;">
+          <h5>Sign in to start your session</h5>
+          <form action="{{ route('postlogin') }}" method="post">
+            {{csrf_field()}}
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" name="email" placeholder="Email">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-envelope"></span>
+                </div>
               </div>
             </div>
-          </div>
-          <p style="font-size:12px; color:red;">@error('email')
-            {{ $message }}
-            @enderror
-          </p>
-          <div class="input-group mb-3">
-            <input type="password" class="form-control" name="password" placeholder="Password">
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-lock"></span>
-              </div>
-            </div>
-          </div>
-          <p style="font-size:12px; color:red;">@error('password')
-            {{ $message }}
-            @enderror
-          </p>
-
-          <div class="row">
-            <!-- <div class="col-8">
-              <div class="icheck-primary">
-              </div>
-            </div> -->
-
-            <p class="mb-0">
-              <a href="{{route('register')}}" class="text-center">I don't have an account</a>
+            <p style="font-size:12px; color:red;">@error('email')
+              {{ $message }}
+              @enderror
             </p>
-
-            <!-- captcha -->
-            <div class="form-group mt-3 mb-3">
+            <div class="input-group mb-3">
+              <input type="password" class="form-control" name="password" placeholder="Password">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+            </div>
+            <p style="font-size:12px; color:red;">@error('password')
+              {{ $message }}
+              @enderror
+            </p>
+            @if(Session::has('error'))
+            <p class="font-size:12px; color:red;">{{ Session::get('error') }}</p>
+            @endif
+                        <!-- captcha -->
+                        <div class="form-group mt-3 mb-3">
                 <div class="captcha">
                     <span>{!! captcha_img() !!}</span>
                     <button type="button" class="btn btn-danger" class="refresh-captcha" id="refresh-captcha">
@@ -89,46 +85,45 @@
             <div class="form-group mb-4">
                 <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
             </div>
+
             <p style="font-size:12px; color:red;">@error('captcha')
               {{ $message }}
               @enderror
             </p>
-            
-            
-            </p>
+
             @if(Session::has('error'))
             <p class="font-size:12px; color:red;">{{ Session::get('error') }}</p>
             @endif
-            <!-- /.col -->
-            <div class="ml-auto">
-              <button type="submit" id="login-btn" class="btn btn-primary btn-block">Sign In</button>
+
+            <div class="d-flex justify-content-between">
+
+              <div class="d-flex flex-column mb-0" style="">
+                <a href="{{route('register')}}" class="text-left" style="vertical-align:middle;">> I don't have an account</a>
+                <a href="/" class="text-left" style="vertical-align:middle;">> Back to main page</a>
+              </div>
+
+              <div class="ml-auto">
+                <button type="submit" id="login-btn" class="btn btn-primary btn-block">Sign In</button>
+              </div>
+            
             </div>
-            <!-- /.col -->
-          </div>
-        </form>
+            
+          </form>
 
-        <!-- <p class="mb-1">
-        </p> -->
-
+          <!-- <p class="mb-1">
+          </p> -->
+          
+        </div>
+        <!-- /.login-card-body -->
       </div>
-      </form>
-
-      <p class="mb-1">
-      </p>
-      <p class="mb-0">
-        <a href="{{route('register')}}" class="text-center">I don't have an account</a>
-      </p>
     </div>
-    <!-- /.login-card-body -->
-  </div>
-  </div>
-  <!-- /.login-box -->
+    <!-- /.login-box -->
 
-  @include('Template/script')
-  <!-- Vendor JS Files -->
-  <!-- <script src="../../../vendor/"></script>
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+    @include('Template/script')
+
+    </div>
+    <div class="sliding-background" style="position: relative !important; z-index: -1080;"></div>
+  </div>
 
   <!-- <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields

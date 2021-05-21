@@ -1,6 +1,67 @@
+/* Main CSS */
+
 * {
     margin: 0;
     padding: 0;
+}
+
+@font-face {
+    font-family: 'c&c';
+    src: url('../font/C&C Red Alert [INET].ttf');
+}
+
+body {
+    font-family: 'c&c', '04b03', 'Nunito', sans-serif;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+/* Page Load Spinner */
+
+.loading {
+	z-index: 20;
+	position: absolute;
+	top: 0;
+	left:-5px;
+	width: 100%;
+	height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+.loading-content {
+	position: absolute;
+	border: 16px solid #f3f3f3; /* Light grey */
+	border-top: 16px solid #3498db; /* Blue */
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	top: 40%;
+	left:35%;
+	animation: spin 2s linear infinite;
+	}
+	
+	@keyframes spin {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
+	}
+
+/* Header + Footer */
+
+.header {
+    /*margin: 0 25% !important;
+    padding: 1% 0 !important;*/
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.header-child {
+    margin: 0 10% !important;
+    padding: 1% 0 !important;
+}
+
+.footer {
+    margin: 0 25% !important;
 }
 
 .navbar-fixed {
@@ -9,6 +70,8 @@
     opacity: 1;
     width: 100%;
 }
+
+/* Home */
 
 .home-logo {
     display: block;
@@ -35,11 +98,89 @@
     margin: 0 5% ;
 }
 
-.header {
-    margin: 0 25% !important;
-    padding: 1% 0 !important;
+.bg-section-1 {
+    background-image: url('../img/consolepay/bg-home-blue.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color:white;
 }
 
-.footer {
-    margin: 0 25% !important;
+.bg-section-2 {
+    background-image: url('../img/consolepay/bg-home-red.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color:white;
+}
+
+@media only screen and (max-width: 767px) {
+    .bg-section-1 {
+        background-image: url('../img/consolepay/bg-home-blue.svg');
+    }
+
+    .bg-section-2 {
+        background-image: url('../img/consolepay/bg-home-red.svg');
+    }
+}
+
+/* Sliding Background */
+
+.bg-container {
+    overflow: hidden;
+    z-index: 1080;
+}
+
+.sliding-background {
+    background: url("../img/consolepay/bg-sliding-red.svg") repeat-x;
+    height: 1080px;
+    width: 5076px;
+    animation: slide 60s linear infinite;
+}
+
+@keyframes slide {
+    0%{
+        transform: translate3d(0, 0, 0);
+    }
+    100%{
+        transform: translate3d(-1692px, 0, 0); /* The image width */
+    }
+}
+
+/* Login + Register */
+
+.home-login {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+h5 {
+    text-align: center;
+}
+
+.login-box {
+	
+	position: fixed;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+    margin: 0 auto;
+    margin-top: 10%;
+}
+
+.register-box {
+	
+	position: fixed;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+    margin: 0 auto;
+    margin-top: 3%;
 }

@@ -1,6 +1,6 @@
-<nav class="main-header header navbar sticky-top navbar-expand navbar-white navbar-light text-center">
-  <!-- Left navbar links -->
-  <!-- <ul class="navbar-nav">
+<nav class="main-header header sticky-top navbar-expand navbar-white navbar-light text-center">
+    <!-- Left navbar links -->
+    <!-- <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
@@ -12,35 +12,35 @@
       </li>
     </ul> -->
 
-  <object data="img/consolepay/consolepay-horizontal.svg" width="240" type="image/svg+xml"></object>
+    <div class="d-flex header-child bg-white navbar">
+      <object data="img/consolepay/consolepay-horizontal.svg" width="240" type="image/svg+xml"></object>
+      <div class="ml-auto">
+      @if (Route::has('login'))
+              @auth
+                  <li class="nav-item d-none d-sm-inline-block">
+                    <a href="{{ url('/') }}" class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item d-none d-sm-inline-block">
+                    <a href="{{ route('logout')}}" class="nav-link">Logout</a>
+                  </li>
+                  <li class="nav-item d-none d-sm-inline-block">
+                    <a href="{{route('viewShoppingCart')}}"><i class="fas fa-shopping-cart"></i></a>
+                  </li>
+              @else
+                  <li class="nav-item d-none d-sm-inline-block">
+                    <a href="{{ route('login') }}" class="nav-link">Login</a>
+                  </li>
+                  @if (Route::has('register'))
+                      <li class="nav-item d-none d-sm-inline-block">
+                        <a href="{{ route('register') }}" class="nav-link">Register</a>
+                      </li>
+                  @endif
+              @endauth
+      @endif
+      </div>
+    </div>
 
-  <div class="ml-auto">
-    @if (Route::has('login'))
-    @auth
-    <li class="nav-item d-none d-sm-inline-block">
-      <a href="{{ url('/') }}" class="nav-link">Home</a>
-    </li>
-    <li class="nav-item d-none d-sm-inline-block">
-      <a href="{{ route('logout')}}" class="nav-link">Logout</a>
-    </li>
-    <li class="nav-item d-none d-sm-inline-block">
-      <!-- <a href="{{ route('logout')}}" class="nav-link">Logout</a> -->
-      <a href="{{route('viewShoppingCart')}}"><i class="fas fa-shopping-cart"></i></a>
-    </li>
-    @else
-    <li class="nav-item d-none d-sm-inline-block">
-      <a href="{{ route('login') }}" class="nav-link">Login</a>
-    </li>
-    @if (Route::has('register'))
-    <li class="nav-item d-none d-sm-inline-block">
-      <a href="{{ route('register') }}" class="nav-link">Register</a>
-    </li>
-    @endif
-    @endauth
-    @endif
-  </div>
-
-  <!-- SEARCH FORM 
+    <!-- SEARCH FORM 
     <form class="form-inline ml-3">
       <div class="input-group input-group-sm">
         <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
@@ -132,11 +132,6 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li> -->
-      <li class="nav-item">
-        <a href="{{ route('logout')}}" class="nav-link">
-          <!-- <i class="nav-icon fas fa-th"></i> -->
-          <p>Logout</p>
-        </a>
       <!-- </li>
       <li class="nav-item">
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i
