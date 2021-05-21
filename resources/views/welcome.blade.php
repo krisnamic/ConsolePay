@@ -65,7 +65,7 @@
 
         <!-- Section 4: Play Console -->
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 section-2" style="margin: 2%;" >
-            <div class="flex mt-8 bg-green dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
+            <div class="flex mt-8 bg-yellow dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                 <div class="d-flex justify-content-center" style="margin: 0; margin-top: 2%; width: 100%;">
                     <img src="img/pendukung/playingGames.jpg" class="w-30 shadow" alt="" data-aos="zoom-in" data-aos-delay="50">
                 </div>
