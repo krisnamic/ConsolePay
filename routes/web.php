@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Middleware\CheckRole;
 use PHPUnit\TextUI\XmlConfiguration\Group;
 use App\Http\Controllers\BarangCRUDController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,19 +33,19 @@ Route::get('/register', [LoginController::class, 'register'])->name('register');
 
 Route::post('/savedata', [LoginController::class, 'saveData'])->name('savedata');
 Route::group(['middleware' => ['auth', 'checkrole:admin']], function () {
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/barang', [BarangCRUDController::class, 'index'])->name('barang');
 });
 Route::group(['middleware' => ['auth', 'checkrole:user']], function () {
-    // Route::get('/addToShoppingCart/{ID_Barang}', [UserController::class, 'addToShoppingCart'])->name('addToShoppingCart');
+    // Route::get('/addToShoppingCart/{id}', [UserController::class, 'addToShoppingCart'])->name('addToShoppingCart');
     Route::post('/addToShoppingCart', [UserController::class, 'addToShoppingCart'])->name('addToShoppingCart');
     Route::get('/viewShoppingCart', [UserController::class, 'viewShoppingCart'])->name('viewShoppingCart');
     Route::post('/deleteItemFromCart', [UserController::class, 'deleteItemFromCart'])->name('deleteItemFromCart');
     Route::post('/addOrder', [UserController::class, 'addOrder'])->name('addOrder');
     Route::get('/viewOrder', [UserController::class, 'viewOrder'])->name('viewOrder');
     // Route::get('/userHome', [HomeController::class, 'userHome'])->name('userHome');
-    // Route::get('/userHome/{ID_Barang}', [UserController::class, 'detailBarang'])->name('detailBarang');
+    // Route::get('/userHome/{id}', [UserController::class, 'detailBarang'])->name('detailBarang');
 });
-Route::get('/{ID_Barang}', [UserController::class, 'detailBarang'])->name('detailBarang');
+Route::get('/{id}', [UserController::class, 'detailBarang'])->name('detailBarang');
 
 
 

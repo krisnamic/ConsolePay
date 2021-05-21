@@ -14,13 +14,13 @@ use App\Http\Controllers\Date;
 
 class UserController extends Controller
 {
-    public function detailBarang($ID_Barang)
+    public function detailBarang($id)
     {
-        // dd($ID_Barang);
-        // $id = ['id' => $ID_Barang];
-        // $produk = Barang::find($ID_Barang);
+        // dd($id);
+        // $id = ['id' => $id];
+        // $produk = Barang::find($id);
         // $barang = kategori::all();
-        $barang = Barang::where('ID_Barang', $ID_Barang)->first();
+        $barang = Barang::where('id', $id)->first();
         // dd($barang);
         return view('user.detailBarang', compact('barang'));
     }
@@ -56,7 +56,7 @@ class UserController extends Controller
         }
         // $shoppingCart = DB::table('shopping_cart')->where('email', $request->email)->value('role');
         // echo 'tes';
-        // $barang = Barang::where('ID_Barang', $ID_Barang)->first();
+        // $barang = Barang::where('id', $id)->first();
         // dd($barang);
         // return view('user.shoppingCart', compact('barang'));
     }
@@ -67,7 +67,7 @@ class UserController extends Controller
         // dd($shopping_cart);
         $i = 0;
         if ($shopping_cart->isEmpty()) {
-            $barang[$i] = DB::table('barang')->where('ID_Barang', 1)->get();
+            $barang[$i] = DB::table('barang')->where('id', 1)->get();
             return view('user.shoppingCart', [
                 // 'shopping_cart' => ' ',
                 'barang' => $barang,
@@ -80,7 +80,7 @@ class UserController extends Controller
         foreach ($shopping_cart as $s) {
             // dump($s->id_barang);
             // $barang[$i][] = $shopping_cart
-            $barang[$i] = DB::table('barang')->where('ID_Barang', $s->id_barang)->get();
+            $barang[$i] = DB::table('barang')->where('id', $s->id_barang)->get();
             $totalPrice1Day += $barang[$i][0]->hargaBarang;
             $i++;
         }
@@ -124,7 +124,7 @@ class UserController extends Controller
         $simpanOrder = $order->save();
 
         foreach ($request->id_barang as $itemAmount) {
-            $barang = DB::table('barang')->where('ID_Barang', $itemAmount)->get();
+            $barang = DB::table('barang')->where('id', $itemAmount)->get();
             if ($barang[0]->stokBarang < 1) {
                 $pesanan = DB::table('pesanan')->where('user_id', $user_id)->latest()->delete();
                 Session::flash('outOfStock', 'Failed To Order! , ' . $barang[0]->namaBarang . ' telah habis');
@@ -145,8 +145,8 @@ class UserController extends Controller
             $detailPesanan->id_pesanan = $pesanan->id;
             $detailPesanan->id_barang = $itemAmount;
 
-            DB::table('barang')->where('ID_Barang', $itemAmount)->decrement('stokBarang', 1);
-            $barang = DB::table('barang')->where('ID_Barang', $itemAmount)->get();
+            DB::table('barang')->where('id', $itemAmount)->decrement('stokBarang', 1);
+            $barang = DB::table('barang')->where('id', $itemAmount)->get();
             // dd($barang[0]->hargaBarang);
             $detailPesanan->hargaBarang = $barang[0]->hargaBarang;
             $detailPesanan->created_at = now();
@@ -178,7 +178,7 @@ class UserController extends Controller
         // dd($order);
         if ($order == null) {
             // dd($i);
-            $barang[$i] = DB::table('barang')->where('ID_Barang', 1)->get();
+            $barang[$i] = DB::table('barang')->where('id', 1)->get();
             return view('user.order', [
                 'barang' => $barang,
                 'null_item' => 'true',
@@ -190,7 +190,7 @@ class UserController extends Controller
         $orderdetail = DB::table('detailpesanan')->where('id_pesanan', $order_id)->get();
         // $barang;
         foreach ($orderdetail as $od) {
-            $barang[$i] = DB::table('barang')->where('ID_Barang', $od->id_barang)->get();
+            $barang[$i] = DB::table('barang')->where('id', $od->id_barang)->get();
             $i++;
         }
         // dd($orderdetail);

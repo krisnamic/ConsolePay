@@ -18,7 +18,7 @@
     @if (Route::has('login'))
     @auth
     <li class="nav-item d-none d-sm-inline-block">
-      <a href="{{ url('/home') }}" class="nav-link">Home</a>
+      <a href="{{ url('/') }}" class="nav-link">Home</a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
       <a href="{{ route('logout')}}" class="nav-link">Logout</a>

@@ -38,7 +38,7 @@
                 <!-- ConsolePay Logo -->
                 <object class="home-logo" data="img/consolepay/consolepay-logo.svg" width="720" type="image/svg+xml" data-aos="fade-down" data-aos-duration="1000" data-aos-easing="ease-in-out"></object>
                 <!-- Rent Button -->
-                <button type="button" onclick="location.href='{{ route('login') }};'" class="btn btn-large btn-outline-primary" data-aos="fade-down" data-aos-delay="500" data-aos-anchor-placement="top-bottom">Rent a Video Game Console!</button>
+                <button type="button" onclick="{{ route('login') }}" class="btn btn-large btn-outline-primary" data-aos="fade-down" data-aos-delay="500" data-aos-anchor-placement="top-bottom">Rent a Video Game Console!</button>
             </div>
         </div>
 
@@ -48,8 +48,8 @@
                 @foreach($barang as $b)
                 <div class="col">
                     <div class="card" style="width: 18rem;">
-                        {{$b->ID_Barang}}
-                        <a href="/{{$b->ID_Barang}}" style="color:black">
+                        {{$b->id}}
+                        <a href="/{{$b->id}}" style="color:black">
                             <img src="{{asset('img/gambar/'.$b->gambarBarang)}}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h3 class="card-title">{{$b->namaBarang}}</h3>

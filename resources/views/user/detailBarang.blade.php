@@ -50,7 +50,7 @@
                         <img src="{{asset('img/gambar/'.$barang->gambarBarang)}}" class="w-100" alt="...">
                     </div>
                 </div>
-                {{$barang->ID_Barang}}
+                {{$barang->id}}
             </div>
             <div class="col-md-6 position-static p-4 pl-md-0">
                 <h3 class="mt-0">{{$barang->namaBarang}}</h3>
@@ -67,7 +67,7 @@
                 @if(Session::has('user_id'))
                 <form action="{{route('addToShoppingCart')}}" method="post">
                     {{csrf_field()}}
-                    <input type="hidden" value="{{$barang->ID_Barang}}" name="id_barang">
+                    <input type="hidden" value="{{$barang->id}}" name="id_barang">
                     <button type="submit" class="btn btn-primary">Add To Shopping Cart</button>
                 </form>
 
@@ -76,7 +76,7 @@
                 <a class="btn btn-primary" href="/login" role="button">Add To Shopping Cart</a>
                 @endif
                 <!-- <a class="btn btn-@if(Session::has('user_id'))primary @elseif(Session::missing('user_id'))danger @endif" href="#" role="button">Add To Shopping Cart</a> -->
-                <!-- <a class="btn btn-primary" href="@if(Session::has('user_id')) /addToShoppingCart/{{$barang->ID_Barang}} @elseif(Session::missing('user_id'))/login @endif" role="button">Add To Shopping Cart</a> -->
+                <!-- <a class="btn btn-primary" href="@if(Session::has('user_id')) /addToShoppingCart/{{$barang->id}} @elseif(Session::missing('user_id'))/login @endif" role="button">Add To Shopping Cart</a> -->
                 <!-- <p class="font-size:12px; color:red;">{{ Session::get('user_id') }}</p> -->
             </div>
         </div>
