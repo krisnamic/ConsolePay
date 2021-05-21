@@ -53,7 +53,7 @@
                 </div>
               </div>
             </div>
-            <p style="font-size:12px; color:red;">@error('email')
+            <p class="errorMsg" style="font-size:12px; color:red;">@error('email')
               {{ $message }}
               @enderror
             </p>
@@ -65,37 +65,42 @@
                 </div>
               </div>
             </div>
-            <p style="font-size:12px; color:red;">@error('password')
+            <p class="errorMsg" style="font-size:12px; color:red;">@error('password')
               {{ $message }}
               @enderror
             </p>
             @if(Session::has('error'))
-            <p class="font-size:12px; color:red;">{{ Session::get('error') }}</p>
+            <p class="errorMsg" class="font-size:12px; color:red;">{{ Session::get('error') }}</p>
             @endif
-                        <!-- captcha -->
-                        <div class="form-group mt-3 mb-3">
-                <div class="captcha">
-                    <span>{!! captcha_img() !!}</span>
-                    <button type="button" class="btn btn-danger" class="refresh-captcha" id="refresh-captcha">
-                        &#x21bb;
-                    </button>
+            <!-- captcha -->
+            <div class="input-group mb-3" style="margin-top: 10px !important;">
+              <div class="captcha">
+                <span>{!! captcha_img() !!}</span>
+                <button type="button" class="btn btn-danger" class="refresh-captcha" id="refresh-captcha">
+                &#x21bb;
+                </button>
+              </div>
+            </div>
+
+            <div class="input-group mb-3" style="margin-top: 10px !important;">
+              <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-recycle"></span>
                 </div>
+              </div>
             </div>
 
-            <div class="form-group mb-4">
-                <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
-            </div>
-
-            <p style="font-size:12px; color:red;">@error('captcha')
+            <p class="errorMsg" style="font-size:12px; color:red;">@error('captcha')
               {{ $message }}
               @enderror
             </p>
 
             @if(Session::has('error'))
-            <p class="font-size:12px; color:red;">{{ Session::get('error') }}</p>
+            <p class="errorMsg" class="font-size:12px; color:red;">{{ Session::get('error') }}</p>
             @endif
 
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between" style="margin-top: 1em;">
 
               <div class="d-flex flex-column mb-0" style="">
                 <a href="{{route('register')}}" class="text-left" style="vertical-align:middle;">> I don't have an account</a>

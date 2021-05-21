@@ -31,12 +31,67 @@
                 <!-- ConsolePay Logo -->
                 <object class="home-logo" data="img/consolepay/consolepay-logo.svg" width="720" type="image/svg+xml" data-aos="fade-down" data-aos-duration="1000" data-aos-easing="ease-in-out"></object>
                 <!-- Rent Button -->
-                <button type="button" onclick="location.href='{{ route('login') }}'" class="btn btn-large btn-light shadow" data-aos="fade-down" data-aos-delay="500" data-aos-anchor-placement="top-bottom">Rent a Video Game Console!</button>
+                <button type="button" onclick="location.href='#displayBarang'" class="btn btn-large btn-light shadow" data-aos="fade-down" data-aos-delay="500" data-aos-anchor-placement="top-bottom">Rent a Video Game Console!</button>
             </div>
         </div>
 
-        <!-- Section 2: Display list Barang-->
-        <div class="container mt-5">
+        <br>
+
+        <!-- Section 2: Console -->
+        <div class="main-section max-w-6xl mx-auto sm:px-6 lg:px-8" style="margin: 2%;" >
+            <div class="second-section flex mt-8 bg-red-home dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
+                <div class="d-flex justify-content-center" style="margin: 0 25%; margin-top: 2%">
+                    <img src="img/gambar/psvita.png" class="w-30" alt="" data-aos="zoom-in" data-aos-delay="50">
+                    <img src="img/gambar/xbox-one-s.png" class="w-30" alt="" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="img/gambar/ps5.png" class="w-30" alt="" data-aos="zoom-in" data-aos-delay="150">
+                    <img src="img/gambar/switch.png" class="w-30" alt="" data-aos="zoom-in" data-aos-delay="200">
+                </div>
+                <div class="text-center" style="margin: 2% 0;"  data-aos="zoom-in" data-aos-anchor-placement="top-bottom">
+                    <h1>Choose from a wide collection of <strong>modern video game consoles!</strong></h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Order Flow -->
+        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 section-2" style="margin: 2%;" >
+            <div class="flex mt-8 bg-blue-home dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
+                <div class="d-flex justify-content-center" style="margin: 0 25%; margin-top: 2%">
+                    <img src="img/pendukung/courier.svg" class="w-30" alt="" data-aos="zoom-in" data-aos-delay="50">
+                    <img src="img/pendukung/arrow.svg" class="w-30" alt="" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="img/pendukung/home.svg" class="w-30" alt="" data-aos="zoom-in" data-aos-delay="150">
+                </div>
+                <div class="text-center" style="margin: 2% 0;"  data-aos="zoom-in" data-aos-anchor-placement="top-bottom">
+                    <h1>Order online <strong>hassle-free</strong>, with trusted courier to deliver your console!</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Play Console -->
+        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 section-2" style="margin: 2%;" >
+            <div class="flex mt-8 bg-green-home dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
+                <div class="d-flex justify-content-center" style="margin: 0; margin-top: 2%; width: 100%;">
+                    <img src="img/pendukung/playingGames.png" class="w-30 shadow" alt="" data-aos="zoom-in" data-aos-delay="50">
+                </div>
+                <div class="text-center" style="margin: 2% 0;"  data-aos="zoom-in" data-aos-anchor-placement="top-bottom">
+                    <h1>Have some <strong>FUN</strong> with your new console!</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 6: Rent Button 2 -->
+        <div class="text-center" style="margin-top: 10%;">
+            <h1 data-aos="fade-down" data-aos-anchor-placement="top-bottom">What are you waiting for?</h1>
+            <button type="button" onclick="location.href='#displayBarang'" class="btn btn-large btn-outline-primary shadow" data-aos="fade-down" data-aos-anchor-placement="top-bottom">Rent a Video Game Console!</button>
+        </div>
+
+        <br>   
+
+        <!-- Section 5: Display list Barang-->
+        <div id="displayBarang" class="container mt-5" style="margin-top: 0;">
+            <br><br>
+            <div class="text-center" style="margin: 2% 0;"  data-aos="zoom-in" data-aos-anchor-placement="top-bottom">
+                <h1>Video Game Console Catalogue</h1>
+            </div>
             <div class="row row-cols-3">
                 @foreach($barang as $b)
                 <div class="col">
@@ -58,57 +113,6 @@
             @if(Session::has('user_id'))
             <p class="font-size:12px; color:red;">{{ Session::get('user_id') }}</p>
             @endif
-        </div>
-
-        <br>
-
-        <!-- Section 3: Console -->
-        <div class="main-section max-w-6xl mx-auto sm:px-6 lg:px-8" style="margin: 2%;" >
-            <div class="second-section flex mt-8 bg-red dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                <div class="d-flex justify-content-center" style="margin: 0 25%; margin-top: 2%">
-                    <img src="img/gambar/psvita.png" class="w-30" alt="" data-aos="zoom-in" data-aos-delay="50">
-                    <img src="img/gambar/xbox-one-s.png" class="w-30" alt="" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="img/gambar/ps5.png" class="w-30" alt="" data-aos="zoom-in" data-aos-delay="150">
-                    <img src="img/gambar/switch.png" class="w-30" alt="" data-aos="zoom-in" data-aos-delay="200">
-                </div>
-                <div class="text-center" style="margin: 2% 0;"  data-aos="zoom-in" data-aos-anchor-placement="top-bottom">
-                    <h1>Choose from a wide collection of <strong>modern video game consoles!</strong></h1>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section 4: Order Flow -->
-        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 section-2" style="margin: 2%;" >
-            <div class="flex mt-8 bg-blue dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                <div class="d-flex justify-content-center" style="margin: 0 25%; margin-top: 2%">
-                    <img src="img/pendukung/courier.svg" class="w-30" alt="" data-aos="zoom-in" data-aos-delay="50">
-                    <img src="img/pendukung/arrow.svg" class="w-30" alt="" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="img/pendukung/home.svg" class="w-30" alt="" data-aos="zoom-in" data-aos-delay="150">
-                </div>
-                <div class="text-center" style="margin: 2% 0;"  data-aos="zoom-in" data-aos-anchor-placement="top-bottom">
-                    <h1>Order online <strong>hassle-free</strong>, with trusted courier to deliver your console!</h1>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section 5: Play Console -->
-        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 section-2" style="margin: 2%;" >
-            <div class="flex mt-8 bg-yellow dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                <div class="d-flex justify-content-center" style="margin: 0; margin-top: 2%; width: 100%;">
-                    <img src="img/pendukung/playingGames.jpg" class="w-30 shadow" alt="" data-aos="zoom-in" data-aos-delay="50">
-                </div>
-                <div class="text-center" style="margin: 2% 0;"  data-aos="zoom-in" data-aos-anchor-placement="top-bottom">
-                    <h1>Have some <strong>FUN</strong> with your new console!</h1>
-                </div>
-            </div>
-        </div>
-
-        <br>
-
-        <!-- Section 6: Rent Button 2 -->
-        <div class="text-center">
-            <h1 data-aos="fade-down" data-aos-anchor-placement="top-bottom">What are you waiting for?</h1>
-            <button type="button" onclick="location.href='{{ route('login') }}'" class="btn btn-large btn-outline-primary shadow" data-aos="fade-down" data-aos-anchor-placement="top-bottom">Rent a Video Game Console!</button>
         </div>
 
         <br><br>

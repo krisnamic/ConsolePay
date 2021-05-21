@@ -3,6 +3,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-size: 20px;
 }
 
 @font-face {
@@ -10,8 +11,18 @@
     src: url('../font/C&C Red Alert [INET].ttf');
 }
 
+@font-face {
+    font-family: 'c&c2';
+    src: url('../font/C&C Red Alert [LAN].ttf');
+}
+
 body {
     font-family: 'c&c', '04b03', 'Nunito', sans-serif;
+}
+
+.emphasis {
+    font-family: 'c&c2' !important;
+    font-weight: normal !important;
 }
 
 .overflow-hidden {
@@ -78,6 +89,26 @@ body {
     margin: 0 auto;
     padding-bottom: 2em;
     max-width: 50%;
+}
+
+.bg-red-home {
+    background-color: #e10101 !important;
+    color: white;
+}
+
+.bg-green-home {
+    background-color: #00d2b9 !important;
+    color: white;
+}
+
+.bg-blue-home {
+    background-color: #448cff !important;
+    color: white;
+}
+
+.bg-yellow-home {
+    background-color: #ffe401 !important;
+    color: white;
 }
 
 .btn-large {
@@ -162,19 +193,7 @@ h5 {
 }
 
 .login-box {
-	
-	position: fixed;
-	top:0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-
-    margin: 0 auto;
-    margin-top: 10%;
-}
-
-.register-box {
-	
+    width: 35%;
 	position: fixed;
 	top:0;
 	bottom: 0;
@@ -183,4 +202,26 @@ h5 {
 
     margin: 0 auto;
     margin-top: 3%;
+}
+
+.register-box {
+    width: 35%;
+	position: fixed;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+    margin: 0 auto;
+    margin-top: 3%;
+}
+
+.input-group {
+    margin: 0 !important;
+    margin-top: 10px !important;
+}
+
+.errorMsg {
+    margin: 0;
+    padding: 0;
 }

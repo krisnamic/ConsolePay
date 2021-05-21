@@ -38,7 +38,6 @@
       <div class="card shadow">
         <div class="card-body register-card-body" style="border-radius: 50px;">
           <h5>Register a new membership</h5>
-
           <form action="{{route('savedata')}}" method="post">
             {{csrf_field()}}
             @csrf
@@ -52,7 +51,7 @@
                   </div>
                 </div>
               </div>
-              <p style="font-size:12px; color:red;">@error('name')
+              <p class="errorMsg" style="font-size:12px; color:red;">@error('name')
                 {{ $message }}
                 @enderror
               </p>
@@ -64,7 +63,7 @@
                   </div>
                 </div>
               </div>
-              <p style="font-size:12px; color:red;">@error('email')
+              <p class="errorMsg" style="font-size:12px; color:red;">@error('email')
                 {{ $message }}
                 @enderror
               </p>
@@ -76,7 +75,7 @@
                   </div>
                 </div>
               </div>
-              <p style="font-size:12px; color:red;">@error('noTelepon')
+              <p class="errorMsg" style="font-size:12px; color:red;">@error('noTelepon')
                 {{ $message }}
                 @enderror
               </p>
@@ -100,13 +99,13 @@
                   </div>
                 </div>
               </div>
-              <p style="font-size:12px; color:red;">@error('password')
+              <p class="errorMsg" style="font-size:12px; color:red;">@error('password')
                 {{ $message }}
                 @enderror
               </p>
               <div class="input-group mb-3">
               </div>
-              <div class="d-flex justify-content-between">
+              <div class="d-flex justify-content-between" style="margin-top: 0.5em;">
                 <!-- <div class="col-8">
                   <div class="icheck-primary">
                   </div>
