@@ -36,7 +36,7 @@
 
       <!-- Register Card -->
       <div class="card shadow">
-        <div class="card-body register-card-body">
+        <div class="card-body register-card-body" style="border-radius: 50px;">
           <h5>Register a new membership</h5>
 
           <form action="{{route('savedata')}}" method="post">

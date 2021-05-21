@@ -38,7 +38,7 @@
       </div>
       <!-- Login Card -->
       <div class="card shadow">
-        <div class="card-body login-card-body">
+        <div class="card-body login-card-body" style="border-radius: 50px;">
           <h5>Sign in to start your session</h5>
           <form action="{{ route('postlogin') }}" method="post">
             {{csrf_field()}}
