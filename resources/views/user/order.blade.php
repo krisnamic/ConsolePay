@@ -11,6 +11,7 @@
 <body>
     @include('Template/navbar')
     <div class="container mt-3">
+        @foreach($order as $o)
         <div class="card">
             <div class="card-header">
                 <h1>Pesanan</h1>
@@ -39,17 +40,18 @@
                     </div>
                 </div>
                 @endforeach
-                <h5 class="card-title">ID Pemesanan : {{$order->id}}</h5>
-                <p class="card-text"> Tanggal Pemesanan : {{$order->tanggalPemesanan}}</p>
-                <p class="card-text"> Lama Pemesnanan : {{$order->jumlahHari}} hari</p>
-                <p class="card-text"> Harga Total : Rp{{$order->hargaTotal}} </p>
-                <p class="card-text"> Status Pemesanan : {{$order->statusPemesanan}} </p>
+                <h5 class="card-title">ID Pemesanan : {{$o->id}}</h5>
+                <p class="card-text"> Tanggal Pemesanan : {{$o->tanggalPemesanan}}</p>
+                <p class="card-text"> Lama Pemesnanan : {{$o->jumlahHari}} hari</p>
+                <p class="card-text"> Harga Total : Rp{{$o->hargaTotal}} </p>
+                <p class="card-text"> Status Pemesanan : {{$o->statusPemesanan}} </p>
                 <form action="" method="post">
                     <a href="#" class="btn btn-primary">Ubah Status Pemesanan</a>
                 </form>
                 @endif
             </div>
         </div>
+        @endforeach
     </div>
     @include('Template/script')
 </body>

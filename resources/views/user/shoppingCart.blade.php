@@ -59,7 +59,7 @@
                             <h5 class="card-title">Total Price For 1 day : {{$totalPrice1Day}} </h5>
                             <div class="col-lg-1">
                                 <label>Total Price</label>
-                                <output id="result"></output>
+                                <output id="result">{{$totalPrice1Day}}</output>
                             </div>
                             <p class="card-text">Lama Order : </p>
                             <input type="number" min="1" id="day" class="day" name="day" required value="1">

@@ -157,7 +157,11 @@ class UserController extends Controller
         // Session::put('user_id', $user_id);
 
         if ($simpanOrder && $simpanOrderDetail) {
-            // dd($simpan);
+            //hapus pake softdelete shopping cart yg di order
+            foreach ($request->id_barang as $itemAmount) {
+                DB::table('shopping_cart')->where('ID_Barang', $itemAmount)->where('user_id', $user_id)->delete();
+            }
+
             Session::flash('addToShoppingCartSuccess', 'Add Item To Shopping Cart Success!');
             return redirect()->route('viewOrder');
             // return view('user.shoppingCart');
@@ -174,7 +178,8 @@ class UserController extends Controller
     {
         $user_id = $request->session()->get('user_id');
         $i = 0;
-        $order = DB::table('pesanan')->where('user_id', $user_id)->latest()->first();
+        // $order = DB::table('pesanan')->where('user_id', $user_id)->latest()->first();
+        $order = DB::table('pesanan')->where('user_id', $user_id)->get();
         // dd($order);
         if ($order == null) {
             // dd($i);
@@ -186,12 +191,14 @@ class UserController extends Controller
             // return view('user.shoppingCart');
         }
         // dd($order->id);
-        $order_id = $order->id;
-        $orderdetail = DB::table('detailpesanan')->where('id_pesanan', $order_id)->get();
-        // $barang;
-        foreach ($orderdetail as $od) {
-            $barang[$i] = DB::table('barang')->where('ID_Barang', $od->id_barang)->get();
-            $i++;
+        foreach ($order as $o) {
+            $order_id = $o->id;
+            $orderdetail = DB::table('detailpesanan')->where('id_pesanan', $order_id)->get();
+            // $barang;
+            foreach ($orderdetail as $od) {
+                $barang[$i] = DB::table('barang')->where('ID_Barang', $od->id_barang)->get();
+                $i++;
+            }
         }
         // dd($orderdetail);
         return view('user.order', [
