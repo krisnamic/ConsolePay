@@ -36,7 +36,6 @@ Route::group(['middleware' => ['auth', 'checkrole:admin']], function () {
     Route::get('/barang', [BarangCRUDController::class, 'index'])->name('barang');
 });
 Route::group(['middleware' => ['auth', 'checkrole:user']], function () {
-    // Route::get('/addToShoppingCart/{id}', [UserController::class, 'addToShoppingCart'])->name('addToShoppingCart');
     Route::post('/addToShoppingCart', [UserController::class, 'addToShoppingCart'])->name('addToShoppingCart');
     Route::get('/viewShoppingCart', [UserController::class, 'viewShoppingCart'])->name('viewShoppingCart');
     Route::post('/deleteItemFromCart', [UserController::class, 'deleteItemFromCart'])->name('deleteItemFromCart');
