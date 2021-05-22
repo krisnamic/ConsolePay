@@ -128,7 +128,7 @@
                         }
                     },
                     { data: 'action', orderable: false, targets: 0 }
-                ], order: [[0, 'desc']]
+                ]
             });
 
             $('body').on('click', '.delete', function () {
