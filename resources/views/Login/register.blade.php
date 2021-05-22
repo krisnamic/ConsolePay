@@ -37,11 +37,11 @@
       <!-- Register Card -->
       <div class="card shadow">
         <div class="card-body register-card-body" style="border-radius: 50px;">
-          <form action="{{route('savedata')}}" method="post">
+          <form  action="{{route('savedata')}}" method="post">
             {{csrf_field()}}
             @csrf
             <div>
-            <h5>Register a new membership</h5>
+              <h5>Register a new membership</h5>
               <input type="hidden" name="role" value="user" \>
               <div class="input-group mb-3">
                 <input type="text" class="form-control" name="name" placeholder="Full name">

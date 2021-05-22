@@ -73,20 +73,22 @@
               <p class="errorMsg" class="font-size:12px; color:red;">{{ Session::get('error') }}</p>
               @endif
               <!-- captcha -->
-              <div class="input-group mb-3" style="margin-top: 10px !important;">
-                <div class="captcha">
-                  <span>{!! captcha_img() !!}</span>
-                  <button type="button" class="btn btn-danger" class="refresh-captcha" id="refresh-captcha">
-                    &#x21bb;
-                  </button>
+              <div>
+                <div class="input-group mb-3" style="margin-top: 10px !important;">
+                  <div class="captcha">
+                    <span>{!! captcha_img() !!}</span>
+                    <button type="button" class="btn btn-danger" class="refresh-captcha" id="refresh-captcha">
+                      &#x21bb;
+                    </button>
+                  </div>
                 </div>
-              </div>
 
-              <div class="input-group mb-3" style="margin-top: 10px !important;">
-                <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <span class="fas fa-recycle"></span>
+                <div class="input-group mb-3" style="margin-top: 10px !important;">
+                  <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <span class="fas fa-recycle"></span>
+                    </div>
                   </div>
                 </div>
               </div>
