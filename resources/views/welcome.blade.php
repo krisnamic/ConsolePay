@@ -111,9 +111,9 @@
                 </div>
                 @endforeach
             </div>
-            @if(Session::has('user_id'))
+            <!-- @if(Session::has('user_id'))
             <p class="font-size:12px; color:red;">{{ Session::get('user_id') }}</p>
-            @endif
+            @endif -->
         </div>
 
         <br><br>
