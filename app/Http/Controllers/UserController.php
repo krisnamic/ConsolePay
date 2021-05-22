@@ -14,13 +14,13 @@ use App\Http\Controllers\Date;
 
 class UserController extends Controller
 {
-    public function detailBarang($ID_Barang)
+    public function detailBarang($id)
     {
-        // dd($ID_Barang);
-        // $id = ['id' => $ID_Barang];
-        // $produk = Barang::find($ID_Barang);
+        // dd($id);
+        // $id = ['id' => $id];
+        // $produk = Barang::find($id);
         // $barang = kategori::all();
-        $barang = Barang::where('id', $ID_Barang)->first();
+        $barang = Barang::where('id', $id)->first();
         // dd($barang);
         return view('user.detailBarang', compact('barang'));
     }
@@ -56,7 +56,7 @@ class UserController extends Controller
         }
         // $shoppingCart = DB::table('shopping_cart')->where('email', $request->email)->value('role');
         // echo 'tes';
-        // $barang = Barang::where('ID_Barang', $ID_Barang)->first();
+        // $barang = Barang::where('id', $id)->first();
         // dd($barang);
         // return view('user.shoppingCart', compact('barang'));
     }

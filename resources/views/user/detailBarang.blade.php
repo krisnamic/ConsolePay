@@ -76,7 +76,7 @@
                 <a class="btn btn-primary" href="/login" role="button">Add To Shopping Cart</a>
                 @endif
                 <!-- <a class="btn btn-@if(Session::has('user_id'))primary @elseif(Session::missing('user_id'))danger @endif" href="#" role="button">Add To Shopping Cart</a> -->
-                <!-- <a class="btn btn-primary" href="@if(Session::has('user_id')) /addToShoppingCart/{{$barang->ID_Barang}} @elseif(Session::missing('user_id'))/login @endif" role="button">Add To Shopping Cart</a> -->
+                <!-- <a class="btn btn-primary" href="@if(Session::has('user_id')) /addToShoppingCart/{{$barang->id}} @elseif(Session::missing('user_id'))/login @endif" role="button">Add To Shopping Cart</a> -->
                 <!-- <p class="font-size:12px; color:red;">{{ Session::get('user_id') }}</p> -->
             </div>
         </div>

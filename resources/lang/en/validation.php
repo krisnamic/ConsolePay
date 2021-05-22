@@ -134,9 +134,12 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'alamat' => [
+            'required' => 'Please enter an address.',
         ],
+        'noTelepon' => [
+            'required' => 'Please enter a phone number.',
+        ]
     ],
 
     /*
