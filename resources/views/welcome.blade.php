@@ -18,9 +18,7 @@
 </head>
 
 <body class="antialiased">
-    <section id="loading">
-        <div id="loading-content"></div>
-    </section>
+    <div id="load"></div>
     <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
 
         <!-- Navbar -->
@@ -141,9 +139,13 @@
         AOS.init();
     </script>
     <script>
-        $(window).load(function() {
-            $('#loading').hide();
-        });
+        document.onreadystatechange = function () {
+        var state = document.readyState
+        if (state == 'complete') {
+                document.getElementById('interactive');
+                document.getElementById('load').style.visibility="hidden";
+        }
+        }
     </script>
     @include('Template/script')
 </body>
