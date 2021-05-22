@@ -47,7 +47,7 @@
                     <img src="img/gambar/switch.png" class="w-30" alt="" data-aos="zoom-in" data-aos-delay="200">
                 </div>
                 <div class="text-center" style="margin: 2% 0;"  data-aos="zoom-in" data-aos-anchor-placement="top-bottom">
-                    <h1>Choose from a wide collection of <strong>modern video game consoles!</strong></h1>
+                    <h1>Choose from a wide collection of <strong style="font-size: 50px;">modern video game consoles!</strong></h1>
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@
                     <img src="img/pendukung/home.svg" class="w-30" alt="" data-aos="zoom-in" data-aos-delay="150">
                 </div>
                 <div class="text-center" style="margin: 2% 0;"  data-aos="zoom-in" data-aos-anchor-placement="top-bottom">
-                    <h1>Order online <strong>hassle-free</strong>, with trusted courier to deliver your console!</h1>
+                    <h1>Order online <strong style="font-size: 50px;">hassle-free</strong>, with trusted courier to deliver your console!</h1>
                 </div>
             </div>
         </div>
@@ -73,7 +73,7 @@
                     <img src="img/pendukung/playingGames.png" class="w-30 shadow" alt="" data-aos="zoom-in" data-aos-delay="50">
                 </div>
                 <div class="text-center" style="margin: 2% 0;"  data-aos="zoom-in" data-aos-anchor-placement="top-bottom">
-                    <h1>Have some <strong>FUN</strong> with your new console!</h1>
+                    <h1>Have some <strong style="font-size: 50px;">FUN</strong> with your new console!</h1>
                 </div>
             </div>
         </div>
