@@ -23,12 +23,14 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{ route('logout')}}" class="nav-link">Logout</a>
       </li>
+      @if(Session::has('user_id'))
       <li class="nav-item d-none d-sm-inline-block" style="margin-left: 15px; margin-right: 15px;">
         <a href="{{route('viewShoppingCart')}}"><i class="fas fa-shopping-cart"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{route('viewOrder')}}"><i class="fas fa-truck"></i></a>
       </li>
+      @endif
       @else
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{ route('login') }}" class="nav-link">Login</a>

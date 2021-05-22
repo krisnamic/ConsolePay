@@ -12,6 +12,7 @@
 <body>
     @include('Template/navbar')
     <div class="container">
+        <a href="javascript:history.back()"><i class="fas fa-arrow-left" style="font-size: 50px;"></i></a>
         <div class="container mt-3 jumbotron">
             <center>
                 <h1>Shopping Cart</h1>
@@ -23,6 +24,15 @@
                         <li>{{Session::get('outOfStock')}}</li>
                     </ul>
                 </div>
+                @endif
+                @if(Session::has('addOrderSuccess'))
+                <p class="alert alert-success">{{ Session::get('addOrderSuccess') }}<br><a href="/viewOrder">View Order</a></p>
+                @endif
+                @if(Session::has('addOrderFail'))
+                <p class="alert alert-success">{{ Session::get('addOrderFail') }}</p>
+                @endif
+                @if(Session::has('deleteItemFromCart'))
+                <p class="alert alert-success">{{ Session::get('deleteItemFromCart') }}<br></p>
                 @endif
                 @if($null_item)
                 <h1>Anda Belum Menambahkan Apapun ke dalam Keranjang</h1>

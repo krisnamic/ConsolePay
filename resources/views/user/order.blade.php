@@ -12,6 +12,7 @@
     @include('Template/navbar')
     <?php $i = 0 ?>
     <div class="container mt-3">
+        <a href="javascript:history.back()"><i class="fas fa-arrow-left" style="font-size: 50px;"></i></a>
         @foreach($barang as $bar)
         <div class="card">
             <div class="card-header">
@@ -46,11 +47,11 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">{{$b[0]->namaBarang}}</h5>
+                                <h5 class="card-title">{{$b[0]->namaBarang}}</h5><br>
                                 <h5 class="card-title">{{$b[0]->merekBarang}}</h5><br>
                                 <h5 class="card-title">{{$b[0]->kategoriBarang}}</h5>
                                 <p class="card-text">Harga : {{$b[0]->hargaBarang}}</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                             </div>
                         </div>
                     </div>

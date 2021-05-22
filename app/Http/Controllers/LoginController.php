@@ -22,7 +22,7 @@ class LoginController extends Controller
 
     public function refreshCaptcha()
     {
-        return response()->json(['captcha'=> captcha_img()]);
+        return response()->json(['captcha' => captcha_img()]);
     }
     public function postLogin(Request $request)
     {
@@ -68,7 +68,6 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             if ($role == 'admin') {
-
                 return redirect()->intended('home');
             } else {
                 Session::put('user_id', $user_id);

@@ -43,6 +43,11 @@
 <body>
     @include('Template/navbar')
     <div class="container">
+        <a href="/"><i class="fas fa-arrow-left" style="font-size:50px;"></i></a>
+        @if(Session::has('addToShoppingCartSuccess'))
+        <p class="alert alert-success">{{ Session::get('addToShoppingCartSuccess') }}<br><a href="/viewShoppingCart">View Shopping Cart</a></p>
+        @endif
+        <!-- <i class="far fa-chevron-circle-left"></i> -->
         <div class="row no-gutters bg-light position-relative">
             <div class="col-md-6 mb-md-0 p-md-4">
                 <div class="zoom-effect">

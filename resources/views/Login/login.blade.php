@@ -69,9 +69,7 @@
                 {{ $message }}
                 @enderror
               </p>
-              @if(Session::has('error'))
-              <p class="errorMsg" class="font-size:12px; color:red;">{{ Session::get('error') }}</p>
-              @endif
+
               <!-- captcha -->
               <div class="input-group mb-3" style="margin-top: 10px !important;">
                 <div class="captcha">
@@ -97,7 +95,7 @@
               </p>
 
               @if(Session::has('error'))
-              <p class="errorMsg" class="font-size:12px; color:red;">{{ Session::get('error') }}</p>
+              <p class="errorMsg" style="font-size:12px; color:red;">{{ Session::get('error') }}</p>
               @endif
 
               <div class="d-flex justify-content-between" style="margin-top: 1em;">

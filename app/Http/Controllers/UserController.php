@@ -48,7 +48,7 @@ class UserController extends Controller
 
         if ($simpan) {
             Session::flash('addToShoppingCartSuccess', 'Add Item To Shopping Cart Success!');
-            return redirect()->route('viewShoppingCart');
+            return redirect()->back();
             // return view('user.shoppingCart');
         } else {
             Session::flash('addToShoppingCartFailed', 'Add Item To Shopping Cart Failed!');
@@ -162,11 +162,11 @@ class UserController extends Controller
                 DB::table('shopping_cart')->where('id_barang', $itemAmount)->where('user_id', $user_id)->delete();
             }
 
-            Session::flash('addToShoppingCartSuccess', 'Add Item To Shopping Cart Success!');
-            return redirect()->route('viewOrder');
+            Session::flash('addOrderSuccess', 'Order Success!');
+            return redirect()->back();
             // return view('user.shoppingCart');
         } else {
-            Session::flash('addToShoppingCartFailed', 'Add Item To Shopping Cart Failed!');
+            Session::flash('addOrderFail', 'Order Failed!');
             return redirect()->back();
         }
         // dd($newDate);
@@ -181,7 +181,8 @@ class UserController extends Controller
         // $order = DB::table('pesanan')->where('user_id', $user_id)->latest()->first();
         $order = DB::table('pesanan')->where('user_id', $user_id)->get();
         // dd($order);
-        if ($order == null) {
+        if ($order->isEmpty()) {
+            // dd($i);
             // dd($i);
             $barang[$i] = DB::table('barang')->where('id', 1)->get();
             return view('user.order', [
@@ -189,6 +190,8 @@ class UserController extends Controller
                 'null_item' => 'true',
             ]);
             // return view('user.shoppingCart');
+        } else {
+            // dd($order);
         }
         // dd($order->id);
 
