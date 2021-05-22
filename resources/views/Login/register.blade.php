@@ -87,7 +87,7 @@
                   </div>
                 </div>
               </div>
-              <p style="font-size:12px; color:red;">@error('alamat')
+              <p class="errorMsg" style="font-size:12px; color:red;">@error('alamat')
                 {{ $message }}
                 @enderror
               </p>
@@ -111,8 +111,8 @@
                   </div>
                 </div> -->
                 <div class="d-flex flex-column mb-0">
-                  <a href="{{route('login')}}" class="text-left" style="vertical-align:middle;">> I already have an account</a>
-                  <a href="/" class="text-left" style="vertical-align:middle;">> Back to main page</a>
+                  <a href="{{route('login')}}" class="text-left" style="vertical-align:middle;">< I already have an account</a>
+                  <a href="/" class="text-left" style="vertical-align:middle;">< Back to main page</a>
                 </div>
                 
                 <!-- captcha -->
