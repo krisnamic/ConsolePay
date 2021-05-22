@@ -23,7 +23,7 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{ route('logout')}}" class="nav-link">Logout</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
+      <li class="nav-item d-none d-sm-inline-block" style="margin-left: 15px; margin-right: 15px;">
         <a href="{{route('viewShoppingCart')}}"><i class="fas fa-shopping-cart"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">

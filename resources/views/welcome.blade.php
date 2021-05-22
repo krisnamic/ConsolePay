@@ -99,8 +99,9 @@
                         {{$b->id}}
                         <a href="/{{$b->id}}" style="color:black">
                             <img src="{{asset('img/gambar/'.$b->gambarBarang)}}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h3 class="card-title">{{$b->namaBarang}}</h3>
+                            <div class="card-body text-center">
+                                <img src="{{asset('img/logo/'.$b->logoBarang)}}" class="card-img-top" alt="...">
+                                <!-- <h3 class="card-title">{{$b->namaBarang}}</h3> -->
                                 <p class="card-text">Rp{{$b->hargaBarang}}</p>
                                 <p class="card-text">Available : {{$b->stokBarang}}</p>
                                 <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->

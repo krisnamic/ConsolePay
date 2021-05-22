@@ -186,7 +186,7 @@ class BarangTableSeeder extends Seeder
                 'hargaBarang' => 75000,
                 'stokBarang' => 6,
                 'gambarBarang' => 'xbox-one.png',
-                'logoBarang' => 'logo-xbox-one.png',
+                'logoBarang' => 'logo-xbox-one.svg',
                 'created_at' => now(),
                 'updated_at' => now()
             ),
