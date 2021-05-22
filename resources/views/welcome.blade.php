@@ -90,19 +90,19 @@
             <div class="text-center" style="margin: 2% 0;"  data-aos="zoom-in" data-aos-anchor-placement="top-bottom">
                 <h1>Video Game Console Catalogue</h1>
             </div>
-            <div class="row row-cols-3">
+            <div class="row row-cols-5">
                 @foreach($barang as $b)
                 <div class="col d-flex">
                     <div class="card shadow d-flex" style="width: 18rem;">
                         <div class="bg-red-home text-center" style="font-size: 1.2em;">
-                            {{$b->id}}
+                            {{$b->namaBarang}}
                         </div>
                         <a href="/{{$b->id}}" style="color:black">
                             <img src="{{asset('img/gambar/'.$b->gambarBarang)}}" class="card-img-top" alt="...">
                             <div class="card-body text-center">
                                 <img src="{{asset('img/logo/'.$b->logoBarang)}}" class="card-img-top" alt="...">
                                 <!-- <h3 class="card-title">{{$b->namaBarang}}</h3> -->
-                                <p class="card-text">Rp{{$b->hargaBarang}}</p>
+                                <p class="card-text" style="margin-top: 10%;">Rp{{$b->hargaBarang}}</p>
                                 <p class="card-text">Available : {{$b->stokBarang}}</p>
                                 <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
