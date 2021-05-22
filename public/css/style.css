@@ -88,7 +88,7 @@ body {
     display: block;
     margin: 0 auto;
     padding-bottom: 2em;
-    max-width: 82vh;
+    max-width: 40%;
 }
 
 .bg-red-home {
@@ -129,6 +129,10 @@ body {
     margin: 0 5% ;
 }
 
+.home-section {
+    height: 80vh;
+}
+
 .bg-section-1 {
     background-image: url('../img/consolepay/bg-home-blue.svg');
     background-position: center center;
@@ -136,6 +140,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-color:white;
+    height: 88vh;
 }
 
 .bg-section-2 {
