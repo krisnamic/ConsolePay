@@ -92,9 +92,11 @@
             </div>
             <div class="row row-cols-3">
                 @foreach($barang as $b)
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        {{$b->id}}
+                <div class="col d-flex">
+                    <div class="card shadow d-flex" style="width: 18rem;">
+                        <div class="bg-red-home text-center" style="font-size: 1.2em;">
+                            {{$b->id}}
+                        </div>
                         <a href="/{{$b->id}}" style="color:black">
                             <img src="{{asset('img/gambar/'.$b->gambarBarang)}}" class="card-img-top" alt="...">
                             <div class="card-body text-center">
