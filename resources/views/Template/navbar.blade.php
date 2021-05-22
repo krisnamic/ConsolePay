@@ -13,7 +13,9 @@
     </ul> -->
 
   <div class="d-flex header-child bg-white navbar">
-    <object data="img/consolepay/consolepay-horizontal.svg" width="240" type="image/svg+xml"></object>
+    <a class="logo-click" href="{{ route('userHome') }}">
+      <img src="img/consolepay/consolepay-horizontal.svg" width="240" type="image/svg+xml">
+    </a>
     <div class="ml-auto">
       @if (Route::has('login'))
       @auth

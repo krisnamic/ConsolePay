@@ -49,13 +49,13 @@
         @endif
         <!-- <i class="far fa-chevron-circle-left"></i> -->
         <div class="row no-gutters bg-light position-relative">
-            <div class="col-md-6 mb-md-0 p-md-4">
+            <div class="col-md-6 mb-md-0 p-md-4" style="background-color: red;">
                 <div class="zoom-effect">
                     <div class="kotak">
                         <img src="{{asset('img/gambar/'.$barang->gambarBarang)}}" class="w-100" alt="...">
                     </div>
                 </div>
-                {{$barang->id}}
+                <!-- {{$barang->id}} -->
             </div>
             <div class="col-md-6 position-static p-4 pl-md-0">
                 <h3 class="mt-0">{{$barang->namaBarang}}</h3>

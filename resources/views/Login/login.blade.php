@@ -71,20 +71,22 @@
               </p>
 
               <!-- captcha -->
-              <div class="input-group mb-3" style="margin-top: 10px !important;">
-                <div class="captcha">
-                  <span>{!! captcha_img() !!}</span>
-                  <button type="button" class="btn btn-danger" class="refresh-captcha" id="refresh-captcha">
-                    &#x21bb;
-                  </button>
+              <div>
+                <div class="input-group mb-3" style="margin-top: 10px !important;">
+                  <div class="captcha">
+                    <span>{!! captcha_img() !!}</span>
+                    <button type="button" class="btn btn-danger" class="refresh-captcha" id="refresh-captcha">
+                      &#x21bb;
+                    </button>
+                  </div>
                 </div>
-              </div>
 
-              <div class="input-group mb-3" style="margin-top: 10px !important;">
-                <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <span class="fas fa-recycle"></span>
+                <div class="input-group mb-3" style="margin-top: 10px !important;">
+                  <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <span class="fas fa-recycle"></span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -101,8 +103,8 @@
               <div class="d-flex justify-content-between" style="margin-top: 1em;">
 
                 <div class="d-flex flex-column mb-0" style="">
-                  <a href="{{route('register')}}" class="text-left" style="vertical-align:middle;">> I don't have an account</a>
-                  <a href="/" class="text-left" style="vertical-align:middle;">> Back to main page</a>
+                  <a href="{{route('register')}}" class="text-left" style="vertical-align:middle;">< I don't have an account</a>
+                  <a href="/" class="text-left" style="vertical-align:middle;">< Back to main page</a>
                 </div>
 
                 <div class="ml-auto">

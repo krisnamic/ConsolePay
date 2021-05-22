@@ -37,11 +37,11 @@
       <!-- Register Card -->
       <div class="card shadow">
         <div class="card-body register-card-body" style="border-radius: 50px;">
-          <h5>Register a new membership</h5>
-          <form action="{{route('savedata')}}" method="post">
+          <form  action="{{route('savedata')}}" method="post">
             {{csrf_field()}}
             @csrf
-            <div class="card-body">
+            <div>
+              <h5>Register a new membership</h5>
               <input type="hidden" name="role" value="user" \>
               <div class="input-group mb-3">
                 <input type="text" class="form-control" name="name" placeholder="Full name">
@@ -87,7 +87,7 @@
                   </div>
                 </div>
               </div>
-              <p style="font-size:12px; color:red;">@error('alamat')
+              <p class="errorMsg" style="font-size:12px; color:red;">@error('alamat')
                 {{ $message }}
                 @enderror
               </p>
@@ -111,8 +111,8 @@
                   </div>
                 </div> -->
                 <div class="d-flex flex-column mb-0">
-                  <a href="{{route('login')}}" class="text-left" style="vertical-align:middle;">> I already have an account</a>
-                  <a href="/" class="text-left" style="vertical-align:middle;">> Back to main page</a>
+                  <a href="{{route('login')}}" class="text-left" style="vertical-align:middle;">< I already have an account</a>
+                  <a href="/" class="text-left" style="vertical-align:middle;">< Back to main page</a>
                 </div>
                 
                 <!-- captcha -->
