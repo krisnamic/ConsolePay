@@ -129,10 +129,6 @@ body {
     margin: 0 5% ;
 }
 
-.home-section {
-    height: 80vh;
-}
-
 .bg-section-1 {
     background-image: url('../img/consolepay/bg-home-blue.svg');
     background-position: center center;
@@ -140,7 +136,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-color:white;
-    height: 88vh;
+    height: 90vh;
 }
 
 .bg-section-2 {
