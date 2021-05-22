@@ -11,7 +11,7 @@ return [
         'expire' => 60,
         'blur' => 2,
         'bgColor' => '#ecf2f4',
-        'fontColors' => ['#000000','#ff00ff','#fa2b12','#ff012b','#abc123'],
+        'fontColors' => ['#000000', '#000000', '#000000', '#000000', '#000000'],
         'encrypt' => false,
     ],
     'math' => [

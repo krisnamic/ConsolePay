@@ -48,8 +48,8 @@
                 @foreach($barang as $b)
                 <div class="col">
                     <div class="card" style="width: 18rem;">
-                        {{$b->ID_Barang}}
-                        <a href="/{{$b->ID_Barang}}" style="color:black">
+                        {{$b->id}}
+                        <a href="/{{$b->id}}" style="color:black">
                             <img src="{{asset('img/gambar/'.$b->gambarBarang)}}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h3 class="card-title">{{$b->namaBarang}}</h3>

@@ -10,8 +10,9 @@
 
 <body>
     @include('Template/navbar')
+    <?php $i = 0 ?>
     <div class="container mt-3">
-        @foreach($order as $o)
+        @foreach($barang as $bar)
         <div class="card">
             <div class="card-header">
                 <h1>Pesanan</h1>
@@ -20,8 +21,23 @@
                 @if($null_item)
                 <h1>Anda Belum Memesan</h1>
                 @else
-                @foreach($barang as $b)
+
+                @foreach($bar as $b)
                 <div class="card mb-3" style="max-width: 540px;">
+                    @if(Session::has('ubahStatusPemesananBerhasil'))
+                    <div class="alert alert-success">
+                        <ul>
+                            <li>{{Session::get('ubahStatusPemesananBerhasil')}}</li>
+                        </ul>
+                    </div>
+                    @endif
+                    @if(Session::has('ubahStatusPemesananGagal'))
+                    <div class="alert alert-danger">
+                        <ul>
+                            <li>{{Session::get('ubahStatusPemesananGagal')}}</li>
+                        </ul>
+                    </div>
+                    @endif
                     <div class="row g-0">
                         <div class="col-md-4">
                             <center>
@@ -40,14 +56,21 @@
                     </div>
                 </div>
                 @endforeach
-                <h5 class="card-title">ID Pemesanan : {{$o->id}}</h5>
-                <p class="card-text"> Tanggal Pemesanan : {{$o->tanggalPemesanan}}</p>
-                <p class="card-text"> Lama Pemesnanan : {{$o->jumlahHari}} hari</p>
-                <p class="card-text"> Harga Total : Rp{{$o->hargaTotal}} </p>
-                <p class="card-text"> Status Pemesanan : {{$o->statusPemesanan}} </p>
-                <form action="" method="post">
-                    <a href="#" class="btn btn-primary">Ubah Status Pemesanan</a>
+                <h5 class="card-title">ID Pemesanan : {{$order[$i]->id}}</h5>
+                <p class="card-text"> Tanggal Pemesanan : {{$order[$i]->tanggalPemesanan}}</p>
+                <p class="card-text"> Lama Pemesnanan : {{$order[$i]->jumlahHari}} hari</p>
+                <p class="card-text"> Harga Total : Rp{{$order[$i]->hargaTotal}} </p>
+                <p class="card-text"> Status Pemesanan : {{$order[$i]->statusPemesanan}} </p>
+                <form action="{{route('ubahStatusPemesanan')}}" method="post">
+                    {{csrf_field()}}
+                    <input type="hidden" name="id_pesanan" value="{{$order[$i]->id}}">
+                    @if($order[$i]->statusPemesanan == "Sudah Dikirim" )
+                    <button type="submit" class="btn btn-primary">Ubah Status Pemesanan</button>
+                    @else
+                    <button type="submit" class="btn btn-primary" disabled>Ubah Status Pemesanan</button>
+                    @endif
                 </form>
+                <?php $i++; ?>
                 @endif
             </div>
         </div>

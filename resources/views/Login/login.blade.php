@@ -78,23 +78,23 @@
 
             <!-- captcha -->
             <div class="form-group mt-3 mb-3">
-                <div class="captcha">
-                    <span>{!! captcha_img() !!}</span>
-                    <button type="button" class="btn btn-danger" class="refresh-captcha" id="refresh-captcha">
-                        &#x21bb;
-                    </button>
-                </div>
+              <div class="captcha">
+                <span>{!! captcha_img('mini') !!}</span>
+                <button type="button" class="btn btn-danger" class="refresh-captcha" id="refresh-captcha">
+                  &#x21bb;
+                </button>
+              </div>
             </div>
 
             <div class="form-group mb-4">
-                <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
+              <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
             </div>
             <p style="font-size:12px; color:red;">@error('captcha')
               {{ $message }}
               @enderror
             </p>
-            
-            
+
+
             </p>
             @if(Session::has('error'))
             <p class="font-size:12px; color:red;">{{ Session::get('error') }}</p>
@@ -151,17 +151,17 @@
     //   }, false);
     // })();
   </script> -->
-    <script type="text/javascript">
-      $('#refresh-captcha').click(function () {
-          $.ajax({
-              type: 'GET',
-              url: 'refresh-captcha',
-              success: function (data) {
-                  $(".captcha span").html(data.captcha);
-              }
-          });
+  <script type="text/javascript">
+    $('#refresh-captcha').click(function() {
+      $.ajax({
+        type: 'GET',
+        url: 'refresh-captcha',
+        success: function(data) {
+          $(".captcha span").html(data.captcha);
+        }
       });
-    </script>
+    });
+  </script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> -->
   <!-- <script src="../../js/captcha.js"></script> -->

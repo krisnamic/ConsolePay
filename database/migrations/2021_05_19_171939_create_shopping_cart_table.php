@@ -17,8 +17,8 @@ class CreateShoppingCartTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('id_barang');
-            $table->foreign('id_barang')->references('ID_Barang')->on('barang');
+            $table->unsignedBigInteger('id_barang');
+            $table->foreign('id_barang')->references('id')->on('barang');
             $table->boolean('status');
             $table->timestamps();
         });

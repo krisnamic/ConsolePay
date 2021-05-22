@@ -44,7 +44,7 @@
                                 <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                                 <form action="{{route('deleteItemFromCart')}}" method="post">
                                     {{csrf_field()}}
-                                    <input type="hidden" name="itemToDelete" value="{{$b[0]->ID_Barang}}">
+                                    <input type="hidden" name="itemToDelete" value="{{$b[0]->id}}">
                                     <button type="submit" class="btn btn-danger">Delete From Shopping Cart</button>
                                 </form>
                             </div>
@@ -66,7 +66,7 @@
                             <input type="hidden" value="{{$totalPrice1Day}}" id="tes" name="totalprice">
                             <?php $i = 0 ?>
                             @foreach($barang as $b)
-                            <input type="hidden" value="{{$b[0]->ID_Barang}}" id="id_barang{{$loop->iteration}}" name="id_barang[{{$loop->iteration}}]">
+                            <input type="hidden" value="{{$b[0]->id}}" id="id_barang{{$loop->iteration}}" name="id_barang[{{$loop->iteration}}]">
                             <?php $i++; ?>
                             @endforeach
                             <input type="hidden" value="<?= $i; ?>" name="jumlahBarang">

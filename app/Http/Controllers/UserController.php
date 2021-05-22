@@ -20,7 +20,7 @@ class UserController extends Controller
         // $id = ['id' => $ID_Barang];
         // $produk = Barang::find($ID_Barang);
         // $barang = kategori::all();
-        $barang = Barang::where('ID_Barang', $ID_Barang)->first();
+        $barang = Barang::where('id', $ID_Barang)->first();
         // dd($barang);
         return view('user.detailBarang', compact('barang'));
     }
@@ -67,7 +67,7 @@ class UserController extends Controller
         // dd($shopping_cart);
         $i = 0;
         if ($shopping_cart->isEmpty()) {
-            $barang[$i] = DB::table('barang')->where('ID_Barang', 1)->get();
+            $barang[$i] = DB::table('barang')->where('id', 1)->get();
             return view('user.shoppingCart', [
                 // 'shopping_cart' => ' ',
                 'barang' => $barang,
@@ -80,7 +80,7 @@ class UserController extends Controller
         foreach ($shopping_cart as $s) {
             // dump($s->id_barang);
             // $barang[$i][] = $shopping_cart
-            $barang[$i] = DB::table('barang')->where('ID_Barang', $s->id_barang)->get();
+            $barang[$i] = DB::table('barang')->where('id', $s->id_barang)->get();
             $totalPrice1Day += $barang[$i][0]->hargaBarang;
             $i++;
         }
@@ -124,7 +124,7 @@ class UserController extends Controller
         $simpanOrder = $order->save();
 
         foreach ($request->id_barang as $itemAmount) {
-            $barang = DB::table('barang')->where('ID_Barang', $itemAmount)->get();
+            $barang = DB::table('barang')->where('id', $itemAmount)->get();
             if ($barang[0]->stokBarang < 1) {
                 $pesanan = DB::table('pesanan')->where('user_id', $user_id)->latest()->delete();
                 Session::flash('outOfStock', 'Failed To Order! , ' . $barang[0]->namaBarang . ' telah habis');
@@ -145,8 +145,8 @@ class UserController extends Controller
             $detailPesanan->id_pesanan = $pesanan->id;
             $detailPesanan->id_barang = $itemAmount;
 
-            DB::table('barang')->where('ID_Barang', $itemAmount)->decrement('stokBarang', 1);
-            $barang = DB::table('barang')->where('ID_Barang', $itemAmount)->get();
+            DB::table('barang')->where('id', $itemAmount)->decrement('stokBarang', 1);
+            $barang = DB::table('barang')->where('id', $itemAmount)->get();
             // dd($barang[0]->hargaBarang);
             $detailPesanan->hargaBarang = $barang[0]->hargaBarang;
             $detailPesanan->created_at = now();
@@ -159,7 +159,7 @@ class UserController extends Controller
         if ($simpanOrder && $simpanOrderDetail) {
             //hapus pake softdelete shopping cart yg di order
             foreach ($request->id_barang as $itemAmount) {
-                DB::table('shopping_cart')->where('ID_Barang', $itemAmount)->where('user_id', $user_id)->delete();
+                DB::table('shopping_cart')->where('id_barang', $itemAmount)->where('user_id', $user_id)->delete();
             }
 
             Session::flash('addToShoppingCartSuccess', 'Add Item To Shopping Cart Success!');
@@ -183,7 +183,7 @@ class UserController extends Controller
         // dd($order);
         if ($order == null) {
             // dd($i);
-            $barang[$i] = DB::table('barang')->where('ID_Barang', 1)->get();
+            $barang[$i] = DB::table('barang')->where('id', 1)->get();
             return view('user.order', [
                 'barang' => $barang,
                 'null_item' => 'true',
@@ -191,15 +191,21 @@ class UserController extends Controller
             // return view('user.shoppingCart');
         }
         // dd($order->id);
+
+        $k = 0;
         foreach ($order as $o) {
             $order_id = $o->id;
             $orderdetail = DB::table('detailpesanan')->where('id_pesanan', $order_id)->get();
             // $barang;
             foreach ($orderdetail as $od) {
-                $barang[$i] = DB::table('barang')->where('ID_Barang', $od->id_barang)->get();
-                $i++;
+                $barang[$i][$k] = DB::table('barang')->where('id', $od->id_barang)->get();
+                $k++;
             }
+            $k = 0;
+            $i++;
+            // $barangs[$k] = $barang;
         }
+        // dd($barang);
         // dd($orderdetail);
         return view('user.order', [
             'order' => $order,
@@ -207,5 +213,19 @@ class UserController extends Controller
             'barang' => $barang,
             'null_item' => false,
         ]);
+    }
+
+    public function ubahStatusPemesanan(Request $request)
+    {
+        $pesanan = DB::table('pesanan')->where('id', $request->id_pesanan)->get();
+        // dd($pesanan[0]->statusPemesanan);
+        if ($pesanan[0]->statusPemesanan == "Sudah Dikirim") {
+            DB::table('pesanan')->where('id', $request->id_pesanan)->update(['statusPemesanan' => 'Siap di Pick-up']);
+            Session::flash('ubahStatusPemesananBerhasil', 'Berhasil Mengubah Status Pemesanan menjadi Siap di Pick-up');
+            return redirect()->back();
+        } else {
+            Session::flash('ubahStatusPemesananGagal', 'Maaf, Belum bisa mengubah status pemesanan');
+            return redirect()->back();
+        }
     }
 }
