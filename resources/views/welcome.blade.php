@@ -27,7 +27,7 @@
 
         <!-- Section 1: Main Logo -->
         <div class="main-section max-w-6xl mx-auto sm:px-6 lg:px-8 bg-section-1">
-            <div class="second-section mt-8 dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg text-center" style="padding-bottom: 3em;">
+            <div class="second-section mt-8 dark:bg-gray-800 overflow-hidden sm:rounded-lg text-center" style="padding-bottom: 3em;">
                 <!-- ConsolePay Logo -->
                 <object class="home-logo" data="img/consolepay/consolepay-logo.svg" style="width: 34em !important;" type="image/svg+xml" data-aos="fade-down" data-aos-duration="1000" data-aos-easing="ease-in-out"></object>
                 <!-- Rent Button -->
