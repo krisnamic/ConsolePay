@@ -103,8 +103,8 @@
               <div class="d-flex justify-content-between" style="margin-top: 1em;">
 
                 <div class="d-flex flex-column mb-0" style="">
-                  <a href="{{route('register')}}" class="text-left" style="vertical-align:middle;">> I don't have an account</a>
-                  <a href="/" class="text-left" style="vertical-align:middle;">> Back to main page</a>
+                  <a href="{{route('register')}}" class="text-left" style="vertical-align:middle;">< I don't have an account</a>
+                  <a href="/" class="text-left" style="vertical-align:middle;">< Back to main page</a>
                 </div>
 
                 <div class="ml-auto">
