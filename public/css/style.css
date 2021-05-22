@@ -165,8 +165,15 @@ body {
     z-index: 1080;
 }
 
-.sliding-background {
+.sliding-background-red {
     background: url("../img/consolepay/bg-sliding-red.svg") repeat-x;
+    height: 1080px;
+    width: 5076px;
+    animation: slide 60s linear infinite;
+}
+
+.sliding-background-green {
+    background: url("../img/consolepay/bg-sliding-green.svg") repeat-x;
     height: 1080px;
     width: 5076px;
     animation: slide 60s linear infinite;

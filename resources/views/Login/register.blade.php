@@ -142,7 +142,7 @@
     
   </div>
   
-  <div class="sliding-background" style="position: relative !important; z-index: -1080;"></div>
+  <div class="sliding-background-green" style="position: relative !important; z-index: -1080;"></div>
   </div>
 
   @include('Template/script')
