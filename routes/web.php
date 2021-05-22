@@ -46,11 +46,6 @@ Route::group(['middleware' => ['auth', 'checkrole:user']], function () {
 Route::get('/{id}', [UserController::class, 'detailBarang'])->name('detailBarang');
 
 
-
-Route::group(['middleware' => ['auth', 'checkrole:admin,user']], function () {
-    Route::get('/barang', [BarangCRUDController::class, 'index'])->name('barang');
-});
-
 //datatables
 Route::resource('barang', BarangCRUDController::class);
 Route::post('delete-barang', [BarangCRUDController::class, 'destroy']);
