@@ -25,7 +25,7 @@ class BarangTableSeeder extends Seeder
             array(
                 'kategoriBarang' => 'Handheld Console',
                 'merekBarang' => 'Sony',
-                'namaBarang' => 'PlayStation Portable (PSP)',
+                'namaBarang' => 'PlayStation Portable',
                 'deskripsiBarang' => 'The PlayStation Portable (PSP) is a handheld video game console developed and marketed by Sony Computer Entertainment.',
                 'hargaBarang' => 17500,
                 'stokBarang' => 12,
@@ -38,7 +38,7 @@ class BarangTableSeeder extends Seeder
             array(
                 'kategoriBarang' => 'Handheld Console',
                 'merekBarang' => 'Sony',
-                'namaBarang' => 'PlayStation Vita (PS Vita)',
+                'namaBarang' => 'PlayStation Vita',
                 'deskripsiBarang' => 'The PlayStation Vita (PS Vita or Vita) is a handheld video game console developed and marketed by Sony Computer Entertainment.',
                 'hargaBarang' => 25000,
                 'stokBarang' => 10,
