@@ -13,9 +13,9 @@
     <!-- </ul> -->
 
   <div class="d-flex header-child bg-white navbar">
-    <div class="nav-item">
+    <!-- <div class="nav-item">
       <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars fa-lg"></i></a>
-    </div>
+    </div> -->
     <a class="logo-click" href="{{ route('userHome') }}">
       <img src="{{ asset('img/consolepay/consolepay-horizontal.svg')}}" width="240" type="image/svg+xml">
     </a>
