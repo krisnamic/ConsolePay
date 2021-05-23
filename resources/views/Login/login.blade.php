@@ -70,6 +70,10 @@
                 @enderror
               </p>
 
+              @if(Session::has('error'))
+                <p class="errorMsg" style="font-size:12px; color:red;">{{ Session::get('error') }}</p>
+              @endif
+
               <!-- captcha -->
               <div>
                 <div class="input-group mb-3" style="margin-top: 10px !important;">
@@ -96,15 +100,11 @@
                 @enderror
               </p>
 
-              @if(Session::has('error'))
-              <p class="errorMsg" style="font-size:12px; color:red;">{{ Session::get('error') }}</p>
-              @endif
-
               <div class="d-flex justify-content-between" style="margin-top: 1em;">
 
-                <div class="d-flex flex-column mb-0" style="">
-                  <a href="{{route('register')}}" class="text-left" style="vertical-align:middle;">< I don't have an account</a>
-                  <a href="/" class="text-left" style="vertical-align:middle;">< Back to main page</a>
+                <div class="d-flex flex-column mb-0">
+                  <a href="{{route('register')}}" class="text-left" style="vertical-align: middle; line-height: 1.2;">< I don't have an account</a>
+                  <a href="/" class="text-left" style="vertical-align: middle;">< Back to main page</a>
                 </div>
 
                 <div class="ml-auto">

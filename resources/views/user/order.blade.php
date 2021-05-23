@@ -77,6 +77,10 @@
         </div>
         @endforeach
     </div>
+
+    <!-- Footer -->
+    @include('Template/footer')
+    
     @include('Template/script')
 </body>
 

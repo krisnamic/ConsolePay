@@ -13,10 +13,8 @@
     @include('Template/navbar')
     <div class="container">
         <a href="javascript:history.back()"><i class="fas fa-arrow-left" style="font-size: 50px;"></i></a>
-        <div class="container mt-3 jumbotron">
-            <center>
-                <h1>Shopping Cart</h1>
-            </center>
+        <div class="container mt-3 jumbotron bg-white shadow text-center" style="border-radius: 1em;">
+                <h1 class="text-center">Shopping Cart</h1>
             <div class="wrap">
                 @if(Session::has('outOfStock'))
                 <div class="alert alert-danger">
@@ -35,7 +33,8 @@
                 <p class="alert alert-success">{{ Session::get('deleteItemFromCart') }}<br></p>
                 @endif
                 @if($null_item)
-                <h1>Anda Belum Menambahkan Apapun ke dalam Keranjang</h1>
+                <h3>You haven't added anything to the shopping cart yet.</h3><br>
+                <a href="/#displayBarang" class="btn btn-outline-primary">Browse for a Console</a>
                 @else
                 @foreach($barang as $b)
                 <div class="card mb-3" style="max-width: 540px; flex-direction:column">
@@ -61,6 +60,17 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row row-cols-2">
+                    <div class="col d-flex">
+                        <div class="card shadow d-flex flex-column" style="width: 18rem;">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
                 @endforeach
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
@@ -89,6 +99,9 @@
 
         </div>
     </div>
+
+    <!-- Footer -->
+    @include('Template/footer')
 
     @include('Template/script')
     <script>
