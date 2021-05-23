@@ -44,7 +44,7 @@
             <div class="container-fluid">
                 <div class="card card-primary card-outline">
                 <div class="card-header">
-                <h5 class="m-0">Data of ConsolePay</h5>
+                <h5 class="m-0">Manage Products</h5>
                 </div>
                 <div class="card-body">
                 <div>
