@@ -39,12 +39,12 @@
 
 <body>
     @include('Template/navbar')
+    @if(Session::has('addToShoppingCartSuccess'))
+        <p class="alert alert-success text-center" style="margin: 0; border-radius: 0;">{{ Session::get('addToShoppingCartSuccess') }}<br><a href="/viewShoppingCart">View Shopping Cart</a></p>
+    @endif
     <div class="d-flex flex-row container" style="margin-bottom: 1em; margin-top: 1em;">
-        @if(Session::has('addToShoppingCartSuccess'))
-            <p class="alert alert-success" style="margin: 1em 0;">{{ Session::get('addToShoppingCartSuccess') }}<br><a href="/viewShoppingCart">View Shopping Cart</a></p>
-        @endif
         <div style="margin: 0.5em;">
-            <a href="/#displayBarang"><i class="fas fa-arrow-left" style="font-size:50px;"></i></a>
+            <a href="javascript:history.back()"><i class="fas fa-arrow-left" style="font-size:50px;"></i></a>
         </div>
         <!-- <i class="far fa-chevron-circle-left"></i> -->
         <div class="d-flex align-items-center row no-gutters bg-white position-relative shadow">
@@ -57,10 +57,9 @@
                 <!-- {{$barang->id}} -->
             </div>
             <div class="col-md-6 position-static p-4 pl-md-0">
-
-                <div class="d-flex flex-row align-items-center">
-                    <img src="{{asset('img/logo/'.$barang->logoBarang)}}" class="w-50" alt="...">
-                    <p>{{$barang->merekBarang}}</p>
+                <div class="d-flex flex-row align-items-center" style="margin-right: 1em;">
+                    <img src="{{asset('img/logo/'.$barang->logoBarang)}}" alt="..." style="margin-right: 2em; width: 46%;">
+                    <img src="{{asset('img/merek/'.$barang->merekBarang.'.svg')}}" alt="..." style="width: 46%;">
                 </div>
                 <br>
                 <div class="desc">
@@ -88,13 +87,13 @@
                     @else
                     <button type="submit" class="btn btn-primary">Add To Shopping Cart</button>
                     @endif
-                    <a href="/#displayBarang" class="btn btn-default" role="button">Back to Catalogue</a>
+                    <a href="javascript:history.back()" class="btn btn-default" role="button">Back to Catalogue</a>
 
                     
                 </form>
                     @elseif(Session::missing('user_id'))
                     <a class="btn btn-primary" href="/login" role="button">Add To Shopping Cart</a>
-                    <a href="/#displayBarang" class="btn btn-default" role="button">Back to Catalogue</a>
+                    <a href="javascript:history.back()" class="btn btn-default" role="button">Back to Catalogue</a>
                     @endif
                     
                 <!-- <form action="route('addToShoppingCart') " method="POST"> -->

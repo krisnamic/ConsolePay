@@ -37,8 +37,8 @@
                 <a href="/#displayBarang" class="btn btn-outline-primary">Browse for a Console</a>
                 @else
                 @foreach($barang as $b)
-                <div class="card mb-3" style="max-width: 540px; flex-direction:column">
-                    <div class="row g-0">
+                <div class="card d-flex flex-column mb-3" style="">
+                    <div class="col g-0">
                         <div class="col-md-4">
                             <center>
                                 <img src="{{asset('img/gambar/'.$b[0]->gambarBarang)}}" alt="..." width="100px" style="padding-top: 30px;">
@@ -61,16 +61,15 @@
                     </div>
                 </div>
 
+                <div id="displayBarang" class="container mt-5" style="margin-top: 0;">
                 <div class="row row-cols-2">
                     <div class="col d-flex">
                         <div class="card shadow d-flex flex-column" style="width: 18rem;">
+
                         </div>
                     </div>
                 </div>
-
-
-
-
+                </div>
                 @endforeach
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
