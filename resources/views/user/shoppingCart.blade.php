@@ -12,20 +12,20 @@
 <body>
     @include('Template/navbar')
     @if(Session::has('outOfStock'))
-    <div class="alert alert-danger">
+    <div class="alert alert-danger text-center" style="margin: 0; border-radius: 0;">
         <ul>
             <li>{{Session::get('outOfStock')}}</li>
         </ul>
     </div>
     @endif
     @if(Session::has('addOrderSuccess'))
-    <p class="alert alert-success">{{ Session::get('addOrderSuccess') }}<br><a href="/viewOrder">View Order</a></p>
+    <p class="alert alert-success text-center" style="margin: 0; border-radius: 0;">{{ Session::get('addOrderSuccess') }}<br><a href="/viewOrder">View Order</a></p>
     @endif
     @if(Session::has('addOrderFail'))
-    <p class="alert alert-success">{{ Session::get('addOrderFail') }}</p>
+    <p class="alert alert-success text-center" style="margin: 0; border-radius: 0;">{{ Session::get('addOrderFail') }}</p>
     @endif
     @if(Session::has('deleteItemFromCart'))
-    <p class="alert alert-success">{{ Session::get('deleteItemFromCart') }}<br></p>
+    <p class="alert alert-success text-center" style="margin: 0; border-radius: 0;">{{ Session::get('deleteItemFromCart') }}<br></p>
     @endif
 
     <div class="d-flex flex-row container">
@@ -98,10 +98,6 @@
 
     </div>
     </div>
-
-    <!-- Testing -->
-
-    
 
     <!-- Footer -->
     @include('Template/footer')
