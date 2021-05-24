@@ -11,10 +11,12 @@
 
 <body>
     @include('Template/navbar')
-    <div class="container">
-        <a href="javascript:history.back()"><i class="fas fa-arrow-left" style="font-size: 50px;"></i></a>
-        <div class="container mt-3 jumbotron bg-white shadow text-center" style="border-radius: 1em;">
-                <h1 class="text-center">Shopping Cart</h1>
+    <div class="d-flex flex-row container">
+        <div style="margin: 0.5em">
+            <a href="javascript:history.back()"><i class="fas fa-arrow-left" style="font-size: 50px;"></i></a>
+        </div>
+        <div class="d-flex flex-column container mt-3 jumbotron bg-white shadow text-center" style="border-radius: 1em;">
+            <h1 class="text-center">Shopping Cart</h1>
             <div class="wrap">
                 @if(Session::has('outOfStock'))
                 <div class="alert alert-danger">
@@ -97,6 +99,48 @@
             </div>
 
         </div>
+    </div>
+
+    <!-- Testing -->
+
+    <div class="d-flex flex-column container mt-3 bg-white shadow" style="border-radius: 1em; margin-bottom: 2em;">
+
+        <div id="displayBarang" class="container mt-5" style="margin-top: 0;">
+            <br><br>
+            <div class="text-center" style="margin: 2% 0;">
+                <h1>Shopping Cart</h1>
+            </div>
+            <div class="row row-cols-3">
+            
+                @foreach($barang as $b)
+                <div class="col d-flex">
+                    <div class="card shadow d-flex flex-column flex-fill align-items-center" style="border-radius: 0.4em;">
+                        <div class="d-flex flex-row justify-content-center">
+                            <div style="width: 25%; margin-right: 1em;">
+                                <img src="{{asset('img/gambar/'.$b[0]->gambarBarang)}}" style="width: 100%;" alt="...">
+                            </div>
+                            <div class="">
+                                <p>
+                                    {{$b[0]->namaBarang}}<br>
+                                    {{$b[0]->merekBarang}}<br>
+                                    {{$b[0]->kategoriBarang}}<br>
+                                    Price : {{$b[0]->hargaBarang}}
+                                </p>
+                            </div>
+                        </div>
+                        <form action="{{route('deleteItemFromCart')}}" method="post" style="margin: 1em;">
+                            {{csrf_field()}}
+                            <input type="hidden" name="itemToDelete" value="{{$b[0]->id}}">
+                            <button type="submit" class="btn btn-danger">Delete From Shopping Cart</button>
+                        </form>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            <hr>
+            
+        </div>
+
     </div>
 
     <!-- Footer -->
