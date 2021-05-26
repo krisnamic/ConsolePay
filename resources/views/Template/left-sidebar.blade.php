@@ -51,7 +51,7 @@
 
           @if (auth()->user()->role == "admin")
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ url('barang') }}" class="nav-link">
               <i class="nav-icon fas fa-database"></i>
               <p>
                 Manage Products
@@ -60,7 +60,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ url('barang/viewOrder') }}" class="nav-link">
               <i class="nav-icon fas fa-truck"></i>
               <p>
                 Order Detail

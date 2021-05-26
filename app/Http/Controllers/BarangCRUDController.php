@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Barang;
 use Illuminate\Http\Request;
 use Datatables;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class BarangCRUDController extends Controller
 {
@@ -140,5 +142,67 @@ class BarangCRUDController extends Controller
     {
         $com = Barang::where('id',$request->id)->delete();
         return Response()->json($com);
+    }
+
+    public function viewOrder(Request $request)
+    {
+        // $user_id = $request->session()->get('user_id');
+        $i = 0;
+        // $order = DB::table('pesanan')->where('user_id', $user_id)->latest()->first();
+        $order = DB::table('pesanan')->get();
+        // dd($order);
+        if ($order->isEmpty()) {
+            // dd($i);
+            // dd($i);
+            $barang[$i] = DB::table('barang')->get();
+            return view('barang.order', [
+                'barang' => $barang,
+                'null_item' => 'true',
+            ]);
+            // return view('user.shoppingCart');
+        } else {
+            // dd($order);
+        }
+        // dd($order->id);
+
+        $k = 0;
+        foreach ($order as $o) {
+            $order_id = $o->id;
+            $orderdetail = DB::table('detailpesanan')->where('id_pesanan', $order_id)->get();
+            // $barang;
+            foreach ($orderdetail as $od) {
+                $barang[$i][$k] = DB::table('barang')->where('id', $od->id_barang)->get();
+                $k++;
+            }
+            $k = 0;
+            $i++;
+            // $barangs[$k] = $barang;
+        }
+        // dd($barang);
+        // dd($orderdetail);
+        return view('barang.order', [
+            'order' => $order,
+            'orderdetail' => $orderdetail,
+            'barang' => $barang,
+            'null_item' => false,
+        ]);
+    }
+
+    public function ubahStatusPemesanan(Request $request)
+    {
+        $pesanan = DB::table('pesanan')->where('id', $request->id_pesanan)->get();
+        // dd($pesanan[0]->statusPemesanan);
+        if ($pesanan[0]->statusPemesanan == "Sedang Dikirim") {
+            DB::table('pesanan')->where('id', $request->id_pesanan)->update(['statusPemesanan' => 'Sudah Dikirim']);
+            Session::flash('ubahStatusPemesananBerhasil', 'Berhasil Mengubah Status Pemesanan menjadi Sudah Dikirim');
+            return redirect()->back();
+        } else if ($pesanan[0]->statusPemesanan == "Siap di Pick-up") {
+            DB::table('pesanan')->where('id', $request->id_pesanan)->update(['statusPemesanan' => 'Selesai']);
+            Session::flash('ubahStatusPemesananBerhasil', 'Berhasil Mengubah Status Pemesanan menjadi Selesai');
+            return redirect()->back();
+        } else {
+            Session::flash('ubahStatusPemesananGagal', 'Maaf, Belum bisa mengubah status pemesanan');
+            return redirect()->back();
+        }
     }
 }
