@@ -37,15 +37,10 @@
     <div class="nav-item">
       <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars fa-lg"></i></a>
     </div>
-    <a class="logo-click" href="{{ route('userHome') }}">
       <img src="{{ asset('img/consolepay/consolepay-horizontal.svg')}}" width="240" type="image/svg+xml">
-    </a>
     <div class="ml-auto">
       @if (Route::has('login'))
       @auth
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ url('/') }}" class="nav-link">Home</a>
-      </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{ route('logout')}}" class="nav-link">Logout</a>
       </li>
@@ -183,7 +178,6 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item">Home</li>
                             <li class="breadcrumb-item">Administrator Page</li>
                             <li class="breadcrumb-item active">Order Detail</li>
                             </ol>
