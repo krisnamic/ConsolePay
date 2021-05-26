@@ -35,6 +35,10 @@ Route::post('/savedata', [LoginController::class, 'saveData'])->name('savedata')
 
 Route::group(['middleware' => ['auth', 'checkrole:admin']], function () {
     Route::get('/barang', [BarangCRUDController::class, 'index'])->name('barang');
+    Route::post('/barang/ubahStatus', [BarangCRUDController::class, 'ubahStatusPemesanan']);
+    Route::get('/barang/viewOrder', [BarangCRUDController::class, 'viewOrder']);
+    Route::resource('barang', BarangCRUDController::class);
+    Route::post('delete-barang', [BarangCRUDController::class, 'destroy']);
 });
 Route::group(['middleware' => ['auth', 'checkrole:user']], function () {
     Route::post('/addToShoppingCart', [UserController::class, 'addToShoppingCart'])->name('addToShoppingCart');
@@ -45,7 +49,3 @@ Route::group(['middleware' => ['auth', 'checkrole:user']], function () {
     Route::post('/ubahStatusPemesanan', [UserController::class, 'ubahStatusPemesanan'])->name('ubahStatusPemesanan');
 });
 Route::get('/{id}', [UserController::class, 'detailBarang'])->name('detailBarang');
-
-//datatables
-Route::resource('barang', BarangCRUDController::class);
-Route::post('delete-barang', [BarangCRUDController::class, 'destroy']);
