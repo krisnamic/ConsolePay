@@ -18,9 +18,7 @@
 </head>
 
 <body class="antialiased">
-    <section id="loading">
-        <div id="loading-content"></div>
-    </section>
+    <div id="load"></div>
     <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
 
         <!-- Navbar -->
@@ -91,11 +89,17 @@
             <div class="text-center" style="margin: 2% 0;" data-aos="zoom-in" data-aos-anchor-placement="top-bottom">
                 <h1>Video Game Console Catalogue</h1>
             </div>
-            <div class="row row-cols-5">
+            <div class="row row-cols-4">
                 @foreach($barang as $b)
+                
+                @if($b->stokBarang === 0)
+                <div class="col-disabled d-flex">
+                    <div class="card shadow d-flex" style="width: 18rem; border-radius: 0.4em; opacity: 50%;">
+                @else
                 <div class="col d-flex">
-                    <div class="card shadow d-flex" style="width: 18rem;">
-                        <div class="bg-red-home text-center" style="font-size: 1.2em;">
+                    <div class="card shadow d-flex" style="width: 18rem; border-radius: 0.4em;">
+                @endif
+                        <div class="bg-red-home text-center" style="font-size: 1.2em; border-radius: 0.4em 0.4em 0 0;">
                             {{$b->namaBarang}}
                         </div>
                         <a href="/{{$b->id}}" style="color:black">
@@ -130,7 +134,7 @@
             </div>
         </div>
 
-        <br>
+        <br><br>
 
         <!-- Footer -->
         @include('Template/footer')
@@ -141,9 +145,13 @@
         AOS.init();
     </script>
     <script>
-        $(window).load(function() {
-            $('#loading').hide();
-        });
+        document.onreadystatechange = function () {
+        var state = document.readyState
+        if (state == 'complete') {
+                document.getElementById('interactive');
+                document.getElementById('load').style.visibility="hidden";
+        }
+        }
     </script>
     @include('Template/script')
 </body>

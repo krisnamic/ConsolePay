@@ -111,8 +111,8 @@
                   </div>
                 </div> -->
                 <div class="d-flex flex-column mb-0">
-                  <a href="{{route('login')}}" class="text-left" style="vertical-align:middle;">< I already have an account</a>
-                  <a href="/" class="text-left" style="vertical-align:middle;">< Back to main page</a>
+                  <a href="{{route('login')}}" class="text-left" style="vertical-align: middle; line-height: 1.2;">< I already have an account</a>
+                  <a href="/" class="text-left" style="vertical-align: middle;">< Back to main page</a>
                 </div>
                 
                 <!-- captcha -->

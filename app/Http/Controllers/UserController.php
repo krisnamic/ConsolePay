@@ -110,7 +110,7 @@ class UserController extends Controller
         $user_id = $request->session()->get('user_id');
         $grandTotalPrice = $request->day * $request->totalprice;
         $date = date('Y-m-d H:i:s');
-        $status_pemesanan = "Sedang Dikirim";
+        $status_pemesanan = "Sudah Dikirim";
 
         $order = new Pesanan;
         $order->user_id = $user_id;
