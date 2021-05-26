@@ -22,7 +22,55 @@
     <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
 
         <!-- Navbar -->
-        @include('Template/navbar')
+        <nav class="main-header header sticky-top navbar-expand navbar-white navbar-light text-center">
+        <!-- Left navbar links -->
+        <!-- <ul class="navbar-nav"> -->
+            <!-- <div class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </div> -->
+            <!-- <li class="nav-item d-none d-sm-inline-block">
+                <a href="index3.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="#" class="nav-link">Contact</a>
+            </li> -->
+            <!-- </ul> -->
+
+        <div class="d-flex header-child bg-white navbar">
+            <!-- <div class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars fa-lg"></i></a>
+            </div> -->
+            <a class="logo-click" href="{{ route('userHome') }}">
+            <img src="{{ asset('img/consolepay/consolepay-horizontal.svg')}}" width="240" type="image/svg+xml">
+            </a>
+            <div class="ml-auto">
+            @if (Route::has('login'))
+            @auth
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{ route('logout')}}" class="nav-link">Logout</a>
+            </li>
+            @if(Session::has('user_id'))
+            <li class="nav-item d-none d-sm-inline-block" style="margin-left: 15px; margin-right: 15px;">
+                <a href="{{route('viewShoppingCart')}}"><i class="fas fa-shopping-cart"></i></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{route('viewOrder')}}"><i class="fas fa-truck"></i></a>
+            </li>
+            @endif
+            @else
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{ route('login') }}" class="nav-link">Login</a>
+            </li>
+            @if (Route::has('register'))
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{ route('register') }}" class="nav-link">Register</a>
+            </li>
+            @endif
+            @endauth
+            @endif
+            </div>
+        </div>
+        </nav>
 
         <!-- Section 1: Main Logo -->
         <div class="main-section max-w-6xl mx-auto sm:px-6 lg:px-8 bg-section-1">
