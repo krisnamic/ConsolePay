@@ -11,6 +11,21 @@
 <body>
     @include('Template/navbar')
     <?php $i = 0 ?>
+    @if(Session::has('ubahStatusPemesananBerhasil'))
+        <div class="alert alert-success">
+            <ul>
+                <li>{{Session::get('ubahStatusPemesananBerhasil')}}</li>
+            </ul>
+        </div>
+    @endif
+    @if(Session::has('ubahStatusPemesananGagal'))
+        <div class="alert alert-danger">
+            <ul>
+                <li>{{Session::get('ubahStatusPemesananGagal')}}</li>
+            </ul>
+        </div>
+    @endif
+
     <div class="container mt-3">
         <a href="javascript:history.back()"><i class="fas fa-arrow-left" style="font-size: 50px;"></i></a>
         @foreach($barang as $bar)
@@ -25,20 +40,6 @@
 
                 @foreach($bar as $b)
                 <div class="card mb-3" style="max-width: 540px;">
-                    @if(Session::has('ubahStatusPemesananBerhasil'))
-                    <div class="alert alert-success">
-                        <ul>
-                            <li>{{Session::get('ubahStatusPemesananBerhasil')}}</li>
-                        </ul>
-                    </div>
-                    @endif
-                    @if(Session::has('ubahStatusPemesananGagal'))
-                    <div class="alert alert-danger">
-                        <ul>
-                            <li>{{Session::get('ubahStatusPemesananGagal')}}</li>
-                        </ul>
-                    </div>
-                    @endif
                     <div class="row g-0">
                         <div class="col-md-4">
                             <center>

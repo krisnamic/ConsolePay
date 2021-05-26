@@ -179,12 +179,13 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">View Order Page</h1>
+                            <h1 class="m-0 text-dark">Administrator Page</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Administrator Page</li>
+                            <li class="breadcrumb-item">Administrator Page</li>
+                            <li class="breadcrumb-item active">Order Detail</li>
                             </ol>
                         </div>
                     </div>
@@ -196,24 +197,11 @@
             <div class="container-fluid">
                 <div class="card card-primary card-outline">
                 <div class="card-header">
-                <h5 class="m-0">Manage Products</h5>
+                <h5 class="m-0">Order Detail</h5>
                 </div>
                 <div class="card-body">
                 <div>
-                    
-                @foreach($barang as $bar)
-        <div class="card">
-            <div class="card-header">
-                <h1>Pesanan</h1>
-            </div>
-            <div class="card-body">
-                @if($null_item)
-                <h1>Anda Belum Memesan</h1>
-                @else
-
-                @foreach($bar as $b)
-                <div class="card mb-3" style="max-width: 540px;">
-                    @if(Session::has('ubahStatusPemesananBerhasil'))
+                @if(Session::has('ubahStatusPemesananBerhasil'))
                     <div class="alert alert-success">
                         <ul>
                             <li>{{Session::get('ubahStatusPemesananBerhasil')}}</li>
@@ -227,6 +215,18 @@
                         </ul>
                     </div>
                     @endif
+                @foreach($barang as $bar)
+        <div class="card">
+            <div class="card-header">
+                <h1>Pesanan</h1>
+            </div>
+            <div class="card-body">
+                @if($null_item)
+                <h1>Anda Belum Memesan</h1>
+                @else
+
+                @foreach($bar as $b)
+                <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="col-md-4">
                             <center>
