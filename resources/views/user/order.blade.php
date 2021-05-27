@@ -26,11 +26,11 @@
     @endif
     <?php $i = 0 ?>
 
-    <div class="d-flex flex-row container mt-3">
+    <div class="d-flex flex-row container mt-3 justify-content-center">
         <div style="margin: 0.5em;">
             <a href="javascript:history.back()"><i class="fas fa-arrow-left" style="font-size: 50px;"></i></a>
         </div>
-        <div class="d-flex flex-row row row-cols-2">
+        <div class="d-flex flex-row row row-cols-2" style="width: 100%;">
             @foreach($barang as $bar)
             <div class="card">
                 <div class="card-header">
