@@ -60,7 +60,7 @@
                                     {{$b[0]->namaBarang}}<br>
                                     {{$b[0]->merekBarang}}<br>
                                     {{$b[0]->kategoriBarang}}<br>
-                                    Price : {{$b[0]->hargaBarang}}
+                                    Price : Rp{{$b[0]->hargaBarang}}
                                 </p>
                             </div>
                         </div>
@@ -79,11 +79,11 @@
             <hr>
             <form action="{{route('addOrder')}}" method="post" class="text-right">
                 {{csrf_field()}}
-                <h5 class="text-right">Price for a Day : {{$totalPrice1Day}} </h5>
-                <h5 class="text-right">Rent Duration : <input type="number" min="1" id="day" class="day" name="day" required value="1" style="width: 3.2vw;"> day</h5>           
+                <h5 class="text-right">Price for a Day : Rp{{$totalPrice1Day}} </h5>
+                <h5 class="text-right">Rent Duration : <input type="number" min="1" max="99" id="day" class="day text-center" name="day" required value="1"> day</h5>           
                 <input type="hidden" value="{{$totalPrice1Day}}" id="tes" name="totalprice">
                 <br>
-                <h5 class="text-right"><strong style="font-size: 1em;">Total Price : <span id="result" style="font-size: 1em;">{{$totalPrice1Day}}</span></strong></h5>
+                <h5 class="text-right"><strong style="font-size: 1em;">Total Price : <span id="result" style="font-size: 1em;">Rp{{$totalPrice1Day}}</span></strong></h5>
                 <?php $i = 0 ?>
                 @foreach($barang as $b)
                 <input type="hidden" value="{{$b[0]->id}}" id="id_barang{{$loop->iteration}}" name="id_barang[{{$loop->iteration}}]">
