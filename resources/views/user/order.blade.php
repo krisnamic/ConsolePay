@@ -26,21 +26,6 @@
     @endif
     <?php $i = 0 ?>
 
-    @if(Session::has('ubahStatusPemesananBerhasil'))
-        <div class="alert alert-success">
-            <ul>
-                <li>{{Session::get('ubahStatusPemesananBerhasil')}}</li>
-            </ul>
-        </div>
-    @endif
-    @if(Session::has('ubahStatusPemesananGagal'))
-        <div class="alert alert-danger">
-            <ul>
-                <li>{{Session::get('ubahStatusPemesananGagal')}}</li>
-            </ul>
-        </div>
-    @endif
-
     <div class="d-flex flex-row container mt-3">
         <div style="margin: 0.5em;">
             <a href="javascript:history.back()"><i class="fas fa-arrow-left" style="font-size: 50px;"></i></a>

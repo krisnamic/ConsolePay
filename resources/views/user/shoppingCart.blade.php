@@ -35,11 +35,11 @@
                 <p style="color: #448cff;">Back to Menu</p>
             </a>
         </div>
-        <div class="d-flex flex-column container jumbotron bg-white shadow text-center" style="border-radius: 1em;">
+        <div class="d-flex flex-column container jumbotron bg-white shadow text-center" style="border-radius: 1em; padding: 40px;">
 
         <div id="displayBarang" class="container" style="margin-top: 0;">
+            <h1 class="text-center">Shopping Cart</h1>
             <div class="text-center" style="margin: 2% 0;">
-                <h1>Shopping Cart</h1>
                 @if($null_item)
                 <div class="wrap d-flex flex-column justify-content-center text-center" style="">
                     <h3>You haven't added anything to the shopping cart yet.</h3><br>
@@ -47,7 +47,7 @@
                 </div>
                 @else
             </div>
-            <div class="d-flex justify-content-center row row-cols-3">
+            <div class="d-flex justify-content-center row row-cols-2">
                
                 @foreach($barang as $b)
                 <div class="col d-flex">
@@ -56,7 +56,7 @@
                             <div style="width: 25%; margin-right: 1em;">
                                 <img src="{{asset('img/gambar/'.$b[0]->gambarBarang)}}" style="width: 100%;" alt="...">
                             </div>
-                            <div class="">
+                            <div class="" style="text-align: justify;">
                                 <p>
                                     {{$b[0]->namaBarang}}<br>
                                     {{$b[0]->merekBarang}}<br>
@@ -78,15 +78,17 @@
             @if($null_item)
             @else
             <hr>
-            <form action="{{route('addOrder')}}" method="post" class="text-center">
+            <form action="{{route('addOrder')}}" method="post" class="text-right">
                 {{csrf_field()}}
-                <h5 class="">Total Price For 1 day : {{$totalPrice1Day}} </h5>
-                <div class="">
+                <h5 class="text-right">Price For 1 day : {{$totalPrice1Day}} </h5>
+                <!-- <div class="">
                     <label>Total Price</label>
                     <output id="result">{{$totalPrice1Day}}</output>
+                </div> -->
+                <div>
+                    <h5 class="text-right">Lama Order : <input type="number" min="1" id="day" class="day" name="day" required value="1" style="width: 7.4vw;"></h5>
+                    
                 </div>
-                <p style="margin-bottom: 0;">Lama Order : </p>
-                <input type="number" min="1" id="day" class="day" name="day" required value="1">
                 <input type="hidden" value="{{$totalPrice1Day}}" id="tes" name="totalprice">
                 <?php $i = 0 ?>
                 @foreach($barang as $b)
@@ -98,7 +100,6 @@
             </form>
             @endif
         </div>
-
     </div>
     </div>
 
