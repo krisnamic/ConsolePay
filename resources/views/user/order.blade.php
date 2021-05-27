@@ -51,10 +51,10 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h6 class="card-text">{{$b[0]->namaBarang}}</h6>
-                                        <h6 class="card-text">{{$b[0]->merekBarang}}</h6>
-                                        <h6 class="card-text">{{$b[0]->kategoriBarang}}</h6>
-                                        <h6 class="card-text">Price : {{$b[0]->hargaBarang}}</h6>
+                                        <h6 class="card-text"><strong>{{$b[0]->namaBarang}}</strong></h6>
+                                        <h6 class="card-text"><strong>{{$b[0]->merekBarang}}</strong></h6>
+                                        <h6 class="card-text"><strong>{{$b[0]->kategoriBarang}}</strong></h6>
+                                        <h6 class="card-text"><strong>Price : {{$b[0]->hargaBarang}}</strong></h6>
                                         <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                                     </div>
                                 </div>
