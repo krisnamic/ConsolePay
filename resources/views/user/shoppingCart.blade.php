@@ -81,10 +81,10 @@
             <form action="{{route('addOrder')}}" method="post" class="text-right">
                 {{csrf_field()}}
                 <h5 class="text-right">Price For 1 day : {{$totalPrice1Day}} </h5>
-                <!-- <div class="">
+                <div class="">
                     <label>Total Price</label>
                     <output id="result">{{$totalPrice1Day}}</output>
-                </div> -->
+                </div>
                 <div>
                     <h5 class="text-right">Lama Order : <input type="number" min="1" id="day" class="day" name="day" required value="1" style="width: 7.4vw;"></h5>
                     
