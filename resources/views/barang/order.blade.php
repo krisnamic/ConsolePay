@@ -209,35 +209,37 @@
                         </ul>
                     </div>
                     @endif
-                @foreach($barang as $bar)
-        <div class="card">
-            <div class="card-header">
-                <h1>Pesanan</h1>
-            </div>
-            <div class="card-body">
-                @if($null_item)
-                <h1>Anda Belum Memesan</h1>
-                @else
 
-                @foreach($bar as $b)
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <center>
-                                <img src="{{asset('img/gambar/'.$b[0]->gambarBarang)}}" alt="..." width="100px" style="padding-top: 30px;">
-                            </center>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">{{$b[0]->namaBarang}}</h5><br>
-                                <h5 class="card-title">{{$b[0]->merekBarang}}</h5><br>
-                                <h5 class="card-title">{{$b[0]->kategoriBarang}}</h5>
-                                <p class="card-text">Harga : {{$b[0]->hargaBarang}}</p>
-                                <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+        <div class="d-flex flex-row row row-cols-2">
+                    @foreach($barang as $bar)
+            <div class="card">
+                <div class="card-header">
+                    <h1>Orders #{{$order[$i]->id}}</h1>
+                </div>
+                @if($null_item)
+                <div class="card-body">
+                    <h1>You haven't ordered yet.</h1>
+                    @else
+                    <div class="card-body">
+                        @foreach($bar as $b)
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <center>
+                                        <img src="{{asset('img/gambar/'.$b[0]->gambarBarang)}}" alt="..." width="100px" style="padding-top: 30px;">
+                                    </center>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{$b[0]->namaBarang}}</h5><br>
+                                        <h5 class="card-title">{{$b[0]->merekBarang}}</h5><br>
+                                        <h5 class="card-title">{{$b[0]->kategoriBarang}}</h5>
+                                        <p class="card-text">Price : {{$b[0]->hargaBarang}}</p>
+                                        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
                 @endforeach
                 <h5 class="card-title">ID Pemesanan : {{$order[$i]->id}}</h5>
                 <p class="card-text"> Tanggal Pemesanan : {{$order[$i]->tanggalPemesanan}}</p>
@@ -260,9 +262,9 @@
             </div>
         </div>
         @endforeach
-
+            </div>
                 </div>
-
+            </div>
             </div>
             </div>
             </div>
