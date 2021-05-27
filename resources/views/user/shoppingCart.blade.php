@@ -48,7 +48,6 @@
                 @else
             </div>
             <div class="d-flex justify-content-center row row-cols-2">
-               
                 @foreach($barang as $b)
                 <div class="col d-flex">
                     <div class="card shadow d-flex flex-column flex-fill align-items-center" style="border-radius: 0.4em;">
@@ -81,15 +80,10 @@
             <form action="{{route('addOrder')}}" method="post" class="text-right">
                 {{csrf_field()}}
                 <h5 class="text-right">Price For 1 day : {{$totalPrice1Day}} </h5>
-                <!-- <div class="">
-                    <label>Total Price</label>
-                    <output id="result">{{$totalPrice1Day}}</output>
-                </div> -->
-                <div>
-                    <h5 class="text-right">Lama Order : <input type="number" min="1" id="day" class="day" name="day" required value="1" style="width: 7.4vw;"></h5>
-                    
-                </div>
+                <h5 class="text-right">Lama Order : <input type="number" min="1" id="day" class="day" name="day" required value="1" style="width: 4.8vw;"></h5>           
                 <input type="hidden" value="{{$totalPrice1Day}}" id="tes" name="totalprice">
+                <br>
+                <h5 class="text-right"><strong style="font-size: 1em;">Total Price : <span id="result" style="font-size: 1em;">{{$totalPrice1Day}}</span></strong></h5>
                 <?php $i = 0 ?>
                 @foreach($barang as $b)
                 <input type="hidden" value="{{$b[0]->id}}" id="id_barang{{$loop->iteration}}" name="id_barang[{{$loop->iteration}}]">
