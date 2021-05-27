@@ -41,7 +41,7 @@
             <h1 class="text-center">Shopping Cart</h1>
             <div class="text-center" style="margin: 2% 0;">
                 @if($null_item)
-                <div class="wrap d-flex flex-column justify-content-center text-center" style="">
+                <div class="wrap d-flex flex-column justify-content-center text-center">
                     <h3>You haven't added anything to the shopping cart yet.</h3><br>
                     <a href="/#displayBarang" class="btn btn-outline-primary">Browse for a Console</a>
                 </div>
