@@ -28,7 +28,7 @@
 
     <div class="d-flex flex-row container mt-3 justify-content-center">
         <div style="margin: 0.5em;">
-            <a href="javascript:history.back()"><i class="fas fa-arrow-left" style="font-size: 50px;"></i></a>
+            <a href="javascript:history.back()"><i class="fas fa-arrow-left" style="font-size: 50px; text-indent: -1em; position: fixed;"></i></a>
         </div>
         <div class="d-flex flex-row row row-cols-2" style="width: 100%;">
             @foreach($barang as $bar)

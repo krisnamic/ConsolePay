@@ -147,7 +147,7 @@
                 <div class="col d-flex justify-content-center">
                     <div class="card shadow d-flex" style="width: 18rem; border-radius: 0.4em;">
                 @endif
-                        <div class="bg-red-home text-center" style="font-size: 1.2em; border-radius: 0.4em 0.4em 0 0;">
+                        <div class="bg-red-home text-center" style="font-size: 1.5em; border-radius: 0.4em 0.4em 0 0;">
                             {{$b->namaBarang}}
                         </div>
                         <a href="/{{$b->id}}" style="color:black">
@@ -155,8 +155,8 @@
                             <div class="card-body text-center">
                                 <img src="{{asset('img/logo/'.$b->logoBarang)}}" class="card-img-top" alt="...">
                                 <!-- <h3 class="card-title">{{$b->namaBarang}}</h3> -->
-                                <p class="card-text" style="margin-top: 10%;">Rp{{$b->hargaBarang}}</p>
-                                <p class="card-text">Available : {{$b->stokBarang}}</p>
+                                <p class="card-text" style="margin-top: 10%; font-size: 1.5em;">Rp{{$b->hargaBarang}}</p>
+                                <p class="card-text" style="font-size: 1.2em;">Available : {{$b->stokBarang}}</p>
                                 <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
                         </a>
