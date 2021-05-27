@@ -117,7 +117,7 @@
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 section-2" style="margin: 2%;">
             <div class="flex mt-8 bg-green-home dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                 <div class="d-flex justify-content-center" style="margin: 0; margin-top: 2%; width: 100%;">
-                    <img src="img/pendukung/playingGames.png" class="w-30 shadow" alt="" data-aos="zoom-in" data-aos-delay="50">
+                    <img src="{{ asset('img/pendukung/playingGames.png')}}" class="w-30 shadow" alt="" data-aos="zoom-in" data-aos-delay="50">
                 </div>
                 <div class="text-center" style="margin: 2% 0;" data-aos="zoom-in" data-aos-anchor-placement="top-bottom">
                     <h1>Have some <strong style="font-size: 50px;">FUN</strong> with your new console!</h1>
