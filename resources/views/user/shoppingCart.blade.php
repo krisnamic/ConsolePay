@@ -79,8 +79,8 @@
             <hr>
             <form action="{{route('addOrder')}}" method="post" class="text-right">
                 {{csrf_field()}}
-                <h5 class="text-right">Price For 1 day : {{$totalPrice1Day}} </h5>
-                <h5 class="text-right">Lama Order : <input type="number" min="1" id="day" class="day" name="day" required value="1" style="width: 4.8vw;"></h5>           
+                <h5 class="text-right">Price for a Day : {{$totalPrice1Day}} </h5>
+                <h5 class="text-right">Rent Duration : <input type="number" min="1" id="day" class="day" name="day" required value="1" style="width: 3.2vw;"> day</h5>           
                 <input type="hidden" value="{{$totalPrice1Day}}" id="tes" name="totalprice">
                 <br>
                 <h5 class="text-right"><strong style="font-size: 1em;">Total Price : <span id="result" style="font-size: 1em;">{{$totalPrice1Day}}</span></strong></h5>
