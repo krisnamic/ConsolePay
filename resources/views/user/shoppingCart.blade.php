@@ -30,7 +30,10 @@
 
     <div class="d-flex flex-row container">
         <div style="margin: 0.5em">
-            <a href="javascript:history.back()"><i class="fas fa-arrow-left" style="font-size: 50px;"></i></a>
+            <a href="{{ url('/#displayBarang') }}">
+                <i class="fas fa-arrow-left" style="font-size: 50px;"></i>
+                <p style="color: #448cff;">Back to Menu</p>
+            </a>
         </div>
         <div class="d-flex flex-column container jumbotron bg-white shadow text-center" style="border-radius: 1em;">
 

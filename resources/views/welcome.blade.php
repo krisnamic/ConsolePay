@@ -141,10 +141,10 @@
                 @foreach($barang as $b)
                 
                 @if($b->stokBarang === 0)
-                <div class="col-disabled d-flex">
+                <div class="col-disabled d-flex justify-content-center">
                     <div class="card shadow d-flex" style="width: 18rem; border-radius: 0.4em; opacity: 50%;">
                 @else
-                <div class="col d-flex">
+                <div class="col d-flex justify-content-center">
                     <div class="card shadow d-flex" style="width: 18rem; border-radius: 0.4em;">
                 @endif
                         <div class="bg-red-home text-center" style="font-size: 1.2em; border-radius: 0.4em 0.4em 0 0;">

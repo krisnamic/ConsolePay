@@ -22,12 +22,9 @@
     <div class="ml-auto">
       @if (Route::has('login'))
       @auth
-      <li class="nav-item d-none d-sm-inline-block">
+      <!-- <li class="nav-item d-none d-sm-inline-block">
         <a href="{{ url('/') }}" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ route('logout')}}" class="nav-link">Logout</a>
-      </li>
+      </li> -->
       @if(Session::has('user_id'))
       <li class="nav-item d-none d-sm-inline-block" style="margin-left: 15px; margin-right: 15px;">
         <a href="{{route('viewShoppingCart')}}"><i class="fas fa-shopping-cart"></i></a>
@@ -36,15 +33,18 @@
         <a href="{{route('viewOrder')}}"><i class="fas fa-truck"></i></a>
       </li>
       @endif
-      @else
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ route('login') }}" class="nav-link">Login</a>
+        <a href="{{ route('logout')}}" class="nav-link">Logout</a>
       </li>
+      @else
       @if (Route::has('register'))
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{ route('register') }}" class="nav-link">Register</a>
       </li>
       @endif
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ route('login') }}" class="nav-link">Login</a>
+      </li>
       @endauth
       @endif
     </div>
