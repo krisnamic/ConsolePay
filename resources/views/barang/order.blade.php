@@ -254,7 +254,7 @@
                     @elseif($order[$i]->statusPemesanan == "Siap di Pick-up" )
                     <button type="submit" class="btn btn-primary">Ubah Menjadi Selesai</button>
                     @else
-                    <button type="submit" class="btn btn-primary" disabled>Tidak Dapat Mengubah Status</button>
+                    <button type="submit" class="btn btn-danger" disabled><i class="fas fa-lock"></i>&nbsp;&nbsp;Tidak Dapat Mengubah Status</button>
                     @endif
                 </form>
                 <?php $i++; ?>

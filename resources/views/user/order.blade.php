@@ -65,14 +65,14 @@
                         <p class="card-text"><strong>Date :</strong> {{$order[$i]->tanggalPemesanan}}
                         <p class="card-text"><strong>Duration :</strong> {{$order[$i]->jumlahHari}} @if($order[$i]->jumlahHari === 1) day @else days @endif
                         <p class="card-text"><strong>Price :</strong> Rp{{$order[$i]->hargaTotal}} </p>
-                        <p class="card-text"><strong>Status :</strong> @if($order[$i]->statusPemesanan === "Sudah Dikirim") Delivered @else Delivering @endif</p>
+                        <p class="card-text"><strong>Status :</strong> {{$order[$i]->statusPemesanan}}</p>
                         <form action="{{route('ubahStatusPemesanan')}}" method="post">
                             {{csrf_field()}}
                             <input type="hidden" name="id_pesanan" value="{{$order[$i]->id}}">
                             @if($order[$i]->statusPemesanan == "Sudah Dikirim" )
-                            <button type="submit" class="btn btn-primary">Change Order Status</button>
+                            <button type="submit" class="btn btn-primary">Ubah Menjadi Siap di Pickup</button>
                             @else
-                            <button type="submit" class="btn btn-primary" disabled>Change Order Status</button>
+                            <button type="submit" class="btn btn-danger" disabled><i class="fas fa-lock"></i>&nbsp;&nbsp;Tidak Dapat Mengubah Status</button>
                             @endif
                         </form>
                         <?php $i++; ?>
