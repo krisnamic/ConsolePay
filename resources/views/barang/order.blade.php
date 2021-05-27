@@ -231,21 +231,21 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h5 class="card-title">{{$b[0]->namaBarang}}</h5><br>
-                                        <h5 class="card-title">{{$b[0]->merekBarang}}</h5><br>
-                                        <h5 class="card-title">{{$b[0]->kategoriBarang}}</h5>
-                                        <p class="card-text">Price : {{$b[0]->hargaBarang}}</p>
+                                        <h6 class="card-text">{{$b[0]->namaBarang}}</h6>
+                                        <h6 class="card-text">{{$b[0]->merekBarang}}</h6>
+                                        <h6 class="card-text">{{$b[0]->kategoriBarang}}</h6>
+                                        <h6 class="card-text">Price : {{$b[0]->hargaBarang}}</h6>
                                         <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                                     </div>
                                 </div>
                             </div>
                         </div>
                 @endforeach
-                <h5 class="card-title">ID Pemesanan : {{$order[$i]->id}}</h5>
-                <p class="card-text"> Tanggal Pemesanan : {{$order[$i]->tanggalPemesanan}}</p>
-                <p class="card-text"> Lama Pemesnanan : {{$order[$i]->jumlahHari}} hari</p>
-                <p class="card-text"> Harga Total : Rp{{$order[$i]->hargaTotal}} </p>
-                <p class="card-text"> Status Pemesanan : {{$order[$i]->statusPemesanan}} </p>
+                <p><strong>ID :</strong> {{$order[$i]->id}}
+                <p class="card-text"><strong>Date :</strong> {{$order[$i]->tanggalPemesanan}}
+                <p class="card-text"><strong>Duration :</strong> {{$order[$i]->jumlahHari}} @if($order[$i]->jumlahHari === 1) day @else days @endif
+                <p class="card-text"><strong>Price :</strong> Rp{{$order[$i]->hargaTotal}} </p>
+                <p class="card-text"><strong>Status:</strong> {{$order[$i]->statusPemesanan}} </p>
                 <form action="{{ url('barang/ubahStatus') }}" method="post">
                     {{csrf_field()}}
                     <input type="hidden" name="id_pesanan" value="{{$order[$i]->id}}">
