@@ -137,7 +137,7 @@
             <div class="text-center" style="margin: 2% 0;" data-aos="zoom-in" data-aos-anchor-placement="top-bottom">
                 <h1>Video Game Console Catalogue</h1>
             </div>
-            <div class="row row-cols-4">
+            <div class="row row-cols-lg-4">
                 @foreach($barang as $b)
                 
                 @if($b->stokBarang === 0)

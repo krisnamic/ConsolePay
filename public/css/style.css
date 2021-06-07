@@ -65,7 +65,7 @@ body {
     height:100%;
     position:fixed;
     z-index:9999;
-    background:url("../img/pendukung/playingGames.png") no-repeat center center black;
+    background:url("../img/pendukung/loading.svg") no-repeat center center black;
 }
 
 /* Header + Footer */
@@ -268,3 +268,4 @@ h5 {
 .desc strong {
     margin-bottom: 0;
 }
+
