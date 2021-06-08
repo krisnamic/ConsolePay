@@ -99,7 +99,7 @@ body {
     display: block;
     margin: 0 auto;
     padding-bottom: 2em;
-    max-width: 90vh;
+    max-width: clamp(40vh, 50%, 90vh);
 }
 
 .bg-red-home {
