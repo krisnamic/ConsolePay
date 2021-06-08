@@ -20,3 +20,7 @@ Options +SymLinksIfOwnerMatch.
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 </IfModule>
+
+<FilesMatch “.(eot|otf|ttf|woff|woff2)”>
+Header always set Access-Control-Allow-Origin “*”
+</FilesMatch>
