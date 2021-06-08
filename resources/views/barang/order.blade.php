@@ -1,72 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>ConsolePay</title>
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/fontawesome-free/css/all.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('AdminLTE/dist/css/adminlte.min.css') }}">
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <link  href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
-        <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-    </head>
-    <body class="hold-transition sidebar-mini">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ConsolePay</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('AdminLTE/dist/css/adminlte.min.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+</head>
+
+<body class="hold-transition sidebar-mini">
     <?php $i = 0 ?>
-        <div class="wrapper">
+    <div class="wrapper">
 
         <nav class="main-header header sticky-top navbar-expand navbar-white navbar-light text-center">
-  <!-- Left navbar links -->
-  <!-- <ul class="navbar-nav"> -->
-      <!-- <div class="nav-item">
+            <!-- Left navbar links -->
+            <!-- <ul class="navbar-nav"> -->
+            <!-- <div class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </div> -->
-      <!-- <li class="nav-item d-none d-sm-inline-block">
+            <!-- <li class="nav-item d-none d-sm-inline-block">
         <a href="index3.html" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
       </li> -->
-    <!-- </ul> -->
+            <!-- </ul> -->
 
-  <div class="d-flex header-child bg-white navbar">
-    <div class="nav-item">
-      <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars fa-lg"></i></a>
-    </div>
-      <img src="{{ asset('img/consolepay/consolepay-horizontal.svg')}}" width="240" type="image/svg+xml">
-    <div class="ml-auto">
-      @if (Route::has('login'))
-      @auth
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ route('logout')}}" class="nav-link">Logout</a>
-      </li>
-      @if(Session::has('user_id'))
-      <li class="nav-item d-none d-sm-inline-block" style="margin-left: 15px; margin-right: 15px;">
-        <a href="{{route('viewShoppingCart')}}"><i class="fas fa-shopping-cart"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{route('viewOrder')}}"><i class="fas fa-truck"></i></a>
-      </li>
-      @endif
-      @else
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ route('login') }}" class="nav-link">Login</a>
-      </li>
-      @if (Route::has('register'))
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ route('register') }}" class="nav-link">Register</a>
-      </li>
-      @endif
-      @endauth
-      @endif
-    </div>
-  </div>
+            <div class="d-flex header-child bg-white navbar">
+                <div class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars fa-lg"></i></a>
+                </div>
+                <img src="{{ asset('img/consolepay/consolepay-horizontal.svg')}}" width="240" type="image/svg+xml">
+                <div class="ml-auto">
+                    @if (Route::has('login'))
+                    @auth
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a href="{{ route('logout')}}" class="nav-link">Logout</a>
+                    </li>
+                    @if(Session::has('user_id'))
+                    <li class="nav-item d-none d-sm-inline-block" style="margin-left: 15px; margin-right: 15px;">
+                        <a href="{{route('viewShoppingCart')}}"><i class="fas fa-shopping-cart"></i></a>
+                    </li>
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a href="{{route('viewOrder')}}"><i class="fas fa-truck"></i></a>
+                    </li>
+                    @endif
+                    @else
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a href="{{ route('login') }}" class="nav-link">Login</a>
+                    </li>
+                    @if (Route::has('register'))
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a href="{{ route('register') }}" class="nav-link">Register</a>
+                    </li>
+                    @endif
+                    @endauth
+                    @endif
+                </div>
+            </div>
 
-        <!-- SEARCH FORM 
+            <!-- SEARCH FORM 
             <form class="form-inline ml-3">
                 <div class="input-group input-group-sm">
                 <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
@@ -164,12 +166,12 @@
                     class="fas fa-th-large"></i></a>
                 </li> -->
             <!-- </ul> -->
-            </nav>
+        </nav>
 
-            @include('Template/left-sidebar')
+        @include('Template/left-sidebar')
 
-            <div class="content-wrapper">
-            
+        <div class="content-wrapper">
+
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
@@ -178,8 +180,8 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item">Administrator Page</li>
-                            <li class="breadcrumb-item active">Order Detail</li>
+                                <li class="breadcrumb-item">Administrator Page</li>
+                                <li class="breadcrumb-item active">Order Detail</li>
                             </ol>
                         </div>
                     </div>
@@ -188,154 +190,185 @@
 
 
             <div class="content">
-            <div class="container-fluid">
-                <div class="card card-primary card-outline">
-                <div class="card-header">
-                <h5 class="m-0">Order Detail</h5>
-                </div>
-                <div class="card-body">
-                <div>
-                @if(Session::has('ubahStatusPemesananBerhasil'))
-                    <div class="alert alert-success">
-                        <ul>
-                            <li>{{Session::get('ubahStatusPemesananBerhasil')}}</li>
-                        </ul>
-                    </div>
-                    @endif
-                    @if(Session::has('ubahStatusPemesananGagal'))
-                    <div class="alert alert-danger">
-                        <ul>
-                            <li>{{Session::get('ubahStatusPemesananGagal')}}</li>
-                        </ul>
-                    </div>
-                    @endif
-
-        <div class="d-flex flex-row row row-cols-2">
-                    @foreach($barang as $bar)
-            <div class="card">
-                <div class="card-header">
-                    <h1>Orders #{{$order[$i]->id}}</h1>
-                </div>
-                @if($null_item)
-                <div class="card-body">
-                    <h1>You haven't ordered yet.</h1>
-                    @else
-                    <div class="card-body">
-                        @foreach($bar as $b)
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <center>
-                                        <img src="{{asset('img/gambar/'.$b[0]->gambarBarang)}}" alt="..." width="100px" style="padding-top: 30px;">
-                                    </center>
+                <div class="container-fluid">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="m-0">Order Detail</h5>
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                @if(Session::has('ubahStatusPemesananBerhasil'))
+                                <div class="alert alert-success">
+                                    <ul>
+                                        <li>{{Session::get('ubahStatusPemesananBerhasil')}}</li>
+                                    </ul>
                                 </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h6 class="card-text">{{$b[0]->namaBarang}}</h6>
-                                        <h6 class="card-text">{{$b[0]->merekBarang}}</h6>
-                                        <h6 class="card-text">{{$b[0]->kategoriBarang}}</h6>
-                                        <h6 class="card-text">Price : {{$b[0]->hargaBarang}}</h6>
-                                        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                                @endif
+                                @if(Session::has('ubahStatusPemesananGagal'))
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        <li>{{Session::get('ubahStatusPemesananGagal')}}</li>
+                                    </ul>
+                                </div>
+                                @endif
+
+                                <div class="d-flex flex-row row row-cols-2">
+                                    @foreach($barang as $bar)
+                                    <div class="card" style="margin-left: auto; margin-right:auto;">
+                                        @if(!$null_item)
+                                        <div class="card-header">
+                                            <h1>Orders #{{$order[$i]->id}}</h1>
+                                        </div>
+                                        @endif
+                                        @if($null_item)
+                                        <div class="card-body">
+                                            <h1>You haven't ordered yet.</h1>
+                                            <!-- <center></center> -->
+                                            @else
+                                            <div class="card-body">
+                                                @foreach($bar as $b)
+                                                <div class="card mb-3" style="max-width: 540px;">
+                                                    <div class="row g-0">
+                                                        <div class="col-md-4">
+                                                            <center>
+                                                                <img src="{{asset('img/gambar/'.$b[0]->gambarBarang)}}" alt="..." width="100px" style="padding-top: 30px;">
+                                                            </center>
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                            <div class="card-body">
+                                                                <h6 class="card-text">{{$b[0]->namaBarang}}</h6>
+                                                                <h6 class="card-text">{{$b[0]->merekBarang}}</h6>
+                                                                <h6 class="card-text">{{$b[0]->kategoriBarang}}</h6>
+                                                                <h6 class="card-text">Price : {{$b[0]->hargaBarang}}</h6>
+                                                                <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @endforeach
+                                                <p><strong>ID :</strong> {{$order[$i]->id}}
+                                                <p class="card-text"><strong>Date :</strong> {{$order[$i]->tanggalPemesanan}}
+                                                <p class="card-text"><strong>Duration :</strong> {{$order[$i]->jumlahHari}} @if($order[$i]->jumlahHari === 1) day @else days @endif
+                                                <p class="card-text"><strong>Price :</strong> Rp{{$order[$i]->hargaTotal}} </p>
+                                                <p class="card-text"><strong>Status:</strong> {{$order[$i]->statusPemesanan}} </p>
+                                                <form action="{{ url('barang/ubahStatus') }}" method="post">
+                                                    {{csrf_field()}}
+                                                    <input type="hidden" name="id_pesanan" value="{{$order[$i]->id}}">
+                                                    @if($order[$i]->statusPemesanan == "Sedang Dikirim" )
+                                                    <button type="submit" class="btn btn-primary">Ubah Menjadi Sudah Dikirim</button>
+                                                    @elseif($order[$i]->statusPemesanan == "Siap di Pick-up" )
+                                                    <button type="submit" class="btn btn-primary">Ubah Menjadi Selesai</button>
+                                                    @else
+                                                    <button type="submit" class="btn btn-danger" disabled><i class="fas fa-lock"></i>&nbsp;&nbsp;Tidak Dapat Mengubah Status</button>
+                                                    @endif
+                                                </form>
+                                                <?php $i++; ?>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
                         </div>
-                @endforeach
-                <p><strong>ID :</strong> {{$order[$i]->id}}
-                <p class="card-text"><strong>Date :</strong> {{$order[$i]->tanggalPemesanan}}
-                <p class="card-text"><strong>Duration :</strong> {{$order[$i]->jumlahHari}} @if($order[$i]->jumlahHari === 1) day @else days @endif
-                <p class="card-text"><strong>Price :</strong> Rp{{$order[$i]->hargaTotal}} </p>
-                <p class="card-text"><strong>Status:</strong> {{$order[$i]->statusPemesanan}} </p>
-                <form action="{{ url('barang/ubahStatus') }}" method="post">
-                    {{csrf_field()}}
-                    <input type="hidden" name="id_pesanan" value="{{$order[$i]->id}}">
-                    @if($order[$i]->statusPemesanan == "Sedang Dikirim" )
-                    <button type="submit" class="btn btn-primary">Ubah Menjadi Sudah Dikirim</button>
-                    @elseif($order[$i]->statusPemesanan == "Siap di Pick-up" )
-                    <button type="submit" class="btn btn-primary">Ubah Menjadi Selesai</button>
-                    @else
-                    <button type="submit" class="btn btn-danger" disabled><i class="fas fa-lock"></i>&nbsp;&nbsp;Tidak Dapat Mengubah Status</button>
-                    @endif
-                </form>
-                <?php $i++; ?>
-                @endif
-            </div>
-        </div>
-        @endforeach
-            </div>
+                    </div>
                 </div>
             </div>
-            </div>
-            </div>
-            </div>
-            </div>
-
+            @include('Template/footer')
             <aside class="control-sidebar control-sidebar-dark">
                 <div class="p-3">
-                <h5>Title</h5>
-                <p>Sidebar content</p>
+                    <h5>Title</h5>
+                    <p>Sidebar content</p>
                 </div>
             </aside>
         </div>
-        @include('Template/footer')
+
 
         <script src="{{ asset('AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('AdminLTE/dist/js/adminlte.min.js') }}"></script>
         <script type="text/javascript">
-        $(document).ready( function () {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
+            $(document).ready(function() {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
 
-            $('#datatable-crud').DataTable({
-                processing: true,
-                serverSide: true,
-                ajax: "{{ url('barang') }}",
-                columns: [
-                    { data: 'id', name: 'id' },
-                    { data: 'namaBarang', name: 'namaBarang' },
-                    { data: 'merekBarang', name: 'merekBarang' },
-                    { data: 'kategoriBarang', name: 'kategoriBarang' },
-                    { data: 'deskripsiBarang', name: 'deskripsiBarang' },
-                    { data: 'hargaBarang', name: 'hargaBarang' },
-                    { data: 'stokBarang', name: 'stokBarang' },
-                    {   data: 'gambarBarang', 
-                        name: 'gambarBarang',
-                        render: function (data, type, full, meta) {
-                            return "<img src=\"img/gambar/" + data + "\" height=\"60\"/>";
+                $('#datatable-crud').DataTable({
+                    processing: true,
+                    serverSide: true,
+                    ajax: "{{ url('barang') }}",
+                    columns: [{
+                            data: 'id',
+                            name: 'id'
+                        },
+                        {
+                            data: 'namaBarang',
+                            name: 'namaBarang'
+                        },
+                        {
+                            data: 'merekBarang',
+                            name: 'merekBarang'
+                        },
+                        {
+                            data: 'kategoriBarang',
+                            name: 'kategoriBarang'
+                        },
+                        {
+                            data: 'deskripsiBarang',
+                            name: 'deskripsiBarang'
+                        },
+                        {
+                            data: 'hargaBarang',
+                            name: 'hargaBarang'
+                        },
+                        {
+                            data: 'stokBarang',
+                            name: 'stokBarang'
+                        },
+                        {
+                            data: 'gambarBarang',
+                            name: 'gambarBarang',
+                            render: function(data, type, full, meta) {
+                                return "<img src=\"img/gambar/" + data + "\" height=\"60\"/>";
+                            }
+                        },
+                        {
+                            data: 'logoBarang',
+                            name: 'logoBarang',
+                            render: function(data, type, full, meta) {
+                                return "<img src=\"img/logo/" + data + "\" height=\"30\"/>";
+                            }
+                        },
+                        {
+                            data: 'action',
+                            orderable: false,
+                            targets: 0
                         }
-                    },
-                    {   data: 'logoBarang', 
-                        name: 'logoBarang',
-                        render: function (data, type, full, meta) {
-                            return "<img src=\"img/logo/" + data + "\" height=\"30\"/>";
-                        }
-                    },
-                    { data: 'action', orderable: false, targets: 0 }
-                ]
-            });
+                    ]
+                });
 
-            $('body').on('click', '.delete', function () {
-                if (confirm("Delete Console Record?") == true) {
-                    var id = $(this).data('id');
-                    // ajax
-                    $.ajax({
-                        type:"POST",
-                        url: "{{ url('delete-barang') }}",
-                        data: { id: id},
-                        dataType: 'json',
-                        success: function(res){
-                            var oTable = $('#datatable-crud').dataTable();
-                            oTable.fnDraw(false);
-                        }
-                    });
-                }
+                $('body').on('click', '.delete', function() {
+                    if (confirm("Delete Console Record?") == true) {
+                        var id = $(this).data('id');
+                        // ajax
+                        $.ajax({
+                            type: "POST",
+                            url: "{{ url('delete-barang') }}",
+                            data: {
+                                id: id
+                            },
+                            dataType: 'json',
+                            success: function(res) {
+                                var oTable = $('#datatable-crud').dataTable();
+                                oTable.fnDraw(false);
+                            }
+                        });
+                    }
+                });
             });
-        });
-    </script>
-    </body>
+        </script>
+</body>
 
-    
+
 </html>

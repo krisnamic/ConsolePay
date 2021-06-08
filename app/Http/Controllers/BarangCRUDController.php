@@ -153,11 +153,11 @@ class BarangCRUDController extends Controller
         // dd($order);
         if ($order->isEmpty()) {
             // dd($i);
-            // dd($i);
             $barang[$i] = DB::table('barang')->get();
             return view('barang.order', [
                 'barang' => $barang,
                 'null_item' => 'true',
+                // 'empty_order' => true, 
             ]);
             // return view('user.shoppingCart');
         } else {

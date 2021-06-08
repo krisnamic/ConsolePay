@@ -32,10 +32,12 @@
         </div>
         <div class="d-flex flex-row row row-cols-2" style="width: 100%;">
             @foreach($barang as $bar)
-            <div class="card">
+            <div class="card" style="margin-left: auto; margin-right:auto;">
+                @if(!$null_item)
                 <div class="card-header">
                     <h1>Orders #{{$order[$i]->id}}</h1>
                 </div>
+                @endif
                 @if($null_item)
                 <div class="card-body">
                     <h1>You haven't ordered yet.</h1>
