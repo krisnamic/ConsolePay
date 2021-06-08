@@ -17,7 +17,7 @@
             <div class="col">
                 <div class="card" style="width: 18rem;">
                     <a href="/userHome/{{$b->id}}" style="color:black">
-                        <img src="{{asset('img/gambar/'.$b->gambarBarang)}}" class="card-img-top" alt="...">
+                        <img src="{{secure_asset('img/gambar/'.$b->gambarBarang)}}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h3 class="card-title">{{$b->namaBarang}}</h3>
                             <p class="card-text">Rp{{$b->hargaBarang}}</p>

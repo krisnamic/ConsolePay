@@ -46,7 +46,7 @@
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <center>
-                                        <img src="{{asset('img/gambar/'.$b[0]->gambarBarang)}}" alt="..." width="100px" style="padding-top: 30px;">
+                                        <img src="{{secure_asset('img/gambar/'.$b[0]->gambarBarang)}}" alt="..." width="100px" style="padding-top: 30px;">
                                     </center>
                                 </div>
                                 <div class="col-md-8">

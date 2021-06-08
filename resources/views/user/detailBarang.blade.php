@@ -51,15 +51,15 @@
             <div class="col-md-6 mb-md-0 p-md-4">
                 <div class="zoom-effect">
                     <div class="d-flex kotak">
-                        <img src="{{asset('img/gambar/'.$barang->gambarBarang)}}" class="w-100" alt="...">
+                        <img src="{{secure_asset('img/gambar/'.$barang->gambarBarang)}}" class="w-100" alt="...">
                     </div>
                 </div>
                 <!-- {{$barang->id}} -->
             </div>
             <div class="col-md-6 position-static p-4 pl-md-0">
                 <div class="d-flex flex-row align-items-center" style="margin-right: 1em;">
-                    <img src="{{asset('img/logo/'.$barang->logoBarang)}}" alt="..." style="margin-right: 2em; width: 46%;">
-                    <img src="{{asset('img/merek/'.$barang->merekBarang.'.svg')}}" alt="..." style="width: 46%;">
+                    <img src="{{secure_asset('img/logo/'.$barang->logoBarang)}}" alt="..." style="margin-right: 2em; width: 46%;">
+                    <img src="{{secure_asset('img/merek/'.$barang->merekBarang.'.svg')}}" alt="..." style="width: 46%;">
                 </div>
                 <br>
                 <div class="desc">

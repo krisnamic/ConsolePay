@@ -41,7 +41,7 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars fa-lg"></i></a>
             </div> -->
             <a class="logo-click" href="{{ route('userHome') }}">
-            <img class="logo-navbar" src="{{ asset('img/consolepay/consolepay-horizontal.svg')}}" type="image/svg+xml">
+            <img class="logo-navbar" src="{{ secure_asset('img/consolepay/consolepay-horizontal.svg')}}" type="image/svg+xml">
             </a>
             <div class="ml-auto">
             @if (Route::has('login'))
@@ -107,7 +107,7 @@
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 section-2" style="margin: 2%;">
             <div class="flex mt-8 bg-green-home dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                 <div class="d-flex justify-content-center" style="margin: 0; margin-top: 2%; width: 100%;">
-                    <img src="{{ asset('img/pendukung/playingGames.png')}}" class="w-30 shadow" alt="" data-aos="zoom-in" data-aos-delay="50">
+                    <img src="{{ secure_asset('img/pendukung/playingGames.png')}}" class="w-30 shadow" alt="" data-aos="zoom-in" data-aos-delay="50">
                 </div>
                 <div class="text-center" style="margin: 2% 0;" data-aos="zoom-in" data-aos-anchor-placement="top-bottom">
                     <h1>Have some <strong style="font-size: 50px;">FUN</strong> with your new console!</h1>
@@ -141,9 +141,9 @@
                             {{$b->namaBarang}}
                         </div>
                         <a href="/{{$b->id}}" style="color:black">
-                            <img src="{{asset('img/gambar/'.$b->gambarBarang)}}" class="card-img-top" alt="...">
+                            <img src="{{secure_asset('img/gambar/'.$b->gambarBarang)}}" class="card-img-top" alt="...">
                             <div class="card-body text-center">
-                                <img src="{{asset('img/logo/'.$b->logoBarang)}}" class="card-img-top" alt="...">
+                                <img src="{{secure_asset('img/logo/'.$b->logoBarang)}}" class="card-img-top" alt="...">
                                 <!-- <h3 class="card-title">{{$b->namaBarang}}</h3> -->
                                 <p class="card-text" style="margin-top: 10%; font-size: 1.5em;">Rp{{$b->hargaBarang}}</p>
                                 <p class="card-text" style="font-size: 1.2em;">Available : {{$b->stokBarang}}</p>

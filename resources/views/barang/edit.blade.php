@@ -7,8 +7,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/fontawesome-free/css/all.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('AdminLTE/dist/css/adminlte.min.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('AdminLTE/plugins/fontawesome-free/css/all.min.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('AdminLTE/dist/css/adminlte.min.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -36,7 +36,7 @@
     <div class="nav-item">
       <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars fa-lg"></i></a>
     </div>
-      <img src="{{ asset('img/consolepay/consolepay-horizontal.svg')}}" width="240" type="image/svg+xml">
+      <img src="{{ secure_asset('img/consolepay/consolepay-horizontal.svg')}}" width="240" type="image/svg+xml">
     <div class="ml-auto">
       @if (Route::has('login'))
       @auth
@@ -310,8 +310,8 @@
         </div>
         @include('Template/footer')
 
-        <script src="{{ asset('AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-        <script src="{{ asset('AdminLTE/dist/js/adminlte.min.js') }}"></script>
+        <script src="{{ secure_asset('AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ secure_asset('AdminLTE/dist/js/adminlte.min.js') }}"></script>
     </body>
 
     

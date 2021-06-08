@@ -17,7 +17,7 @@
       <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars fa-lg"></i></a>
     </div> -->
     <a class="logo-click" href="{{ route('userHome') }}">
-      <img src="{{ asset('img/consolepay/consolepay-horizontal.svg')}}" width="240" type="image/svg+xml">
+      <img src="{{ secure_asset('img/consolepay/consolepay-horizontal.svg')}}" width="240" type="image/svg+xml">
     </a>
     <div class="ml-auto">
       @if (Route::has('login'))

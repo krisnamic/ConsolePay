@@ -53,7 +53,7 @@
                     <div class="card shadow d-flex flex-column flex-fill align-items-center" style="border-radius: 0.4em;">
                         <div class="d-flex flex-row justify-content-center">
                             <div style="width: 25%; margin-right: 1em;">
-                                <img src="{{asset('img/gambar/'.$b[0]->gambarBarang)}}" style="width: 100%;" alt="...">
+                                <img src="{{secure_asset('img/gambar/'.$b[0]->gambarBarang)}}" style="width: 100%;" alt="...">
                             </div>
                             <div class="" style="text-align: justify;">
                                 <p>
