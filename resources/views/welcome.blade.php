@@ -165,9 +165,9 @@
                     <p>Sponsored by :</p>
                 </div>
                 <div class="d-flex justify-content-center" style="margin: 0 25%;">
-                    <img src="img/merek/sony.svg" class="w-30 merek-home" alt="">
-                    <img src="img/merek/microsoft.svg" class="w-30 merek-home" alt="">
-                    <img src="img/merek/nintendo.svg" class="w-30 merek-home" alt="">
+                    <img src="img/merek/Sony.svg" class="w-30 merek-home" alt="">
+                    <img src="img/merek/Microsoft.svg" class="w-30 merek-home" alt="">
+                    <img src="img/merek/Nintendo.svg" class="w-30 merek-home" alt="">
                 </div>
             </div>
         </div>
