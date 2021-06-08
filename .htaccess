@@ -14,4 +14,9 @@ Options +SymLinksIfOwnerMatch.
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule "^(.*)$ public/$1" [L]
 
+    #redirect http to https
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 </IfModule>
