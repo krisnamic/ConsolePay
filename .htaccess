@@ -1,6 +1,12 @@
 <IfModule mod_rewrite.c>
+    <IfModule mod_headers.c>
+    <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css|css|js)$">
+    Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+    </IfModule>
+
     <IfModule mod_negotiation.c>
-Options +SymLinksIfOwnerMatch.
+    Options +SymLinksIfOwnerMatch.
     </IfModule>
 
     RewriteEngine On
@@ -19,11 +25,3 @@ Options +SymLinksIfOwnerMatch.
     RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
-
-### marker CORS start ###
-<FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font\.css)$">
-<IfModule mod_headers.c>
-Header set Access-Control-Allow-Origin "*"
-</IfModule>
-</FilesMatch>
-### marker CORS end ###
