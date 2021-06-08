@@ -130,47 +130,18 @@
     <div class="sliding-background-red" style="position: relative !important; z-index: -1080;"></div>
   </div>
 
-  <!-- <script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    // (function() {
-    //   'use strict';
-    //   window.addEventListener('load', function() {
-    //     document.getElementById("login-btn").disabled = true;
-    //     // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    //     var forms = document.getElementsByClassName('needs-validation');
-    //     // Loop over them and prevent submission
-    //     var validation = Array.prototype.filter.call(forms, function(form) {
-    //       form.addEventListener('submit', function(event) {
-    //         if (form.checkValidity() === false) {
-    //           event.preventDefault();
-    //           event.stopPropagation();
-    //         }
-    //         form.classList.add('was-validated');
-    //       }, false);
-    //     });
-    //   }, false);
-    // })();
-  </script> -->
   <script type="text/javascript">
     $('#refresh-captcha').click(function() {
       $.ajax({
         type: 'GET',
         url: 'refresh-captcha',
+        crossDomain:true,
         success: function(data) {
           $(".captcha span").html(data.captcha);
         }
       });
     });
   </script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> -->
-  <!-- <script src="../../js/captcha.js"></script> -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.3/venobox.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script> -->
-
-
 </body>
 
 </html>
