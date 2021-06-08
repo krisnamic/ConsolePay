@@ -269,3 +269,18 @@ h5 {
     margin-bottom: 0;
 }
 
+.logo-navbar {
+    width: 20vw;
+}
+
+.bisa {
+    font-size: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+    .bisa {
+        font-size: 0.5em;
+    }
+  }

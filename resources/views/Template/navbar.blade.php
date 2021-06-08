@@ -26,25 +26,15 @@
         <a href="{{ url('/') }}" class="nav-link">Home</a>
       </li> -->
       @if(Session::has('user_id'))
-      <li class="nav-item d-none d-sm-inline-block" style="margin-left: 15px; margin-right: 15px;">
-        <a href="{{route('viewShoppingCart')}}"><i class="fas fa-shopping-cart"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{route('viewOrder')}}"><i class="fas fa-truck"></i></a>
-      </li>
-      @endif
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ route('logout')}}" class="nav-link">Logout</a>
-      </li>
-      @else
-      @if (Route::has('register'))
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ route('register') }}" class="nav-link">Register</a>
-      </li>
-      @endif
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ route('login') }}" class="nav-link">Login</a>
-      </li>
+                <a href="{{route('viewShoppingCart')}}" style="margin-left: 15px; margin-right: 15px;"><i class="fas fa-shopping-cart"></i></a>
+                <a href="{{route('viewOrder')}}"><i class="fas fa-truck"></i></a>
+            @endif
+                <a href="{{ route('logout')}}" class="bisa">Logout</a>
+            @else
+                <a href="{{ route('login') }}" class="bisa">Login</a>
+            @if (Route::has('register'))
+                <a href="{{ route('register') }}" class="bisa">Register</a>
+            @endif
       @endauth
       @endif
     </div>

@@ -41,30 +41,20 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars fa-lg"></i></a>
             </div> -->
             <a class="logo-click" href="{{ route('userHome') }}">
-            <img src="{{ asset('img/consolepay/consolepay-horizontal.svg')}}" width="240" type="image/svg+xml">
+            <img class="logo-navbar" src="{{ asset('img/consolepay/consolepay-horizontal.svg')}}" type="image/svg+xml">
             </a>
             <div class="ml-auto">
             @if (Route::has('login'))
             @auth
             @if(Session::has('user_id'))
-            <li class="nav-item d-none d-sm-inline-block" style="margin-left: 15px; margin-right: 15px;">
-                <a href="{{route('viewShoppingCart')}}"><i class="fas fa-shopping-cart"></i></a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{route('viewShoppingCart')}}" style="margin-left: 15px; margin-right: 15px;"><i class="fas fa-shopping-cart"></i></a>
                 <a href="{{route('viewOrder')}}"><i class="fas fa-truck"></i></a>
-            </li>
             @endif
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="{{ route('logout')}}" class="nav-link">Logout</a>
-            </li>
+                <a href="{{ route('logout')}}" class="bisa">Logout</a>
             @else
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="{{ route('login') }}" class="nav-link">Login</a>
-            </li>
+                <a href="{{ route('login') }}" class="bisa">Login</a>
             @if (Route::has('register'))
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="{{ route('register') }}" class="nav-link">Register</a>
-            </li>
+                <a href="{{ route('register') }}" class="bisa">Register</a>
             @endif
             @endauth
             @endif
