@@ -14,11 +14,8 @@ use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
-    public function loginPage(Request $request)
+    public function loginPage()
     {
-        if ($request->session()->get('user_id') || $request->session()->get('admin_is_loggedin')) {
-            return back();
-        }
         return view('Login.login');
     }
 
@@ -71,7 +68,6 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             if ($role == 'admin') {
-                Session::put('admin_is_loggedin', 'loggedin');
                 return redirect()->intended('barang');
             } else {
                 Session::put('user_id', $user_id);
@@ -99,11 +95,8 @@ class LoginController extends Controller
         return redirect('/');
     }
 
-    public function register(Request $request)
+    public function register()
     {
-        if ($request->session()->get('user_id') || $request->session()->get('admin_is_loggedin')) {
-            return back();
-        }
         return view('Login.register');
     }
 
